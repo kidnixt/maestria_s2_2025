@@ -38,7 +38,8 @@
     "//Tags",
     "//2_Sistemas_Multiagente",
     "//3_Machine_Learning_Producción",
-    "/"
+    "/",
+    "//Tags/Tags/0_MODELOS_DEEP_LEARNING"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
