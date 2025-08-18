@@ -11,12 +11,14 @@
             "id": "e5c6c580d3f2f151",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "Tags/0_MODELOS_DEEP_LEARNING"
+                "file": "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "0_MODELOS_DEEP_LEARNING"
+              "title": "0_clase1_1808_dump"
             }
           }
         ]
@@ -180,6 +182,7 @@
   },
   "active": "e5c6c580d3f2f151",
   "lastOpenFiles": [
+    "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
     "Tags/0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
     "README.md",
     "Tags/0_MODELOS_DEEP_LEARNING",
