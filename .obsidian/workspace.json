@@ -11,12 +11,14 @@
             "id": "5ca64efbdc552d89",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "2_TALLER_DEEP_LEARNING"
+                "file": "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "2_TALLER_DEEP_LEARNING"
+              "title": "2_Derivadas"
             }
           }
         ]
@@ -181,9 +183,11 @@
   },
   "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
+    "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
+    "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
+    "0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
     "2_TALLER_DEEP_LEARNING/2_TALLER_DEEP_LEARNING.md",
     "2_TALLER_DEEP_LEARNING",
-    "0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
     "Tags/Tags.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/1_INTELIGENCIA_ARTIFICIAL_GENERATIVA.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA",
@@ -194,8 +198,6 @@
     "assets/Pasted image 20250820164100.png",
     "assets/Pasted image 20250820164033.png",
     "assets",
-    "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
-    "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
     "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01",
     "README.md",

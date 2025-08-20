@@ -38,7 +38,9 @@
     "//2_Sistemas_Multiagente",
     "//3_Machine_Learning_Producción",
     "/",
-    "//Tags/Tags/0_MODELOS_DEEP_LEARNING/Tags/0_MODELOS_DEEP_LEARNING/1_Clase01"
+    "//Tags/Tags/0_MODELOS_DEEP_LEARNING/Tags/0_MODELOS_DEEP_LEARNING/1_Clase01",
+    "//0_MODELOS_DEEP_LEARNING",
+    "//0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING/1_Clase01"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
