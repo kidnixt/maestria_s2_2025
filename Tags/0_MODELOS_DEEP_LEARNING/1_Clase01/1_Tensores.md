@@ -101,49 +101,21 @@ $$
 
 
 - **Norma euclídea (ℓ2):**
-
-  
-
-\[
-
+$$
 \|x\|_2 = \sqrt{\sum_i x_i^2}
-
-\]
-
-  
-
-- **Producto interno:**
-
-  
-
-\[
-
+$$
+- **Producto interno:**  
+$$
 \langle x, y \rangle = \sum_i x_i y_i = x^\top y
-
-\]
-
-  
-
+$$
 ---
-
-  
-
 ## 7. 📏 Producto interno y similaridad coseno
 
 - Relación con ángulo θ:
+$$\cos(\theta) = \frac{\langle x, y \rangle}{\|x\|\|y\|} $$
 
-  
-
-\[
-
-\cos(\theta) = \frac{\langle x, y \rangle}{\|x\|\|y\|}
-
-\]
-
-  
 
 - Si ⟨x, y⟩ = 0 → vectores ortogonales.
-
 - Valores de coseno: entre -1 (opuestos) y +1 (alineados).
 
 - **Distancia euclídea en términos de productos internos:**
