@@ -25,12 +25,12 @@
             "id": "5ca64efbdc552d89",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "mk-space",
               "state": {
-                "currentVersion": "1.9.10"
+                "path": "Tags/0_MODELOS_DEEP_LEARNING"
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.10"
+              "icon": "lucide-file",
+              "title": "0_MODELOS_DEEP_LEARNING"
             }
           }
         ],
@@ -194,10 +194,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5ca64efbdc552d89",
+  "active": "99c241dfb9ba0c5f",
   "lastOpenFiles": [
-    "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
     "Tags/0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
+    "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
     "README.md",
     "Tags/0_MODELOS_DEEP_LEARNING",
     "Tags/Untitled.md",
