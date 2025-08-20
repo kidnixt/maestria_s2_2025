@@ -240,14 +240,11 @@ H_{(b,c)} = \sum_i X_{i,:,:}, \quad X \sim (a,b,c)
 $$
 
 - Producto interno generalizado:
-
-  
-
-\[
+$$
 
 y = \sum_{i,j,k} [X_1 \odot X_2]_{i,j,k}
 
-\]
+
 
   
 
