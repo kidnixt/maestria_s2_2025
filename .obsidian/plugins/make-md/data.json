@@ -35,11 +35,9 @@
   "showRibbon": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "//Tags",
     "//2_Sistemas_Multiagente",
     "//3_Machine_Learning_Producción",
     "/",
-    "//Tags/Tags/0_MODELOS_DEEP_LEARNING",
     "//Tags/Tags/0_MODELOS_DEEP_LEARNING/Tags/0_MODELOS_DEEP_LEARNING/1_Clase01"
   ],
   "expandFolderOnClick": true,
