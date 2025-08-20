@@ -190,11 +190,7 @@ $$
 
 
 - Producto interno entre todas las filas:
-
-  
-
-\[
-
+$$
 XX^\top = [\langle X_{i,:}, X_{j,:} \rangle]_{i,j}
 
 \]
