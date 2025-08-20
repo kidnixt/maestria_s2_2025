@@ -117,7 +117,7 @@ $$\cos(\theta) = \frac{\langle x, y \rangle}{\|x\|\|y\|} $$
 
 - Si ⟨x, y⟩ = 0 → vectores ortogonales.
 - Valores de coseno: entre -1 (opuestos) y +1 (alineados).
-
+-
 - **Distancia euclídea en términos de productos internos:**
 
   
