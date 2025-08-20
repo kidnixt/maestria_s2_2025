@@ -192,46 +192,24 @@ $$
 - Producto interno entre todas las filas:
 $$
 XX^\top = [\langle X_{i,:}, X_{j,:} \rangle]_{i,j}
-
-\]
-
-  
-
+$$
 ---
-
-  
-
 ## 11. 📦 Batch Matrix Multiplication (BMM)
 
 Operaciones de mayor dimensión:  
 
-- Si \(X \sim (n, a, b)\) e \(Y \sim (n, b, c)\):
-
-  
-
-\[
-
+- Si $(X \sim (n, a, b)$ e $(Y \sim (n, b, c)$:
+$$
 [BMM(X,Y)]_i = X_{i,:,:} Y_{i,:,:} \quad \sim (n, a, c)
-
-\]
-
-  
-
+$$
 Ejemplo en PyTorch:
 
 ```python
-
 X = torch.randn((4,5,2)) # batch de 4 matrices 5x2
-
 Y = torch.randn((4,2,3)) # batch de 4 matrices 2x3
-
 Z = torch.matmul(X,Y)    # o X @ Y
-
 print(Z.shape)           # torch.Size([4,5,3])
-
 ```
-
-  
 
 ---
 
