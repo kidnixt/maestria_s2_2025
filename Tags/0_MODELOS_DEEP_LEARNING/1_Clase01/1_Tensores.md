@@ -87,10 +87,7 @@ y = torch.randn((4,))   # Vector 1D, shape (4,)
 print((x+y).shape)      # torch.Size([4,4])  <-- broadcasting
 ```
 
-
 ---
-
-  
 
 ## 6. ➕ Operaciones con vectores
 
@@ -241,33 +238,15 @@ $$
 
 - Producto interno generalizado:
 $$
-
 y = \sum_{i,j,k} [X_1 \odot X_2]_{i,j,k}
-
-
-
-  
-
+$$
 - Ejemplo en vectores:
-
-  
-
-\[
-
+$$
 \sum_i x_i = \langle x, \mathbf{1} \rangle
-
-\]
-
-  
-
+$$
 ---
-
-  
-
 # ✅ Conclusión
 
 - Todo en Deep Learning se formula con **tensores**.
-
 - Operaciones clave: **producto interno, normas, multiplicaciones matriciales, BMM, broadcasting, reducciones**.
-
 - Estas operaciones son la base para redes neuronales y cómputo eficiente en GPUs.
