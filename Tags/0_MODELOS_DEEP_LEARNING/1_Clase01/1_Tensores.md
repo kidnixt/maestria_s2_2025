@@ -119,17 +119,10 @@ $$\cos(\theta) = \frac{\langle x, y \rangle}{\|x\|\|y\|} $$
 - Valores de coseno: entre -1 (opuestos) y +1 (alineados).
 -
 - **Distancia euclídea en términos de productos internos:**
-
-  
-
-\[
-
+$$
 \|x-y\|_2^2 = \langle x, x \rangle + \langle y, y \rangle - 2\langle x, y \rangle
 
-\]
-
-  
-
+$$
 ---
 
   
