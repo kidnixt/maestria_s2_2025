@@ -30,8 +30,7 @@ El número de dimensiones (n) se llama **orden del tensor**.
 - Un tensor `X` es un arreglo n-dimensional de elementos del mismo tipo.
 - El **shape** (forma) se denota:
 
-
-$$X \sim (s_1, s_2, \dots, s_n)\]$$
+$$X \sim (s_1, s_2, \dots, s_n)$$
 
   
 
