@@ -144,14 +144,10 @@ X_{m,1} & \dots & X_{m,n}
 $$
 
 - Interpretaciones:
-
   - **Filas:** cada fila = un vector fila $(x_i^\top)$.
   - **Columnas:** cada columna = un vector columna $(c_j)$.
 
 ---
-
-  
-
 ## 9. 🔄 Transformación lineal y multiplicación
 
 - Una matriz representa una aplicación lineal:
