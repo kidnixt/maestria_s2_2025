@@ -99,7 +99,6 @@ $$
 z = a x + b y \quad \Rightarrow \quad [z]_i = a x_i + b y_i
 $$
 
-
 - **Norma euclídea (ℓ2):**
 $$
 \|x\|_2 = \sqrt{\sum_i x_i^2}
@@ -113,11 +112,10 @@ $$
 
 - Relación con ángulo θ:
 $$\cos(\theta) = \frac{\langle x, y \rangle}{\|x\|\|y\|} $$
-
-
 - Si ⟨x, y⟩ = 0 → vectores ortogonales.
 - Valores de coseno: entre -1 (opuestos) y +1 (alineados).
--
+
+
 - **Distancia euclídea en términos de productos internos:**
 $$
 \|x-y\|_2^2 = \langle x, x \rangle + \langle y, y \rangle - 2\langle x, y \rangle
@@ -125,13 +123,11 @@ $$
 $$
 ---
 
-  
-
 ## 8. 🟦 Matrices
 
 - Tensores de dimensión 2.
 
-\[
+$$
 
 X =
 
