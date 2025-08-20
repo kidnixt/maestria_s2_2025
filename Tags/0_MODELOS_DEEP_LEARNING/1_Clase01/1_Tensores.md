@@ -45,7 +45,7 @@ $$X[:, i, :] \sim (h, c)$$
 - **Escalar (0D):** un número real. Se puede operar con `+, -, ·, sin, cos, sqrt(x), exp, |·|, ...`
 - **Vector (1D):** columna de valores
 
-\[
+$$
 
 x =
 
@@ -65,47 +65,28 @@ x_m
 
 x^\top = (x_1, x_2, \dots, x_m)
 
-\]
-
-  
-
+$$
 ---
-
-  
 
 ## 5. 🖥️ Notación matemática vs código
 
 ⚠️ Diferencia importante:
-
 - En matemática, por defecto, los vectores son **columna**.
-
 - En código, puede ser **fila o columna**:
-
   - `(d,)` → vector 1D (tensor unidimensional).
-
   - `(d,1)` o `(1,d)` → tensor 2D con 1 columna o 1 fila.
 
-  
-
 Esto afecta al **broadcasting**.
-
-  
 
 Ejemplo en PyTorch:
 
 ```python
-
 import torch
-
 x = torch.randn((4,1))  # Vector columna, shape (4,1)
-
 y = torch.randn((4,))   # Vector 1D, shape (4,)
-
 print((x+y).shape)      # torch.Size([4,4])  <-- broadcasting
-
 ```
 
-  
 
 ---
 
@@ -114,14 +95,11 @@ print((x+y).shape)      # torch.Size([4,4])  <-- broadcasting
 ## 6. ➕ Operaciones con vectores
 
 - **Combinación lineal:**
-
-  
-
-\[
+$$
 
 z = a x + b y \quad \Rightarrow \quad [z]_i = a x_i + b y_i
 
-\]
+$$
 
   
 
