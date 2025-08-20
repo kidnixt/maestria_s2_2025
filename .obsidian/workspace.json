@@ -11,12 +11,14 @@
             "id": "5ca64efbdc552d89",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "Tags/0_MODELOS_DEEP_LEARNING"
+                "file": "Tags/0_MODELOS_DEEP_LEARNING/1_Clase01/Untitled.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "0_MODELOS_DEEP_LEARNING"
+              "title": "Untitled"
             }
           }
         ]
@@ -179,12 +181,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b35884086e8c2601",
+  "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
-    "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
+    "Tags/0_MODELOS_DEEP_LEARNING/1_Clase01/Untitled.md",
     "Tags/0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
-    "Tags/0_MODELOS_DEEP_LEARNING/1_Clase01",
     "Tags/0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
+    "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
+    "Tags/0_MODELOS_DEEP_LEARNING/1_Clase01",
     "README.md",
     "Tags/0_MODELOS_DEEP_LEARNING",
     "Tags/Untitled.md",
