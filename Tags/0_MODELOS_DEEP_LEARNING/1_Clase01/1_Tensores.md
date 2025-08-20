@@ -212,66 +212,32 @@ print(Z.shape)           # torch.Size([4,5,3])
 ```
 
 ---
-
-  
-
 ## 12. ✖️ Otras operaciones
 
 - **Producto de Hadamard (elemento a elemento):**
-
-  
-
-\[
-
+$$
 (X \odot Y)_{ij} = X_{ij} Y_{ij}
-
-\]
-
-  
-
+$$
 - **Broadcasting:** operaciones con tensores de distinto shape.
 
 Ejemplo:
-
-  
-
-\[
-
+$$
 Y_{(n,m)} = X_{(n,m)} + a_{(m)}
-
-\]
-
-  
-
+$$
 ---
-
-  
-
 ## 13. 🌐 Broadcasting
 
 ⚡ El broadcasting permite “expandir” tensores para operar sin copiarlos explícitamente.  
 
 Ejemplo: sumar un vector a cada fila de una matriz.
 
-  
-
 ---
-
-  
-
 ## 14. 📉 Operaciones de reducción
 
 - Reducción a lo largo de ejes:
-
-  
-
-\[
-
+$$
 H_{(b,c)} = \sum_i X_{i,:,:}, \quad X \sim (a,b,c)
-
-\]
-
-  
+$$
 
 - Producto interno generalizado:
 
