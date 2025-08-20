@@ -31,46 +31,20 @@ El número de dimensiones (n) se llama **orden del tensor**.
 - El **shape** (forma) se denota:
 
 $$X \sim (s_1, s_2, \dots, s_n)$$
-
-  
-
 Ejemplo:  
-
 - Si `n = 3`, entonces `X ∼ (h, w, c)` → tensor 3D con alto, ancho y canales.  
-
 - Elemento específico:  
 
-  
-
-\[
-
-X_{i,j,k} \quad \text{o bien} \quad [X]_{i,j,k}
-
-\]
-
-  
+$$X_{i,j,k} \quad \text{o bien} \quad [X]_{i,j,k}$$
 
 - **Slicing**:  
-
-\[
-
-X[:, i, :] \sim (h, c)
-
-\]
-
-  
-
+$$X[:, i, :] \sim (h, c)$$
 ---
-
-  
-
 ## 4. ⚪ Escalares y Vectores
 
 - **Escalar (0D):** un número real. Se puede operar con `+, -, ·, sin, cos, sqrt(x), exp, |·|, ...`
-
 - **Vector (1D):** columna de valores
 
-  
 
 \[
 
