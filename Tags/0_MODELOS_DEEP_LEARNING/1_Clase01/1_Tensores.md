@@ -1,74 +1,37 @@
 # 📘 Apuntes - Deep Learning: Tensores
 
   
-
-Universidad ORT Uruguay  
-
-📅 18 de Agosto, 2025
-
-  
-
----
-
-  
-
 ## 1. 🎯 Objeto de estudio
 
 Las redes neuronales pueden verse como **funciones** con estas características:
 
 - 🟦 **Input y output** representados mediante **tensores**.
-
 - 🟩 **Parámetros** también son tensores.
-
 - 🟨 Son **componibles** (podemos apilar funciones en capas).
-
 - 🟪 Son **diferenciables**, lo que permite el cálculo de gradientes.
-
 - 🔧 Se pueden **optimizar numéricamente end-to-end**.
 
-  
-
 ---
-
-  
-
 ## 2. 🔢 Tensores
 
 Tipos de datos fundamentales:
-
 - **Escalar (0D)**: número real.
-
 - **Vector (1D)**: lista de valores.
-
 - **Matriz (2D)**: tabla con filas y columnas.
-
 - **Array n-dimensional (nD)**: generalización.
-
-  
 
 👉 A estos objetos los llamamos **tensores**.  
 
 El número de dimensiones (n) se llama **orden del tensor**.
 
-  
-
 ---
-
-  
-
 ## 3. 📐 Índices y Shape
 
 - Un tensor `X` es un arreglo n-dimensional de elementos del mismo tipo.
-
 - El **shape** (forma) se denota:
 
-  
 
-\[
-
-X \sim (s_1, s_2, \dots, s_n)
-
-\]
+$$X \sim (s_1, s_2, \dots, s_n)\]$$
 
   
 
