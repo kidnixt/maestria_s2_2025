@@ -141,17 +141,12 @@ X_{m,1} & \dots & X_{m,n}
 
 \end{bmatrix}
 
-\]
-
-  
+$$
 
 - Interpretaciones:
 
-  - **Filas:** cada fila = un vector fila \(x_i^\top\).
-
-  - **Columnas:** cada columna = un vector columna \(c_j\).
-
-  
+  - **Filas:** cada fila = un vector fila $(x_i^\top)$.
+  - **Columnas:** cada columna = un vector columna $(c_j)$.
 
 ---
 
