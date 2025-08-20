@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "0_clase1_1808_dump"
             }
+          },
+          {
+            "id": "5ca64efbdc552d89",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.10"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -75,7 +88,7 @@
             }
           },
           {
-            "id": "b2a80681fdec37ee",
+            "id": "99c241dfb9ba0c5f",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -171,6 +184,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -180,7 +194,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e5c6c580d3f2f151",
+  "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
     "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
     "Tags/0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
