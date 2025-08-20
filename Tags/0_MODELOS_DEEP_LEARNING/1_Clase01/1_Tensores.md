@@ -96,12 +96,9 @@ print((x+y).shape)      # torch.Size([4,4])  <-- broadcasting
 
 - **Combinación lineal:**
 $$
-
 z = a x + b y \quad \Rightarrow \quad [z]_i = a x_i + b y_i
-
 $$
 
-  
 
 - **Norma euclídea (ℓ2):**
 
