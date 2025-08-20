@@ -45,7 +45,6 @@ $$X[:, i, :] \sim (h, c)$$
 - **Escalar (0D):** un número real. Se puede operar con `+, -, ·, sin, cos, sqrt(x), exp, |·|, ...`
 - **Vector (1D):** columna de valores
 
-
 \[
 
 x =
