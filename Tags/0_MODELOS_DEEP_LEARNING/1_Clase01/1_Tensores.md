@@ -152,31 +152,19 @@ $$
 
 - Una matriz representa una aplicación lineal:
 
-  
-
-\[
+$$
 
 x \mapsto y = W x, \quad W \sim (m,n), \quad x \sim (n), \quad y \sim (m)
 
-\]
-
-  
+$$
 
 - **Multiplicación de matrices**:
-
-  
-
-\[
-
+$$
 (XY)_{ij} = \langle X_{i,:}, Y_{:,j} \rangle = \sum_{z=1}^b X_{iz} Y_{zj}
 
-\]
-
-  
+$$
 
 - Interpretación: **composición de funciones**.
-
-  
 
 ---
 
@@ -185,10 +173,7 @@ x \mapsto y = W x, \quad W \sim (m,n), \quad x \sim (n), \quad y \sim (m)
 ## 10. 📊 Batch de operaciones
 
 Ejemplo:
-
-  
-
-\[
+$$
 
 XW =
 
@@ -201,10 +186,8 @@ X_{1,:}W \\
 X_{m,:}W
 
 \end{bmatrix}
+$$
 
-\]
-
-  
 
 - Producto interno entre todas las filas:
 
