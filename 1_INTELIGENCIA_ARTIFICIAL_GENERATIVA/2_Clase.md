@@ -16,8 +16,7 @@ Sean X,YX, Y variables aleatorias:
     👉 La probabilidad conjunta se puede descomponer en una **marginal** y una **condicional**.
     
 - **Independencia:**
-    
-    $$X⊥Y⟺p(x,y)=p(x) p(y)X \perp Y \quad \Longleftrightarrow \quad p(x,y) = p(x)\,p(y)$$
+$$X⊥Y⟺p(x,y)=p(x) p(y)X \perp Y \quad \Longleftrightarrow \quad p(x,y) = p(x)\,p(y)$$
     
     👉 Dos variables son independientes si conocer una **no cambia** la probabilidad de la otra.
     
