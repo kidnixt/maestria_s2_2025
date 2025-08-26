@@ -11,14 +11,12 @@
             "id": "5ca64efbdc552d89",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
-                "mode": "source",
-                "source": false
+                "path": "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA"
               },
               "icon": "lucide-file",
-              "title": "2_Derivadas"
+              "title": "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA"
             }
           }
         ]
@@ -181,8 +179,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5ca64efbdc552d89",
+  "active": "b35035299071a514",
   "lastOpenFiles": [
+    "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
     "0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
@@ -192,7 +191,6 @@
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/1_INTELIGENCIA_ARTIFICIAL_GENERATIVA.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA",
     "Tags/0_MODELOS_DEEP_LEARNING/Untitled.md",
-    "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "assets/Pasted image 20250820164201.png",
     "assets/Pasted image 20250820164131.png",
     "assets/Pasted image 20250820164100.png",
