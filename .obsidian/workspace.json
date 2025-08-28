@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "2_Clase"
             }
+          },
+          {
+            "id": "73288d8277f36296",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.12"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -75,7 +88,7 @@
             }
           },
           {
-            "id": "7a12715f93788ebe",
+            "id": "99377afbeeda49fa",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -181,7 +194,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5ca64efbdc552d89",
+  "active": "73288d8277f36296",
   "lastOpenFiles": [
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/1_Clase.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/2_Clase.md",
