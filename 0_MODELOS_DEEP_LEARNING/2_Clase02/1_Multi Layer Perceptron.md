@@ -124,3 +124,4 @@ X = torch.randn(32, 100)   # batch de 32, input de dim 100
 W = torch.randn(100, 50)   # pesos
 b = torch.randn(50)        # bias
 a = torch.relu(X @ W + b)  # salida (32, 50)
+
