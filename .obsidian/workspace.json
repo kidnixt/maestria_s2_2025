@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/2_Modelos Autoregresivos Generativos.md",
+                "file": "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_Modelos Autoregresivos Generativos"
+              "title": "1_Tensores"
             }
           }
         ]
@@ -182,10 +182,12 @@
   },
   "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
-    "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/1_Variables Aleatorias Continuas.md",
-    "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/1_Clase.md",
+    "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
+    "2_TALLER_DEEP_LEARNING/2_TALLER_DEEP_LEARNING.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/3_Entrenamiento de Modelos Autoregresivos.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/2_Modelos Autoregresivos Generativos.md",
+    "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/1_Variables Aleatorias Continuas.md",
+    "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/1_Clase.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/2_Clase.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
@@ -201,10 +203,8 @@
     "Vault.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Clase02.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02",
-    "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
-    "2_TALLER_DEEP_LEARNING/2_TALLER_DEEP_LEARNING.md",
     "2_TALLER_DEEP_LEARNING",
     "Tags/Tags.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA",
