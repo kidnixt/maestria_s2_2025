@@ -32,6 +32,9 @@ $$
 
 ## 2. 🔩 Perceptrón: modelo de una neurona
 
+
+![[Pasted image 20250902143923.png]]
+
 Con notación matricial:
 $$
 \hat{y} = A(x^\top w + b)
@@ -47,6 +50,11 @@ Donde:
 ---
 
 ## 3. ⚡ Funciones de activación
+
+
+![[Pasted image 20250902143941.png]]
+
+![[Pasted image 20250902143952.png]]
 
 Funciones más comunes:
 
@@ -83,12 +91,16 @@ La activación aplica:
 $$
 a = A(z)
 $$
+![[Pasted image 20250902144013.png]]
+
 
 💡 **Cada capa densa = linealidad + activación.**
 
 ---
 
 ## 5. 🧮 Parámetros de una capa densa
+
+![[Pasted image 20250902144031.png]]
 
 La cantidad de parámetros es:
 $$
@@ -104,6 +116,8 @@ $(100+1)\times 50 = 5050$ parámetros.
 ---
 
 ## 6. 📦 Operando en batch
+
+![[Pasted image 20250902144049.png]]
 
 Con $N$ ejemplos en paralelo:
 
@@ -124,4 +138,29 @@ X = torch.randn(32, 100)   # batch de 32, input de dim 100
 W = torch.randn(100, 50)   # pesos
 b = torch.randn(50)        # bias
 a = torch.relu(X @ W + b)  # salida (32, 50)
+```
 
+## 7. 🏗️ Multi-Layer Perceptron (MLP)
+
+Un MLP con $d>1$ capas se obtiene componiendo capas densas:
+$$
+\hat{y} = f(x; W_1,\dots,W_d, b_1,\dots,b_d) =
+D_d(D_{d-1}(\dots D_1(x;W_1,b_1)\dots; W_{d-1},b_{d-1}); W_d,b_d)
+$$
+
+- Condición: $O_i = I_{i+1}$
+- Número de parámetros total:
+$$
+\text{params}(f) = \sum_{i=1}^d (I_i + 1)O_i
+$$
+
+---
+
+# ✅ Conclusión
+
+- Un MLP = composición de **capas densas + activaciones**.  
+- Cada neurona aplica: combinación lineal + función de activación.  
+- El poder del modelo proviene de:
+  1. **Profundidad (capas múltiples)**
+  2. **No linealidades (activaciones)**  
+- Más parámetros = mayor representación (pero también riesgo de overfitting).
