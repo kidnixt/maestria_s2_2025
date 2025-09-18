@@ -70,6 +70,8 @@ $$
 $$
 👉 Es un promedio ponderado exponencial de gradientes pasados.
 
+![[Pasted image 20250918120627.png]]
+
 ### ⚖️ Interpretación física (Heavy-ball)
 - Partícula sobre el paisaje $f(\theta)$:
 $$
@@ -117,6 +119,8 @@ Idea: **look-ahead** → calcular el gradiente en un punto adelantado por moment
 4. $\theta_{t+1} = \theta_t + v_{t+1}$
 
 💡 Diferencia: primero se “mira” el gradiente en el punto adelantado, luego se corrige con él.
+
+![[Pasted image 20250918120733.png]]
 
 ---
 
