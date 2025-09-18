@@ -109,7 +109,9 @@ Resultado:
 
 Para $f: \mathbb{R}^n \to \mathbb{R}$, una sola pasada **reverse** produce $\nabla f = (\partial y / \partial x_i)^n_{i=1}$. 
 
-Para $f: \mathbb{R}^n \to \mathbb{R}^m$: si $\text{ops}(f)$ es el costo de evaluar $f$, el Jacobiano cuesta * $n \cdot c \cdot \text{ops}(f)$ en **AD forward mode**. * $m \cdot c \cdot \text{ops}(f)$ en **AD reverse mode**.
+Para $f: \mathbb{R}^n \to \mathbb{R}^m$: si $\text{ops}(f)$ es el costo de evaluar $f$, el Jacobiano cuesta 
+
+* $n \cdot c \cdot \text{ops}(f)$ en **AD forward mode**. * $m \cdot c \cdot \text{ops}(f)$ en **AD reverse mode**.
 💡 **Conclusión:**
 - Si $m \ll n$ (muchas entradas, pocas salidas → típico en ML), conviene **reverse mode**.
 - Desventaja: requiere mucha memoria (hay que guardar los $v_i$ intermedios).
