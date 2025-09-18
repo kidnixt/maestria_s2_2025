@@ -25,6 +25,8 @@ $$
 y = f(x_1, x_2) = \ln(x_1) + x_1x_2 - \sin(x_2)
 $$
 
+![[Pasted image 20250918115618.png]]
+
 Definimos variables intermedias:
 - $v_{-1} = x_1$, $v_0 = x_2$
 - $v_1 = \ln v_{-1}$
@@ -53,6 +55,8 @@ Resultado:
 - $\dot y = \partial y/\partial x_1$.
 
 💡 **Intuición:** se propaga “junto” al valor normal una especie de “valor sombra” que representa la derivada respecto a $x_1$.
+
+![[Pasted image 20250918115714.png]]
 
 ---
 
@@ -97,18 +101,21 @@ Resultado:
 
 💡 **Diferencia con Forward:** ahora la propagación va **hacia atrás** en el grafo.
 
+![[Pasted image 20250918115746.png]]
+
 ---
 
 ## 6) ⚖️ Forward vs Reverse
 
-Sea $f: \mathbb{R}^n \to \mathbb{R}^m$, con costo de evaluar $f$ igual a $\text{ops}(f)$.
+Para $f: \mathbb{R}^n \to \mathbb{R}$, una sola pasada **reverse** produce $\nabla f = (\partial y / \partial x_i)^n_{i=1}$. 
 
-- **Forward Mode:** calcular el Jacobiano cuesta $n \cdot c \cdot \text{ops}(f)$.
-- **Reverse Mode:** calcular el Jacobiano cuesta $m \cdot c \cdot \text{ops}(f)$.
-
+Para $f: \mathbb{R}^n \to \mathbb{R}^m$: si $\text{ops}(f)$ es el costo de evaluar $f$, el Jacobiano cuesta * $n \cdot c \cdot \text{ops}(f)$ en **AD forward mode**. * $m \cdot c \cdot \text{ops}(f)$ en **AD reverse mode**.
 💡 **Conclusión:**
 - Si $m \ll n$ (muchas entradas, pocas salidas → típico en ML), conviene **reverse mode**.
 - Desventaja: requiere mucha memoria (hay que guardar los $v_i$ intermedios).
+
+
+
 
 ---
 
