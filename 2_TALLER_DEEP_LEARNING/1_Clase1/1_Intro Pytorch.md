@@ -352,3 +352,120 @@ x.requires_grad_(False)
 Esto puede ser útil cuando queremos **congelar pesos** de una red durante entrenamiento.
 
 ---
+
+# 🧩 Otras operaciones y funciones útiles
+
+### 📌 Redimensionamiento de tensores
+
+```python
+x = torch.randn(4,4)
+y = x.view(16)      # cambia forma a 1D de 16 elementos
+z = x.view(-1,8)    # -1 infiere automáticamente la otra dimensión
+```
+
+💡 Tip: `view` no copia datos, solo cambia la forma. Para crear una copia explícita usa `reshape`.
+
+---
+
+### 📌 Apilamiento de tensores
+
+- **Vertical (`vstack`) y horizontal (`hstack`)**
+
+```python
+x = torch.randn(2,3)
+y = torch.randn(2,3)
+
+torch.vstack([x,y])
+torch.hstack([x,y])
+```
+
+- **Stack:** crea una dimensión extra
+
+```python
+torch.stack([x,y], dim=0)  # shape (2,2,3)
+torch.stack([x,y], dim=1)  # shape (2,2,3)
+```
+
+---
+
+### 📌 Indexación avanzada
+
+- **Boolean masking:**
+
+```python
+x = torch.randn(4,4)
+mask = x>0
+print(x[mask])
+```
+
+- **Fancy indexing:**
+
+```python
+x = torch.arange(10)
+indices = torch.tensor([2,5,7])
+print(x[indices])
+```
+
+---
+
+### 📌 Operaciones estadísticas y reducción
+
+```python
+x = torch.randn(3,4)
+print(x.sum())        # suma total
+print(x.mean(dim=0))  # promedio por columna
+print(x.max(dim=1))   # máximo por fila
+```
+
+💡 `dim` indica el eje de reducción. Resulta clave en redes para normalización y agregación de features.
+
+---
+
+### 📌 Gradientes combinados y retropropagación
+
+```python
+x = torch.randn(3, requires_grad=True)
+y = x**2 + 2*x + 1
+z = y.mean()
+z.backward()
+print(x.grad)
+```
+
+- Cada operación es **registrada en un grafo computacional**.
+- `backward()` propaga gradientes desde el output escalar hacia todos los tensores con `requires_grad=True`.
+    
+
+---
+
+### 📌 Resetear gradientes
+
+```python
+x.grad.zero_()
+```
+
+⚡ Muy importante antes de un nuevo paso de entrenamiento para evitar **acumulación de gradientes** no deseada.
+
+---
+
+### 📌 Deshabilitar gradientes (inferencia)
+
+```python
+with torch.no_grad():
+    y = x * 2
+```
+
+- Permite **ahorrar memoria y velocidad** cuando no se necesita gradiente.
+- Muy usado en predicción y evaluación de modelos entrenados.
+
+---
+
+# 🎯 Conclusión de la notebook
+
+1. PyTorch es una biblioteca flexible para **tensores, GPU y gradientes**.
+2. **Tensores**: la base de todo cálculo, con atributos `shape`, `dtype` y `device`.
+3. **Operaciones básicas**: indexación, slicing, concatenación, apilamiento, redimensionamiento.
+4. **Interoperabilidad con NumPy**: compartir memoria entre tensores y arrays.
+5. **Dispositivos**: mover tensores entre CPU y GPU según disponibilidad.
+6. **Autograd**: cálculo automático de gradientes para entrenamiento de redes neuronales.
+7. **Tips prácticos**: in-place operations, boolean/fancy indexing, reset de gradientes, deshabilitar gradientes cuando no son necesarios.
+    
