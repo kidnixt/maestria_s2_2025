@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/3_Entrenamiento de Modelos Autoregresivos.md",
+                "file": "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3_Entrenamiento de Modelos Autoregresivos"
+              "title": "1_Automatic_Differentiation"
             }
           }
         ]
@@ -89,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "ef21f9330133686b",
@@ -183,16 +184,20 @@
   },
   "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
+    "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
+    "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
+    "0_MODELOS_DEEP_LEARNING/3_Clase03/3_Clase03.md",
+    "0_MODELOS_DEEP_LEARNING/3_Clase03",
+    "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Clase02.md",
+    "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/3_Entrenamiento de Modelos Autoregresivos.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/2_Modelos Autoregresivos Generativos.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/1_Variables Aleatorias Continuas.md",
-    "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
     "2_TALLER_DEEP_LEARNING/2_TALLER_DEEP_LEARNING.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/1_Multi Layer Perceptron.md",
     "0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
-    "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/3_Entrenamiento de Modelos Autoregresivos.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/1_Clase.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/2_Clase.md",
@@ -204,7 +209,6 @@
     "assets/Pasted image 20250902143941.png",
     "assets/Pasted image 20250902143923.png",
     "Vault.md",
-    "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Clase02.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02",
     "2_TALLER_DEEP_LEARNING",
     "Tags/Tags.md",
