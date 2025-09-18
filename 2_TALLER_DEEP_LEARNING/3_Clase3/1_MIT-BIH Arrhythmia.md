@@ -157,18 +157,14 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 ```
 
 - **`nn.CrossEntropyLoss()`**: Es la función de pérdida estándar para la **clasificación multiclas** en PyTorch. Es ideal porque internamente combina las operaciones necesarias para la clasificación, como `LogSoftmax` y `NLLLoss`.
-    
 - **`optim.Adam()`**: El optimizador utilizado para ajustar los pesos de la red.
-    
 
 ### 📌 Bucle de Entrenamiento
 
 El bucle de entrenamiento es el proceso iterativo donde el modelo aprende. Por cada `epoch`:
 
 1. **Entrenamiento**: Se itera sobre el `train_loader`, se realizan los `forward` y `backward` passes, y se actualizan los pesos.
-    
 2. **Validación**: Se itera sobre el `val_loader` en modo `eval`, se calcula la pérdida de validación, y se utiliza la lógica de `Early Stopping` para decidir si continuar o no.
-    
 
 ### 📌 Evaluación del Modelo
 
