@@ -2,6 +2,8 @@
 
 ---
 
+![[Pasted image 20250918115547.png]]
+
 ## 1) 🎯 Idea central de AD
 
 - Toda función en un modelo se compone de **operaciones elementales**:
