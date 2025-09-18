@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2_TALLER_DEEP_LEARNING/2_Clase2/1_California_House_Price.md",
+                "file": "2_TALLER_DEEP_LEARNING/3_Clase3/1_MIT-BIH Arrhythmia.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1_California_House_Price"
+              "title": "1_MIT-BIH Arrhythmia"
             }
           }
         ]
@@ -183,7 +183,10 @@
   },
   "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
+    "2_TALLER_DEEP_LEARNING/3_Clase3/1_MIT-BIH Arrhythmia.md",
+    "2_TALLER_DEEP_LEARNING/3_Clase3/3_Clase3.md",
     "2_TALLER_DEEP_LEARNING/2_Clase2/1_California_House_Price.md",
+    "2_TALLER_DEEP_LEARNING/3_Clase3",
     "2_TALLER_DEEP_LEARNING/2_Clase2/2_Clase2.md",
     "2_TALLER_DEEP_LEARNING/2_Clase2",
     "2_TALLER_DEEP_LEARNING/2_TALLER_DEEP_LEARNING.md",
@@ -224,10 +227,7 @@
     "2_TALLER_DEEP_LEARNING",
     "Tags/Tags.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA",
-    "Tags/0_MODELOS_DEEP_LEARNING/Untitled.md",
     "assets",
-    "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
-    "0_MODELOS_DEEP_LEARNING/1_Clase01",
-    "0_MODELOS_DEEP_LEARNING"
+    "0_MODELOS_DEEP_LEARNING/1_Clase01"
   ]
 }
