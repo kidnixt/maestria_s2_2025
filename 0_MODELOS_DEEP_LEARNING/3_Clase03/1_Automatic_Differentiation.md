@@ -111,7 +111,10 @@ Para $f: \mathbb{R}^n \to \mathbb{R}$, una sola pasada **reverse** produce $\nab
 
 Para $f: \mathbb{R}^n \to \mathbb{R}^m$: si $\text{ops}(f)$ es el costo de evaluar $f$, el Jacobiano cuesta 
 
-* $n \cdot c \cdot \text{ops}(f)$ en **AD forward mode**. * $m \cdot c \cdot \text{ops}(f)$ en **AD reverse mode**.
+* $n \cdot c \cdot \text{ops}(f)$ en **AD forward mode**. 
+* $m \cdot c \cdot \text{ops}(f)$ en **AD reverse mode**.
+
+
 💡 **Conclusión:**
 - Si $m \ll n$ (muchas entradas, pocas salidas → típico en ML), conviene **reverse mode**.
 - Desventaja: requiere mucha memoria (hay que guardar los $v_i$ intermedios).
@@ -126,6 +129,8 @@ Para $f: \mathbb{R}^n \to \mathbb{R}^m$: si $\text{ops}(f)$ es el costo de evalu
 - El **algoritmo de backpropagation** en redes neuronales es un caso particular de **AD Reverse Mode**.
 - Se propaga el error desde la salida hasta las entradas, aplicando la regla de la cadena de manera eficiente.
 
+![[Pasted image 20250918120116.png]]
+
 ---
 
 ## 8) ⚙️ AD en PyTorch
@@ -135,11 +140,25 @@ En PyTorch, cada `Tensor` tiene:
 - `grad`: gradiente acumulado.
 - `grad_fn`: puntero al nodo del grafo que lo creó.
 
+![[Pasted image 20250918120134.png]]
+
 Ejemplo:
-```python
+
+``` python
 import torch
 
 x = torch.tensor(2.0, requires_grad=True)
 y = torch.log(x) + x**2 - torch.sin(x)
 y.backward()   # Calcula dy/dx
 print(x.grad)  # gradiente en x=2
+``` 
+
+
+# ✅ Conclusiones
+
+- AD aplica **la regla de la cadena** en un grafo de operaciones.
+- **Forward mode:** eficiente para pocas variables de entrada.
+- **Reverse mode:** eficiente para muchas entradas y pocas salidas (el caso en ML).
+- **Números duales** → forma matemática de ver AD Forward.
+- **Backpropagation** es un caso especial de AD Reverse.
+- Frameworks como **PyTorch** implementan AD de forma automática y eficiente.

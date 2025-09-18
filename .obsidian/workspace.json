@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
+                "file": "0_MODELOS_DEEP_LEARNING/3_Clase03/2_Optimización.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1_Automatic_Differentiation"
+              "title": "2_Optimización"
             }
           }
         ]
@@ -89,8 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ef21f9330133686b",
@@ -184,13 +183,17 @@
   },
   "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
+    "assets/Pasted image 20250918120505.png",
+    "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
+    "0_MODELOS_DEEP_LEARNING/3_Clase03/2_Optimización.md",
+    "0_MODELOS_DEEP_LEARNING/3_Clase03/3_Clase03.md",
+    "assets/Pasted image 20250918120134.png",
+    "assets/Pasted image 20250918120116.png",
     "assets/Pasted image 20250918115746.png",
     "assets/Pasted image 20250918115714.png",
     "assets/Pasted image 20250918115618.png",
     "assets/Pasted image 20250918115547.png",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
-    "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
-    "0_MODELOS_DEEP_LEARNING/3_Clase03/3_Clase03.md",
     "0_MODELOS_DEEP_LEARNING/3_Clase03",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Clase02.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/3_Entrenamiento de Modelos Autoregresivos.md",
@@ -210,15 +213,12 @@
     "assets/Pasted image 20250902144031.png",
     "assets/Pasted image 20250902144013.png",
     "assets/Pasted image 20250902143952.png",
-    "assets/Pasted image 20250902143941.png",
-    "assets/Pasted image 20250902143923.png",
     "Vault.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02",
     "2_TALLER_DEEP_LEARNING",
     "Tags/Tags.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA",
     "Tags/0_MODELOS_DEEP_LEARNING/Untitled.md",
-    "assets/Pasted image 20250820164201.png",
     "assets",
     "Tags/0_MODELOS_DEEP_LEARNING/0_clase1_1808_dump.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01",
