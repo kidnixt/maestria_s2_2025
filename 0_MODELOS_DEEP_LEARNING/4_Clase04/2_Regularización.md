@@ -250,6 +250,9 @@ Durante inferencia no usamos estadísticas del mini-batch → se emplean **prome
   $$
   → mejora robustez y generalización.
 
+![[Pasted image 20250930164641.png]]
+
+
 - **Gradient Clipping:**  
   Se acotan los gradientes para evitar explosiones:
   $$
