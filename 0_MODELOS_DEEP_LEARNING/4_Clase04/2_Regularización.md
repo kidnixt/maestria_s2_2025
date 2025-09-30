@@ -143,12 +143,16 @@ Algoritmo típico:
 **Efecto:** Early stopping actúa como una forma de regularización parecida a ℓ2, **pero sin modificar directamente los pesos**.  
 Además, determina automáticamente *cuánta regularización aplicar*.
 
+![[Pasted image 20250930164155.png]]
+
 ---
 
 ## 8) 🧢 Dropout
 
 ### ✨ Idea:
 Durante entrenamiento, **apagamos aleatoriamente neuronas** con probabilidad $1 - r$.
+
+![[Pasted image 20250930164224.png]]
 
 Original:
 $$
@@ -176,6 +180,10 @@ $$
 ### 🧠 Entrenamiento vs Inferencia
 
 - **Entrenamiento:** aplicamos máscaras aleatorias en cada batch.  
+
+![[Pasted image 20250930164533.png]]
+
+
 - **Inferencia:** no muestreamos → usamos el valor esperado:
 
 $$
@@ -183,6 +191,8 @@ $$
 $$
 
 👉 En práctica, se multiplican los pesos por $r$ en inferencia para compensar.
+
+![[Pasted image 20250930164549.png]]
 
 ---
 
@@ -229,6 +239,9 @@ Durante inferencia no usamos estadísticas del mini-batch → se emplean **prome
 - **Aumento de datos (Data Augmentation):**  
   - Transformaciones de imágenes: flips, traslaciones, deformaciones, ruido, cambios de color, etc.  
   - Aumenta efectivamente el dataset → reduce overfitting.
+
+![[Pasted image 20250930164619.png]]
+
 
 - **Ejemplos adversarios:**  
   Se agregan pequeñas perturbaciones intencionales:
