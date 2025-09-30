@@ -264,6 +264,9 @@ Durante inferencia no usamos estadísticas del mini-batch → se emplean **prome
   $$
   Evita updates demasiado grandes en zonas con gradientes enormes.
 
+![[Pasted image 20250930164700.png]]
+
+
 - **Ruido en coeficientes / Label smoothing:**  
   Se agrega ruido a los targets o a los pesos para suavizar decisiones del modelo.
 
