@@ -77,6 +77,8 @@ $$
 
 **Efecto geométrico:** Las soluciones se restringen a una *bola* centrada en el origen → tiende a achicar todos los pesos suavemente.
 
+![[Pasted image 20250930164016.png]]
+
 ---
 
 ## 5) 🟨 LASSO (ℓ1) = Prior Laplaciano
@@ -107,6 +109,8 @@ $$
 👉 **LASSO induce esparsidad**: muchos pesos quedan exactamente en cero → útil para seleccionar características.
 
 **Efecto geométrico:** La región factible es un *rombo* en 2D → las soluciones tienden a estar en vértices (esparsas).
+
+![[Pasted image 20250930164112.png]]
 
 ---
 
