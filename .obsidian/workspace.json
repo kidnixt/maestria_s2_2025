@@ -75,7 +75,7 @@
             }
           },
           {
-            "id": "759839cb3c092326",
+            "id": "d98ec1bd14a32042",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "2_TALLER_DEEP_LEARNING/3_Clase3/1_MIT-BIH Arrhythmia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for 1_MIT-BIH Arrhythmia"
             }
           },
           {
@@ -153,16 +153,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "2_TALLER_DEEP_LEARNING/3_Clase3/1_MIT-BIH Arrhythmia.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of 1_MIT-BIH Arrhythmia"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",

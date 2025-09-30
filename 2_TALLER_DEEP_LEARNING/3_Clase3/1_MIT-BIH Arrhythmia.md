@@ -170,21 +170,17 @@ El bucle de entrenamiento es el proceso iterativo donde el modelo aprende. Por c
 
 Una vez finalizado el entrenamiento, el rendimiento del mejor modelo se evalúa en un conjunto de prueba.
 
-Python
 
-```
+```Python
 model_classification_report(ej3_model, test_loader)
 ```
 
 - La función `model_classification_report` utiliza `sklearn.metrics.classification_report` para mostrar métricas detalladas por clase, como **precisión**, **recall** y **f1-score**. Esto proporciona una visión más completa del rendimiento del modelo que solo la precisión global.
-    
 
 ---
 
 ## 🎯 Conclusión de la notebook
 
 1. **Clasificación Multiclas**: La notebook demuestra cómo abordar un problema de clasificación de varias clases con PyTorch.
-    
 2. **Regularización**: La implementación de **`Dropout`** y **`Early Stopping`** es fundamental para prevenir el **sobreajuste** y asegurar que el modelo sea robusto y generalice bien.
-    
 3. **Flujo de Trabajo Completo**: Se muestra un ciclo completo de machine learning: preparación de datos, definición de la arquitectura, entrenamiento con optimizador y función de pérdida, y evaluación detallada con métricas de clasificación.
