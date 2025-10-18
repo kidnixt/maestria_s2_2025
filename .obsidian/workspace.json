@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
+                "file": "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_Derivadas"
+              "title": "2_Entrenamiento_MLPs"
             }
           }
         ],
@@ -199,9 +199,10 @@
   },
   "active": "5d9f3076a0901939",
   "lastOpenFiles": [
+    "0_MODELOS_DEEP_LEARNING/2_Clase02/1_Multi Layer Perceptron.md",
+    "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
     "assets/Pasted image 20251018141612.png",
-    "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Clase02.md",
     "0_MODELOS_DEEP_LEARNING/5_Clase05/1_Redes CNN Parte 1.md",
