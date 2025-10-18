@@ -1,4 +1,4 @@
-# 📘 Apuntes - Deep Learning: Optimización (GD, Momentum, Nesterov y Adam)
+	# 📘 Apuntes - Deep Learning: Optimización (GD, Momentum, Nesterov y Adam)
 
 ---
 

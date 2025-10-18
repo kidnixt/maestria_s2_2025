@@ -272,6 +272,8 @@ $$
   $$
 - Reordenar (shuffle) en cada **epoch**.
 
+![[Pasted image 20251018142308.png]]
+
 💡 **Por qué mini-batch:**  
 - Compromiso entre **ruido** (mejora generalización, “explora” mínimos) y **eficiencia** (aprovecha GPU).  
 - Gradientes más **estables** que en puramente estocástico y más **baratos** que el batch completo.
