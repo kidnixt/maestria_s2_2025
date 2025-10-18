@@ -288,6 +288,8 @@ $$
 * `x.squeeze(dim)` elimina dimensiones de tamaño 1 cuando estorban.
 * `x.view`/`x.reshape` reacomodan sin copiar (cuando se puede).
 
+![[Pasted image 20251018141612.png]]
+
 ---
 
 ## 14. 📉 Operaciones de reducción
