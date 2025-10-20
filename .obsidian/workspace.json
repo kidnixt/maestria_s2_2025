@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
+                "file": "0_MODELOS_DEEP_LEARNING/2_Clase02/1_Multi Layer Perceptron.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_Derivadas"
+              "title": "1_Multi Layer Perceptron"
             }
           }
         ],
@@ -199,6 +199,7 @@
   },
   "active": "5d9f3076a0901939",
   "lastOpenFiles": [
+    "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
     "0_MODELOS_DEEP_LEARNING/5_Clase05/2_Redes CNN Parte 2.md",
     "0_MODELOS_DEEP_LEARNING/5_Clase05/1_Redes CNN Parte 1.md",
@@ -208,7 +209,6 @@
     "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/1_Multi Layer Perceptron.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
-    "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/4_Clase04/4_Clase04.md",
     "0_MODELOS_DEEP_LEARNING/3_Clase03/3_Clase03.md",
     "assets/Pasted image 20251018142308.png",
