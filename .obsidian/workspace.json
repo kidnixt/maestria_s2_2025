@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/5_Clase05/2_Redes CNN Parte 2.md",
+                "file": "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_Redes CNN Parte 2"
-            }
-          },
-          {
-            "id": "5d9f3076a0901939",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/5_Clase05/2_Redes CNN Parte 2.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2_Redes CNN Parte 2"
+              "title": "1_Tensores"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -104,8 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ef21f9330133686b",
@@ -198,10 +182,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5d9f3076a0901939",
+  "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "0_MODELOS_DEEP_LEARNING/5_Clase05/2_Redes CNN Parte 2.md",
+    "Untitled 1.base",
+    "Untitled.base",
+    "conflict-files-obsidian-git.md",
     "0_MODELOS_DEEP_LEARNING/5_Clase05/1_Redes CNN Parte 1.md",
     "0_MODELOS_DEEP_LEARNING/4_Clase04/2_Regularización.md",
     "0_MODELOS_DEEP_LEARNING/4_Clase04/1_Entropia Cruzada.md",
@@ -241,10 +227,7 @@
     "2_TALLER_DEEP_LEARNING/1_Clase1",
     "0_MODELOS_DEEP_LEARNING/3_Clase03",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/3_Entrenamiento de Modelos Autoregresivos.md",
-    "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase/2_Modelos Autoregresivos Generativos.md",
     "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA/3_Clase",
-    "0_MODELOS_DEEP_LEARNING/2_Clase02",
-    "2_TALLER_DEEP_LEARNING",
-    "1_INTELIGENCIA_ARTIFICIAL_GENERATIVA"
+    "0_MODELOS_DEEP_LEARNING/2_Clase02"
   ]
 }
