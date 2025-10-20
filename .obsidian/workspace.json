@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
+                "file": "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_Entrenamiento_MLPs"
+              "title": "1_Automatic_Differentiation"
             }
           }
         ],
@@ -199,6 +199,7 @@
   },
   "active": "5d9f3076a0901939",
   "lastOpenFiles": [
+    "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/1_Multi Layer Perceptron.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
@@ -208,7 +209,6 @@
     "0_MODELOS_DEEP_LEARNING/4_Clase04/1_Entropia Cruzada.md",
     "0_MODELOS_DEEP_LEARNING/3_Clase03/2_Optimización.md",
     "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
-    "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
     "0_MODELOS_DEEP_LEARNING/4_Clase04/4_Clase04.md",
     "0_MODELOS_DEEP_LEARNING/3_Clase03/3_Clase03.md",
     "assets/Pasted image 20251018142308.png",
