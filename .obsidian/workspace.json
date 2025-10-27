@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/6_Clase06/2_NLP.md",
+                "file": "0_MODELOS_DEEP_LEARNING/6_Clase06/1_Skip Connections.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_NLP"
+              "title": "1_Skip Connections"
             }
           }
         ]
@@ -184,19 +184,19 @@
   },
   "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
-    "0_MODELOS_DEEP_LEARNING/6_Clase06/1_Skip Connections.md",
-    "0_MODELOS_DEEP_LEARNING/6_Clase06/2_NLP.md",
-    "0_MODELOS_DEEP_LEARNING/6_Clase06/6_Clase06.md",
-    "0_MODELOS_DEEP_LEARNING/5_Clase05/1_Redes CNN Parte 1.md",
-    "0_MODELOS_DEEP_LEARNING/6_Clase06",
+    "0_MODELOS_DEEP_LEARNING/5_Clase05/2_Redes CNN Parte 2.md",
     "0_MODELOS_DEEP_LEARNING/4_Clase04/2_Regularización.md",
+    "0_MODELOS_DEEP_LEARNING/5_Clase05/1_Redes CNN Parte 1.md",
+    "0_MODELOS_DEEP_LEARNING/6_Clase06/2_NLP.md",
+    "0_MODELOS_DEEP_LEARNING/6_Clase06/1_Skip Connections.md",
+    "0_MODELOS_DEEP_LEARNING/6_Clase06/6_Clase06.md",
+    "0_MODELOS_DEEP_LEARNING/6_Clase06",
     "0_MODELOS_DEEP_LEARNING/4_Clase04/1_Entropia Cruzada.md",
     "0_MODELOS_DEEP_LEARNING/3_Clase03/2_Optimización.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/1_Multi Layer Perceptron.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
-    "0_MODELOS_DEEP_LEARNING/5_Clase05/2_Redes CNN Parte 2.md",
     "Untitled 1.base",
     "Untitled.base",
     "conflict-files-obsidian-git.md",
