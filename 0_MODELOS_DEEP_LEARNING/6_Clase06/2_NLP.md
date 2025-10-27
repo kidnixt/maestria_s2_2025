@@ -1,272 +1,157 @@
-# 📘 Apuntes - Deep Learning: Natural Language Processing (NLP)
+
+# 📘 Apuntes - Deep Learning: Procesamiento de Lenguaje Natural (NLP)
 
 ---
 
-## 1. 🧠 Introducción al Procesamiento del Lenguaje Natural
+## 1. 🎯 NLP: Contexto y Aplicaciones
 
-El **Procesamiento del Lenguaje Natural (NLP)** busca que las máquinas puedan **entender, generar y razonar con texto humano**.
+El **Procesamiento de Lenguaje Natural (NLP)** es un campo de la Inteligencia Artificial (AI) que permite a las máquinas comprender el lenguaje humano.
 
-Ejemplos de tareas:
-- ✍️ **Clasificación de texto:** análisis de sentimientos, detección de spam, etc.
-- 💬 **Modelado del lenguaje:** predecir la próxima palabra o token.
-- 🧩 **Traducción automática:** convertir texto de un idioma a otro.
-- ❓ **Preguntas y respuestas:** sistemas tipo ChatGPT o asistentes virtuales.
+### 🛠️ Usos Prácticos
 
----
+El NLP se aplica en diversas tareas, facilitando la interacción entre humanos y computadoras:
 
-## 2. 🔠 Representación del texto
+- **Sentiment Analysis** (Análisis de Sentimiento).
+- **Machine Translation** (Traducción Automática).
+- **Question Answering** (Respuesta a Preguntas).
+- **Text Summarization** (Resumen de Texto).
+- **Text Classification** (Clasificación de Texto).
 
-El texto es discreto, pero los modelos neuronales operan con **vectores continuos**.  
-Por eso, el primer paso es representar palabras como **vectores numéricos** (embeddings).
+### 🧠 Comprensión del Lenguaje
 
----
+La comprensión requiere extraer el significado contextual de las palabras. Por ejemplo, un texto se puede analizar para identificar la Emoción (Frustrado), el Tono (Negativo, Subjetivo), el Producto (Messenger App) y el Lenguaje (Inglés, Informal).
 
-## 3. 📦 One-Hot Encoding
-
-Representación más simple:  
-Cada palabra se codifica como un vector binario con un `1` en la posición correspondiente.
-
-Ejemplo con vocabulario de tamaño $V = 5$:
-| Palabra | Vector |
-|----------|--------|
-| gato     | [1,0,0,0,0] |
-| perro    | [0,1,0,0,0] |
-| pez      | [0,0,1,0,0] |
-
-💡 Problemas:
-- Alta **dimensionalidad** (uno por palabra del vocabulario).
-- No hay **relaciones semánticas** entre palabras.
-  - Ejemplo: `gato` y `perro` son totalmente ortogonales, aunque sean semánticamente similares.
+👉 Un sistema puede, por ejemplo, transformar un input como "Cynthia sold the bike to Bob for $200" en una transacción comercial estructurada, identificando al vendedor, comprador, bien y precio.
 
 ---
 
-## 4. 🌌 Word Embeddings
+## 2. ⚠️ Desafíos Fundamentales del NLP
 
-Solución: representar las palabras en un **espacio vectorial continuo** de baja dimensión (por ejemplo, 100 o 300).
+El lenguaje humano está lleno de complejidades que los modelos deben resolver:
 
-Cada palabra se asocia a un vector $w_i \in \mathbb{R}^d$.
+### 🎭 Ambigüedad Semántica
 
-Ventajas:
-- Palabras con significado similar tienen **vectores cercanos**.
-- Las relaciones semánticas se pueden expresar de forma **geométrica**:
-  $$
-  \text{Rey} - \text{Hombre} + \text{Mujer} \approx \text{Reina}
-  $$
+- El **Contexto es la matriz del significado**.
+- Una misma frase tiene significados radicalmente distintos según el contexto, lo que obliga a los modelos a interpretar la situación para desambiguar.
 
-Modelos clásicos:
-- **Word2Vec** (Mikolov et al., 2013)
-- **GloVe** (Pennington et al., 2014)
-- **FastText** (Bojanowski et al., 2016)
+### 🔄 Sinónimos
 
----
+- Múltiples palabras pueden tener el mismo significado (ej: _cultivation_, _civilization_, _refinement_ para _culture_).
+- El modelo debe entender la **equivalencia semántica** de palabras distintas.
 
-## 5. 🧩 Word2Vec: Skip-Gram y CBOW
+### 🔗 Dependencia
 
-### 🟢 Skip-Gram
-Predice el **contexto** a partir de la palabra central.  
-Ejemplo:
-> “El gato duerme en la cama”  
-Palabra central: “gato”  
-Contexto: “El”, “duerme”, “en”
-
-Función objetivo:
-$$
-\max_\theta \sum_{t} \sum_{-c \le j \le c, j \ne 0} \log P(w_{t+j} | w_t)
-$$
-
-### 🔵 CBOW (Continuous Bag of Words)
-Predice la **palabra central** a partir del contexto.
-
-$$
-\max_\theta \sum_{t} \log P(w_t | w_{t-c}, \dots, w_{t+c})
-$$
-
-Ambos modelos aprenden embeddings útiles para representar significado semántico.
+- Las relaciones semánticas dependen de palabras que pueden estar distantes en el texto.
+- Esto obliga a los modelos a mantener el **contexto a largo plazo**.
 
 ---
 
-## 6. ⚙️ Modelado del lenguaje (Language Modeling)
+## 3. ⚙️ Pipeline de Preprocesamiento
 
-Un **modelo de lenguaje** estima la probabilidad de una secuencia de palabras:
+El texto debe ser preparado antes de ser usado por un modelo de _Deep Learning_ mediante un _pipeline_:
 
-$$
-P(w_1, w_2, \dots, w_T) = \prod_{t=1}^T P(w_t | w_1, \dots, w_{t-1})
-$$
+### 🧮 3.1. Tokenización
 
-Objetivo: aprender una función que **prediga la próxima palabra** dada la secuencia previa.
+- Proceso de descomponer el texto en las unidades más pequeñas, generalmente **palabras individuales o _tokens_**.
+- Estos tokens son los bloques básicos para el análisis posterior.
 
-Ejemplo:
-> “El gato duerme en la” → “cama”
+### ✂️ 3.2. Remoción de Stop Words
 
----
+- Las _Stop Words_ son **palabras comunes** que suelen eliminarse para enfocar el análisis en el contenido relevante.
 
-## 7. 🧮 Modelos N-gramas
+### 🌿 3.3. Reducción a la Raíz
 
-Aproximan el contexto usando solo las últimas *n-1* palabras:
+Se busca reducir las distintas formas de una palabra (flexión) a una raíz.
 
-$$
-P(w_t | w_1, \dots, w_{t-1}) \approx P(w_t | w_{t-n+1}, \dots, w_{t-1})
-$$
+- **Stemming:**
+    
+    - Reduce a una raíz que **no necesariamente es una palabra válida** del idioma.
+    - Se elige cuando se busca **simplicidad y velocidad**.
+    - Ejemplo: _Dancing_ → _danc_.
+- **Lematización:**
+    
+    - Reduce las palabras a su **forma base correcta** (_lema_), asegurando que la raíz pertenezca al idioma.
+    - Se elige cuando es **crítico mantener la validez de las palabras** y comprender el contexto.
+    - Ejemplo: _Dancing_ → _dance_.
 
-Ejemplo:  
-Trigrama ($n=3$):
-$$
-P(\text{"hace"} | \text{"hoy"}, \text{"no"}) \approx P(\text{"hace"} | \text{"hoy"}, \text{"no"})
-$$
-
-💡 Problemas:
-- No generalizan bien a secuencias nuevas.
-- El número de combinaciones crece **exponencialmente** con *n*.
-- Dificultad para capturar dependencias largas.
 
 ---
 
-## 8. 🧱 Redes Neuronales para lenguaje
+## 4. 🔢 Vectorización del Texto
 
-Para superar las limitaciones de los *n-gramas*, se usan modelos neuronales que aprenden representaciones continuas del contexto.
+La vectorización es la conversión de palabras en vectores numéricos, un requisito fundamental.
 
-Tipos principales:
-- 🔁 **RNN (Recurrent Neural Networks)**
-- 🔄 **LSTM / GRU** (versiones mejoradas de RNN)
-- ⚡ **Transformers**
+### 💼 4.1. Bag of Words (BoW)
 
----
+- Se construye una tabla donde las **filas** son los documentos ($d$) y las **columnas** son los _tokens_ ($t$) del vocabulario.
+- La entrada $f(t, d)$ es el **número de ocurrencias** del token $t$ en el documento $d$.
 
-## 9. 🔁 Recurrent Neural Networks (RNN)
+### ⚖️ 4.2. TFIDF
 
-Las RNN procesan texto **secuencialmente**, manteniendo un **estado oculto** que resume la información previa.
+El **Term Frequency-Inverse Document Frequency** (TFIDF) pondera la importancia de una palabra:
 
-Ecuaciones básicas:
+$$\text{tfidf}(t, d, D) = \text{tf}(t, d) \cdot \text{idf}(t, D)$$
 
-$$
-h_t = f(W_{xh}x_t + W_{hh}h_{t-1})
-$$
-$$
-y_t = W_{hy}h_t
-$$
+- **TF (Token Frequency):** Normaliza la frecuencia de la palabra en el documento.
+- **IDF (Inverse Document Frequency):** Penaliza las palabras que aparecen en muchos documentos (palabras comunes).
 
-Donde:
-- $x_t$ = entrada (palabra en forma de embedding)
-- $h_t$ = estado oculto en el tiempo $t$
-- $y_t$ = salida (predicción)
+### 🧠 4.3. One-hot vs. Word Embeddings
 
-💡 Permiten capturar dependencias en secuencia, pero presentan problemas de *vanishing gradient*.
+|**Característica**|**🟥 One-hot Word Vectors**|**🟦 Word Embeddings**|
+|---|---|---|
+|**Representación**|**Sparse** (dispersa) y de **alta dimensión**|**Densas** y de **menor dimensión**|
+|**Relaciones**|**Ortogonales** (no capturan semántica)|Capturan la **estructura semántica**|
+|**Origen**|Hardcoded|**Aprendidos** desde los datos|
+|**Similitud**|Cada palabra es independiente|Palabras similares tienen **vectores cercanos**|
 
 ---
 
-## 10. ⚙️ LSTM y GRU
+## 5. 🌍 Word Embeddings: Word2Vec
 
-Extensiones de las RNN que incorporan **puertas de control** para manejar dependencias largas.
+### 📐 5.1. Estructura y Semántica
 
-Ejemplo (LSTM):
-- **Input gate**: decide qué nueva información almacenar.
-- **Forget gate**: decide qué olvidar del estado previo.
-- **Output gate**: decide qué parte del estado usar para la salida.
+Los _Word Embeddings_ son vectores densos que capturan la estructura del lenguaje, permitiendo **relaciones geométricas significativas**.
 
-Resultado:
-- Mejor capacidad para aprender **relaciones a largo plazo** en texto.
+- **Ejemplo:** La diferencia vectorial entre "Queen" y "King" es similar a la diferencia entre "Woman" y "Man" (relación semántica de género).
+- Los vectores reflejan relaciones **semánticas** (Rey vs Reina) y **sintácticas** (Grande vs Más Grande).
 
----
+### 🏗️ 5.2. Modelo Word2Vec
 
-## 11. ⚡ Transformers
+**Word2Vec** es una arquitectura de red neuronal simple y eficiente para **aprender los _embeddings_**. Se basa en la hipótesis de que el significado de una palabra se puede inferir de su contexto.
 
-Modelo introducido por Vaswani et al. (2017):  
-**“Attention Is All You Need”**
+#### 5.2.1. Arquitectura
 
-Elimina la recurrencia y utiliza un **mecanismo de atención** para modelar relaciones entre todas las palabras de la secuencia **en paralelo**.
+El modelo utiliza una arquitectura básica de **dos capas** (input, hidden layer/embedding, output layer):
 
-💡 Cada palabra puede “atender” a cualquier otra palabra de la oración.
+- **Input:** Codificado como _one-hot_ con dimensión igual al tamaño del vocabulario ($\text{vocab\_size}$).
+- **Hidden Layer:** Es la capa de proyección, cuya matriz de pesos entre el input y ella **es la matriz de _Word Embeddings_**.
+- **Output Layer:** Dimensión $\text{vocab\_size}$, que produce las probabilidades de las palabras de salida.
 
-Ventajas:
-- Computación paralela → más rápido.
-- Capta **dependencias largas** de forma más directa.
-- Escala bien a modelos enormes (GPT, BERT, etc).
+#### 5.2.2. Modos de Entrenamiento
 
----
+Existen dos arquitecturas principales para entrenar los _embeddings_:
 
-## 12. 🧭 Mecanismo de Atención
-
-Dada una secuencia de vectores $x_1, x_2, \dots, x_n$:
-
-1. Se calculan tres matrices:
-   - **Query (Q)**  
-   - **Key (K)**  
-   - **Value (V)**  
-
-2. La atención se define como:
-
-$$
-\text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^T}{\sqrt{d_k}} \right)V
-$$
-
-Esto asigna **pesos de importancia** a cada palabra según su relación con las demás.
-
----
-
-## 13. 🌍 Modelos de lenguaje preentrenados
-
-Los grandes modelos modernos (GPT, BERT, etc.) son **preentrenados** en grandes corpus de texto y luego **ajustados (fine-tuned)** para tareas específicas.
-
-Ejemplos:
-- **BERT:** entrenamiento *bidireccional* con enmascaramiento.
-- **GPT:** entrenamiento *autoregresivo* (predice la siguiente palabra).
-- **T5:** modelo *encoder-decoder* para tareas de texto a texto.
-
----
-
-## 14. 🧩 Tokenización
-
-El texto debe dividirse en **tokens** antes de ser procesado.
-
-Tipos comunes:
-- Por palabra (“gato”, “perro”)
-- Por subpalabra (“gato” → “ga”, “to”)
-- Por carácter
-
-Ejemplo de tokenización subpalabra (BPE, SentencePiece):
-> “jugando” → “jug”, “ando”
-
-Ventajas:
-- Reduce el tamaño del vocabulario.
-- Maneja mejor palabras raras o nuevas.
-
----
-
-## 15. 📚 Aplicaciones del NLP moderno
-
-- 💬 **Chatbots y asistentes virtuales**
-- 🧾 **Resumen automático de texto**
-- 🌐 **Traducción automática**
-- 🕵️ **Análisis de sentimientos**
-- 🔍 **Búsqueda semántica**
-- 🧠 **Modelos generativos de texto (GPT, LLaMA, etc.)**
-
----
-
-## 16. 🧠 Concepto de contextualización
-
-En los modelos modernos (como BERT o GPT), el embedding de una palabra **depende del contexto**.
-
-Ejemplo:
-> “El **banco** del parque” vs. “El **banco** de inversión”
-
-Antes: mismo vector (“banco”)  
-Ahora: diferentes embeddings según el contexto → **representaciones contextualizadas**.
-
----
-
-## 17. 🧩 Representaciones finales
-
-- **Word2Vec / GloVe:** un vector por palabra → *no contextual*.
-- **Transformers:** un vector distinto por palabra según contexto → *contextual*.
-
-Estas representaciones son la base de todo el procesamiento moderno del lenguaje.
+- **CBOW (Continuous Bag of Words):**
+    
+    - **Input:** La suma o promedio de los vectores _one-hot_ de las **palabras del contexto** circundante.
+    - **Output:** Predice la **palabra central**.
+    - **Lógica:** Dado un contexto, ¿cuál es la palabra que falta en el medio?.
+        
+- **Skip-gram:**
+    - **Input:** El vector _one-hot_ de la **palabra central**.
+    - **Output:** Predice las **palabras del contexto** circundante (se hace una predicción para cada palabra del contexto).
+    - **Lógica:** Dada una palabra, ¿cuáles son las palabras que probablemente la rodean?.
 
 ---
 
 # ✅ Conclusiones
 
-- El NLP busca representar y procesar el lenguaje natural con redes neuronales.  
-- La representación del texto pasó de **vectores one-hot** a **embeddings continuos**.  
-- Los modelos evolucionaron de **n-gramas → RNN → LSTM → Transformers**.  
-- El **mecanismo de atención
+- **NLP** resuelve desafíos como la **ambigüedad** y la **dependencia** del lenguaje para la comprensión automática.
+    
+- El **preprocesamiento** incluye **Tokenización**, eliminación de **Stop Words**, y **Reducción a la Raíz** (Lematización es más precisa que _Stemming_).
+    
+- La **Vectorización** tradicional usa **BoW** o **TFIDF**, pero no captura relaciones semánticas.
+    
+- Los **Word Embeddings** son la representación moderna: **vectores densos** que codifican el significado y las relaciones semánticas/sintácticas en un espacio geométrico.
+    
+- **Word2Vec** es el modelo base para aprender estos _embeddings_ a través de dos modos: **CBOW** (predice la palabra central dado el contexto) y **Skip-gram** (predice el contexto dada la palabra central).
