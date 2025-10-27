@@ -147,11 +147,8 @@ Existen dos arquitecturas principales para entrenar los _embeddings_:
 # ✅ Conclusiones
 
 - **NLP** resuelve desafíos como la **ambigüedad** y la **dependencia** del lenguaje para la comprensión automática.
-    
 - El **preprocesamiento** incluye **Tokenización**, eliminación de **Stop Words**, y **Reducción a la Raíz** (Lematización es más precisa que _Stemming_).
-    
 - La **Vectorización** tradicional usa **BoW** o **TFIDF**, pero no captura relaciones semánticas.
-    
 - Los **Word Embeddings** son la representación moderna: **vectores densos** que codifican el significado y las relaciones semánticas/sintácticas en un espacio geométrico.
     
 - **Word2Vec** es el modelo base para aprender estos _embeddings_ a través de dos modos: **CBOW** (predice la palabra central dado el contexto) y **Skip-gram** (predice el contexto dada la palabra central).
