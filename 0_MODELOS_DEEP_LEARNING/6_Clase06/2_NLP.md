@@ -1,153 +1,303 @@
-
-# 📘 Apuntes - Deep Learning: Procesamiento de Lenguaje Natural (NLP)
-
----
-
-## 1. 🎯 NLP: Contexto y Aplicaciones
-
-El **Procesamiento de Lenguaje Natural (NLP)** es un campo de la Inteligencia Artificial (AI) que permite a las máquinas comprender el lenguaje humano.
-
-### 🛠️ Usos Prácticos
-
-El NLP se aplica en diversas tareas, facilitando la interacción entre humanos y computadoras:
-
-- **Sentiment Analysis** (Análisis de Sentimiento).
-- **Machine Translation** (Traducción Automática).
-- **Question Answering** (Respuesta a Preguntas).
-- **Text Summarization** (Resumen de Texto).
-- **Text Classification** (Clasificación de Texto).
-
-### 🧠 Comprensión del Lenguaje
-
-La comprensión requiere extraer el significado contextual de las palabras. Por ejemplo, un texto se puede analizar para identificar la Emoción (Frustrado), el Tono (Negativo, Subjetivo), el Producto (Messenger App) y el Lenguaje (Inglés, Informal).
-
-👉 Un sistema puede, por ejemplo, transformar un input como "Cynthia sold the bike to Bob for $200" en una transacción comercial estructurada, identificando al vendedor, comprador, bien y precio.
+# 📘 Apuntes - Deep Learning: Procesamiento del Lenguaje Natural (NLP)
 
 ---
 
-## 2. ⚠️ Desafíos Fundamentales del NLP
+## 1. 🧠 Introducción al NLP
 
-El lenguaje humano está lleno de complejidades que los modelos deben resolver:
+El **Procesamiento del Lenguaje Natural (NLP)** busca que las computadoras **comprendan, interpreten y generen lenguaje humano**.
 
-### 🎭 Ambigüedad Semántica
+Principales aplicaciones:
 
-- El **Contexto es la matriz del significado**.
-- Una misma frase tiene significados radicalmente distintos según el contexto, lo que obliga a los modelos a interpretar la situación para desambiguar.
+- 🗣️ **Sentiment Analysis**
+- 🌍 **Machine Translation**
+- ❓ **Question Answering**
+- 📰 **Text Summarization**
+- 🧾 **Text Classification**
+- 🔊 **Text-to-Speech**
+- 🎧 **Speech Recognition**
 
-### 🔄 Sinónimos
+👉 Todas estas tareas dependen de la **representación del lenguaje** en una forma numérica que los modelos puedan procesar.
 
-- Múltiples palabras pueden tener el mismo significado (ej: _cultivation_, _civilization_, _refinement_ para _culture_).
-- El modelo debe entender la **equivalencia semántica** de palabras distintas.
+---
+
+## 2. 💬 Comprender el lenguaje natural
+
+El lenguaje natural es **ambiguo, contextual y dependiente** del orden y de las relaciones gramaticales entre palabras.  
+Los modelos de NLP deben ser capaces de:
+
+- Capturar el **significado** más allá de las palabras individuales.
+- Entender **dependencias** entre términos distantes.
+- Manejar **polisemia, sinónimos y variaciones gramaticales**.
+
+---
+
+## 3. ⚠️ Dificultades del NLP
+
+### 🌀 Ambigüedad
+
+Una palabra puede tener múltiples significados según el contexto.
+
+> Ejemplo: “banco” puede ser un asiento o una institución financiera.
+
+### 🧩 Sinónimos
+
+Distintas palabras pueden expresar el mismo concepto.
+
+> Ejemplo: “feliz” y “contento”.
 
 ### 🔗 Dependencia
 
-- Las relaciones semánticas dependen de palabras que pueden estar distantes en el texto.
-- Esto obliga a los modelos a mantener el **contexto a largo plazo**.
+El significado de una palabra depende de las anteriores o siguientes.
+
+> Ejemplo: “No me gusta el café” ≠ “Me gusta el café”.
 
 ---
 
-## 3. ⚙️ Pipeline de Preprocesamiento
+## 4. 🎯 Enfoque del curso
 
-El texto debe ser preparado antes de ser usado por un modelo de _Deep Learning_ mediante un _pipeline_:
+Este teórico se centra en las **etapas fundamentales del preprocesamiento y representación del texto**, previas a entrenar modelos de Deep Learning:
 
-### 🧮 3.1. Tokenización
-
-- Proceso de descomponer el texto en las unidades más pequeñas, generalmente **palabras individuales o _tokens_**.
-- Estos tokens son los bloques básicos para el análisis posterior.
-
-### ✂️ 3.2. Remoción de Stop Words
-
-- Las _Stop Words_ son **palabras comunes** que suelen eliminarse para enfocar el análisis en el contenido relevante.
-
-### 🌿 3.3. Reducción a la Raíz
-
-Se busca reducir las distintas formas de una palabra (flexión) a una raíz.
-
-- **Stemming:**
-    
-    - Reduce a una raíz que **no necesariamente es una palabra válida** del idioma.
-    - Se elige cuando se busca **simplicidad y velocidad**.
-    - Ejemplo: _Dancing_ → _danc_.
-- **Lematización:**
-    
-    - Reduce las palabras a su **forma base correcta** (_lema_), asegurando que la raíz pertenezca al idioma.
-    - Se elige cuando es **crítico mantener la validez de las palabras** y comprender el contexto.
-    - Ejemplo: _Dancing_ → _dance_.
-
+1. Tokenización
+2. Eliminación de _stop words_
+3. Reducción a la raíz (stemming/lematización)
+4. Vectorización del texto
+5. Representaciones semánticas: embeddings
 
 ---
 
-## 4. 🔢 Vectorización del Texto
+## 5. ✂️ Tokenización
 
-La vectorización es la conversión de palabras en vectores numéricos, un requisito fundamental.
+Proceso de **dividir un texto en unidades básicas** llamadas _tokens_ (palabras, signos o subpalabras).
 
-### 💼 4.1. Bag of Words (BoW)
+Ejemplo:
+**Input:**
 
-- Se construye una tabla donde las **filas** son los documentos ($d$) y las **columnas** son los _tokens_ ($t$) del vocabulario.
-- La entrada $f(t, d)$ es el **número de ocurrencias** del token $t$ en el documento $d$.
+> “Los perros son animales muy leales y se llevan bien con las personas.”
 
-### ⚖️ 4.2. TFIDF
+**Output:**
 
-El **Term Frequency-Inverse Document Frequency** (TFIDF) pondera la importancia de una palabra:
+> [“Los”, “perros”, “son”, “animales”, “muy”, “leales”, “y”, “se”, “llevan”, “bien”, “con”, “las”, “personas”, “.”]
 
-$$\text{tfidf}(t, d, D) = \text{tf}(t, d) \cdot \text{idf}(t, D)$$
+📌 Estos _tokens_ son los bloques básicos para análisis posteriores (frecuencias, embeddings, etc.).
 
-- **TF (Token Frequency):** Normaliza la frecuencia de la palabra en el documento.
-- **IDF (Inverse Document Frequency):** Penaliza las palabras que aparecen en muchos documentos (palabras comunes).
+---
 
-### 🧠 4.3. One-hot vs. Word Embeddings
+## 6. 🚫 Eliminación de _Stop Words_
 
-|**Característica**|**🟥 One-hot Word Vectors**|**🟦 Word Embeddings**|
+Las _stop words_ son **palabras frecuentes y poco informativas** (artículos, preposiciones, pronombres).
+
+Objetivo → eliminar ruido y centrarse en los términos relevantes.
+
+**Ejemplo:**
+
+Input:
+
+> [“Los”, “perros”, “son”, “animales”, “muy”, “leales”, “y”, “se”, “llevan”, “bien”, “con”, “las”, “personas”, “.”]
+
+Stop words: “Los”, “son”, “y”, “se”, “con”, “las”, “.”
+
+Output:
+
+> [“perros”, “animales”, “muy”, “leales”, “llevan”, “bien”, “personas”]
+
+---
+
+## 7. 🌱 Reducción a la raíz
+
+Proceso que busca **unificar las variaciones gramaticales** de una palabra bajo una forma base.
+
+### 🔹 Stemming
+
+- Recorta sufijos/prefijos de manera **sintáctica**.
+- Puede producir “raíces” que no son palabras reales.
+- ✅ Rápido, ❌ menos preciso.
+
+### 🔹 Lematización
+
+- Usa **diccionarios y análisis morfológico**.
+- Devuelve palabras válidas del idioma.
+- ✅ Preciso, ❌ más costoso.
+
+|Técnica|Ventaja|Desventaja|Ejemplo (“running”)|
+|---|---|---|---|
+|Stemming|Rápido|“raíces” inválidas|“runn”|
+|Lemmatización|Correcta gramaticalmente|Más lento|“run”|
+
+---
+
+## 8. 🧪 Ejemplos de Stemming vs Lemmatization
+
+|Original|Stemming|Lemmatization|
 |---|---|---|
-|**Representación**|**Sparse** (dispersa) y de **alta dimensión**|**Densas** y de **menor dimensión**|
-|**Relaciones**|**Ortogonales** (no capturan semántica)|Capturan la **estructura semántica**|
-|**Origen**|Hardcoded|**Aprendidos** desde los datos|
-|**Similitud**|Cada palabra es independiente|Palabras similares tienen **vectores cercanos**|
+|Dancing, dancer, danced|[“danc”, “dancer”, “danc”]|[“dance”, “dancer”, “dance”]|
+|Organization, organized|[“organ”, “organ”]|[“organization”, “organize”]|
+|Happiness, happier, happiest|[“happi”, “happier”, “happiest”]|[“happiness”, “happy”, “happy”]|
+
+📌 Lematización mantiene el sentido semántico correcto.
 
 ---
 
-## 5. 🌍 Word Embeddings: Word2Vec
+## 9. 🧮 Vectorización: Bag of Words (BoW)
 
-### 📐 5.1. Estructura y Semántica
+Transforma un conjunto de documentos en **vectores numéricos** que representan las frecuencias de palabras.
 
-Los _Word Embeddings_ son vectores densos que capturan la estructura del lenguaje, permitiendo **relaciones geométricas significativas**.
+- Filas → documentos
+- Columnas → tokens del vocabulario
+- Valor $(t, d)$ → número de ocurrencias de la palabra $t$ en documento $d$
 
-- **Ejemplo:** La diferencia vectorial entre "Queen" y "King" es similar a la diferencia entre "Woman" y "Man" (relación semántica de género).
-- Los vectores reflejan relaciones **semánticas** (Rey vs Reina) y **sintácticas** (Grande vs Más Grande).
+Ejemplo:
 
-### 🏗️ 5.2. Modelo Word2Vec
+|Documento|the|quick|brown|fox|dog|
+|---|---|---|---|---|---|
+|d1: “The quick brown fox jumped over the lazy dog.”|2|1|1|1|1|
+|d2: “The dog hunts a fox.”|1|0|0|1|1|
 
-**Word2Vec** es una arquitectura de red neuronal simple y eficiente para **aprender los _embeddings_**. Se basa en la hipótesis de que el significado de una palabra se puede inferir de su contexto.
+👉 Es simple, pero **no considera el orden ni el contexto** de las palabras.
 
-#### 5.2.1. Arquitectura
+---
 
-El modelo utiliza una arquitectura básica de **dos capas** (input, hidden layer/embedding, output layer):
+## 10. 📊 TF-IDF (Term Frequency – Inverse Document Frequency)
 
-- **Input:** Codificado como _one-hot_ con dimensión igual al tamaño del vocabulario ($\text{vocab\_size}$).
-- **Hidden Layer:** Es la capa de proyección, cuya matriz de pesos entre el input y ella **es la matriz de _Word Embeddings_**.
-- **Output Layer:** Dimensión $\text{vocab\_size}$, que produce las probabilidades de las palabras de salida.
+Pondera la frecuencia de una palabra según su **importancia relativa** en el corpus.
 
-#### 5.2.2. Modos de Entrenamiento
+### Fórmulas:
 
-Existen dos arquitecturas principales para entrenar los _embeddings_:
-
-- **CBOW (Continuous Bag of Words):**
+- **Frecuencia del término (TF):**  
+    $$  
+    tf(t, d) = \frac{f(t, d)}{\sum_{t' \in d} f(t', d)}  
+    $$
     
-    - **Input:** La suma o promedio de los vectores _one-hot_ de las **palabras del contexto** circundante.
-    - **Output:** Predice la **palabra central**.
-    - **Lógica:** Dado un contexto, ¿cuál es la palabra que falta en el medio?.
-        
-- **Skip-gram:**
-    - **Input:** El vector _one-hot_ de la **palabra central**.
-    - **Output:** Predice las **palabras del contexto** circundante (se hace una predicción para cada palabra del contexto).
-    - **Lógica:** Dada una palabra, ¿cuáles son las palabras que probablemente la rodean?.
+- **Frecuencia inversa del documento (IDF):**  
+    $$  
+    idf(t, D) = \log_2 \frac{|D|}{|{d \in D : t \in d}|}  
+    $$
+    
+- **Combinación:**  
+    $$  
+    tfidf(t, d, D) = tf(t, d) \cdot idf(t, D)  
+    $$
+    
+
+📌 TF-IDF reduce el peso de palabras muy frecuentes (_the, and, of, ..._) y resalta términos distintivos.
+
+---
+
+## 11. 📚 Ejemplo práctico de TF-IDF
+
+Corpus:
+
+```text
+1. This is the first document.
+2. This is the second second document.
+3. And the third one.
+4. Is this the first document?
+```
+
+→ Se genera una matriz donde cada fila es un documento y cada columna un término, con los valores ponderados por su relevancia TF-IDF.
+
+Resultado: las palabras **únicas o menos frecuentes** (p. ej. “third”) tienen mayor peso.
+
+---
+
+## 12. 🧱 Limitaciones de BoW / TF-IDF
+
+- Ignoran el **orden** de las palabras.
+- No capturan **relaciones semánticas** (p. ej. “king” y “queen” son tratados como diferentes).
+- Representaciones **sparse** y de alta dimensión.
+
+💡 Solución: usar **Word Embeddings** → vectores densos que capturan significado.
+
+---
+
+## 13. 🧩 One-Hot Encoding vs Word Embeddings
+
+|Aspecto|One-Hot Encoding|Word Embeddings|
+|---|---|---|
+|Tipo de vector|Disperso (sparse)|Denso|
+|Dimensión|Igual al tamaño del vocabulario|Pequeña (50–300 típicamente)|
+|Entrenamiento|Manual / estático|Aprendido automáticamente|
+|Relaciones semánticas|❌ No capta similitud|✅ Palabras similares → vectores cercanos|
+
+---
+
+## 14. 🧭 Word Embeddings
+
+Representan palabras como **vectores densos en un espacio continuo** donde la **distancia refleja relaciones semánticas**.
+
+- Palabras similares → vectores cercanos
+- Relaciones pueden representarse **geométricamente**:
+
+$$  
+\text{king} - \text{man} + \text{woman} \approx \text{queen}  
+$$
+
+Ejemplo de direcciones semánticas:
+
+- “gender”: hombre ↔ mujer
+- “pluralidad”: gato ↔ gatos
+- “tiempo verbal”: correr ↔ corrió
+
+![[Pasted image 20251103173027.png]]
+
+---
+
+## 15. 🧠 Formas de obtener Word Embeddings
+
+1. **Entrenados desde cero:**  
+    Se aprenden junto con la tarea principal (p. ej. clasificación de texto).  
+    ➕ Adaptados a la tarea, ➖ requieren más datos.
+    
+2. **Pre-entrenados:**  
+    Derivados de modelos entrenados en grandes corpus.  
+    ➕ Reutilizables y eficientes (ej. Word2Vec, GloVe, FastText).
+    
+
+---
+
+## 16. 🔬 Word2Vec (Mikolov et al., 2013)
+
+Paper: _“Efficient Estimation of Word Representations in Vector Space”_  
+👉 Propone un método simple y efectivo para aprender representaciones vectoriales a partir de texto.
+
+Dos arquitecturas principales:
+
+|Modelo|Idea|Objetivo|
+|---|---|---|
+|**CBOW** (_Continuous Bag of Words_)|Predice una palabra a partir del contexto|Maximizar $P(w_t \mid w_{t-m}, ..., w_{t+m})$|
+|**Skip-Gram**|Predice el contexto a partir de una palabra|Maximizar $P(w_{t-m}, ..., w_{t+m} \mid w_t)$|
+
+![[Pasted image 20251103173039.png]]
+
+📈 Word2Vec se entrena sobre grandes corpus y produce **espacios semánticos coherentes**.
+
+---
+
+## 17. 🧩 CBOW vs Skip-Gram
+
+|Característica|CBOW|Skip-Gram|
+|---|---|---|
+|Predicción|Palabra central|Palabras del contexto|
+|Datos requeridos|Corpus grande|Corpus pequeño|
+|Velocidad|Más rápido|Más lento|
+|Ejemplo|Contexto: “el ___ come huesos” → “perro”|Palabra: “perro” → predice “el”, “come”, “huesos”|
+
+---
+
+## 18. 🧭 Aplicaciones de Word Embeddings
+
+- Inicialización de modelos de NLP (LSTM, Transformers, etc.)
+- Clasificación de texto y sentimientos
+- Búsqueda semántica
+- Detección de sinónimos y analogías
+- Sistemas de recomendación basados en texto
 
 ---
 
 # ✅ Conclusiones
 
-- **NLP** resuelve desafíos como la **ambigüedad** y la **dependencia** del lenguaje para la comprensión automática.
-- El **preprocesamiento** incluye **Tokenización**, eliminación de **Stop Words**, y **Reducción a la Raíz** (Lematización es más precisa que _Stemming_).
-- La **Vectorización** tradicional usa **BoW** o **TFIDF**, pero no captura relaciones semánticas.
-- Los **Word Embeddings** son la representación moderna: **vectores densos** que codifican el significado y las relaciones semánticas/sintácticas en un espacio geométrico.
-- **Word2Vec** es el modelo base para aprender estos _embeddings_ a través de dos modos: **CBOW** (predice la palabra central dado el contexto) y **Skip-gram** (predice el contexto dada la palabra central).
+- El **preprocesamiento del texto** (tokenización, limpieza, stemming/lematización) es esencial para representar lenguaje en forma numérica.
+- **BoW y TF-IDF** fueron los primeros enfoques efectivos, pero no capturan **semántica ni contexto**.
+- Los **Word Embeddings** introducen una representación **densa y continua**, que refleja relaciones semánticas entre palabras.
+- **Word2Vec (CBOW/Skip-Gram)** marcó un hito en NLP al permitir aprender estas representaciones de manera no supervisada.
+- Estas técnicas sentaron las bases para modelos más avanzados, como **RNNs**, **LSTMs** y **Transformers**, que utilizan embeddings como entrada para procesar secuencias.
+
