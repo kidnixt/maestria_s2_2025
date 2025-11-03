@@ -210,11 +210,11 @@ $$
 
 ## 13. 📊 Resultados típicos (T = 1000)
 
-| Arquitectura | Pérdida | Conclusión |
-|---------------|----------|-------------|
-| RNN Vanilla | ≈ ln(K + 2) (≈2.3) | Falla → olvida la secuencia |
-| LSTM | ≈ 0.0 | Éxito → conserva la memoria |
-| GRU | ≈ 0.0 | Éxito → memoria eficiente |
+| Arquitectura | Pérdida            | Conclusión                                      |
+| ------------ | ------------------ | ----------------------------------------------- |
+| RNN Vanilla  | ≈ ln(K + 2) (≈2.3) | Falla → olvida la secuencia                     |
+| LSTM         | ≈ 0.0              | Éxito → conserva la memoria perfectamente       |
+| GRU          | ≈ 0.0              | Éxito → conserva la memoria de manera eficiente |
 
 👉 Las LSTM y GRU logran **preservar dependencias a largo plazo**, donde las RNN tradicionales fallan.
 
@@ -226,10 +226,14 @@ $$
 - Varias capas recurrentes apiladas.  
 - Permite aprender **representaciones jerárquicas** de secuencias.
 
+![[Pasted image 20251103171147.png]]
+
 ### 🔹 Bidirectional RNN
 - Procesan la secuencia **en ambas direcciones** (hacia adelante y hacia atrás).  
 - Cada salida combina información **pasada y futura**.  
 - Útil para tareas donde se conoce toda la secuencia (p. ej. NLP).
+
+![[Pasted image 20251103171159.png]]
 
 ---
 
@@ -247,6 +251,9 @@ Las **LSTM** (Hochreiter & Schmidhuber, 1997) introducen **compuertas** que cont
 💡 La celda LSTM mantiene dos estados:
 - **Cell state ($c_t$):** memoria a largo plazo.  
 - **Hidden state ($h_t$):** salida momentánea.
+
+
+![[Pasted image 20251103171237.png]]
 
 ---
 
@@ -289,6 +296,8 @@ La **GRU** simplifica la LSTM, reduciendo parámetros y mejorando eficiencia.
 | **Reset gate ($R_t$)** | Controla cuánta info pasada se ignora. |
 | **Update gate ($Z_t$)** | Controla cuánto del estado anterior se mantiene. |
 
+![[Pasted image 20251103171315.png]]
+
 Ecuaciones:
 
 $$
@@ -311,6 +320,11 @@ $$
 
 ## 18. 💡 Intuición del GRU
 
+GRU simplifica LSTM manteniendo solo dos compuertas:
+
+- **Reset Gate:** Decide cuánta información del pasado debe ignorarse al generar el nuevo estado candidato.
+- **Update Gate:** controla el balance entre mantener la memoria previa y agregar nueva información.
+
 - Si $R_t$ es **pequeño**, el modelo “resetea” su memoria (ignora el pasado).  
 - Si $Z_t$ es **grande**, el modelo **actualiza fuertemente** con nueva información.  
 - Si $Z_t$ es **pequeño**, mantiene la memoria previa $h_{t-1}$.
@@ -327,6 +341,8 @@ GRU = equilibrio entre **recordar** y **actualizar** memoria de forma más simpl
 3. **Representación global**: $h_T$ resume el contexto completo.  
 4. **Capa densa**: $y = W h_T + b$.  
 5. **Salida**: $\arg\max(y)$ → clase de sentimiento (positivo/negativo, etc.).
+
+![[Pasted image 20251103171452.png]]
 
 ---
 
