@@ -121,7 +121,7 @@ En cada paso temporal:
 $$  
 \text{input} =  
 \begin{cases}  
-\text{SOS} & t=1 \  
+\text{SOS} & t=1 \\  
 \text{palabra real}; y_{t-1} & t>1  
 \end{cases}  
 $$
@@ -131,7 +131,7 @@ Luego el modelo predice $$ \hat{y}_t$$
 
 El decoder recibe:
 
-$$ \text{input}_1 = \text{SOS} ] $
+$$ \text{input}_1 = \text{SOS}$$
 
 Genera una palabra → se realimenta → genera la siguiente → … hasta **EOS**.
 
