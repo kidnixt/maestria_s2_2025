@@ -115,7 +115,6 @@ Produce:
 $$  
 h_1,\ldots,h_{T_x}  
 $$
-
 ### 5.2 Atención
 
 Para cada paso i del decoder:
