@@ -66,56 +66,41 @@ De allí el cuello de botella.
 
 ## 3. 🧠 Idea clave de Bahdanau: Atención + Alineamiento suave
 
-En lugar de usar un único vector de contexto:
-
-[  
-c  
-]
-
-se propone usar **un vector distinto para cada paso del decoder**:
-
-[  
-c_i  
-]
-
-donde (i) es el índice de la palabra target.
+En lugar de usar un único vector de contexto: $c$ se propone usar **un vector distinto para cada paso del decoder**: $c_i$ donde $i$ es el índice de la palabra target.
 
 El modelo aprende una función de **alineamiento**:
-
-[  
+$$  
 e_{ij} = a(s_{i-1}, h_j)  
-]
+$$
 
-que indica qué tan relevante es el hidden del encoder (h_j) para generar la palabra (y_i).
+que indica qué tan relevante es el hidden del encoder $h_j$ para generar la palabra $y_i$.
 
 Luego se normaliza con softmax:
 
-[  
+$$  
 \alpha_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x} \exp(e_{ik})}.  
-]
+$$
 
 El context vector:
 
-[  
+$$  
 c_i = \sum_{j=1}^{T_x} \alpha_{ij} h_j  
-]
+$$
 
 ⭐ Interpretable:  
-(\alpha_{ij}) ≈ probabilidad de alinear (y_i) con (x_j).
+$\alpha_{ij}$ ≈ probabilidad de alinear $y_i$ con $x_j$.
+
 
 ---
 
 ## 4. 📡 Queries, Keys y Values (paralelo moderno)
 
-- **Keys** → hiddens del encoder ({h_1,\ldots,h_{T_x}})
-    
+- **Keys** → hiddens del encoder $h_1,\ldots,h_{T_x}$
 - **Values** → los mismos hiddens (o combinación)
-    
-- **Queries** → hiddens del decoder ({s_i})
-    
+- **Queries** → hiddens del decoder ${s_i}$
 
-Atención =  
-“Qué value mirar” según “qué query tengo”.
+**Atención =**  
+**“Qué value mirar” según “qué query tengo”.**
 
 Esto anticipa la terminología usada en Transformers.
 
@@ -127,9 +112,9 @@ Esto anticipa la terminología usada en Transformers.
 
 Produce:
 
-[  
+$$  
 h_1,\ldots,h_{T_x}  
-]
+$$
 
 ### 5.2 Atención
 
