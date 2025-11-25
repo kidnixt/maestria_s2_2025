@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/8_Clase08/1_Modelos De Lenguaje.md",
+                "file": "0_MODELOS_DEEP_LEARNING/8_Clase08/2_Seq2Seq.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1_Modelos De Lenguaje"
+              "title": "2_Seq2Seq"
             }
           }
         ]
@@ -183,8 +183,9 @@
   },
   "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
-    "0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
     "0_MODELOS_DEEP_LEARNING/8_Clase08/1_Modelos De Lenguaje.md",
+    "0_MODELOS_DEEP_LEARNING/8_Clase08/2_Seq2Seq.md",
+    "0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
     "0_MODELOS_DEEP_LEARNING/8_Clase08",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
     "0_MODELOS_DEEP_LEARNING/7_Clase07/1_RNN.md",
@@ -225,7 +226,6 @@
     "0_MODELOS_DEEP_LEARNING/4_Clase04",
     "2_TALLER_DEEP_LEARNING/3_Clase3/1_MIT-BIH Arrhythmia.md",
     "2_TALLER_DEEP_LEARNING/3_Clase3/3_Clase3.md",
-    "2_TALLER_DEEP_LEARNING/2_Clase2/1_California_House_Price.md",
     "2_TALLER_DEEP_LEARNING/3_Clase3",
     "2_TALLER_DEEP_LEARNING/2_Clase2",
     "2_TALLER_DEEP_LEARNING/1_Clase1"
