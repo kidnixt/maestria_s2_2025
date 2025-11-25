@@ -126,12 +126,12 @@ $$
 \end{cases}  
 $$
 
-Luego el modelo predice $$ \hat{y}_t$
+Luego el modelo predice $$ \hat{y}_t$$
 ### 5.2 🔮 Inferencia
 
 El decoder recibe:
 
-$[ \text{input}_1 = \text{SOS} ] $
+$$ \text{input}_1 = \text{SOS} ] $
 
 Genera una palabra → se realimenta → genera la siguiente → … hasta **EOS**.
 
