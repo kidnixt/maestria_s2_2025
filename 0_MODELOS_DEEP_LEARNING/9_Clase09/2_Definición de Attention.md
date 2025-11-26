@@ -186,15 +186,14 @@ Escalar por $\sqrt{d_k}$ estabiliza los valores.
 
 ## 9. 🧮 Self-Attention (versión matricial final)
 
-$$[  
+$$  
 \text{Attention}(Q,K,V)
-
+=
 \operatorname{Softmax}  
 \left(  
 \frac{QK^\top}{\sqrt{d_k}}  
 \right)V  
-]$$
-
+$$
 Esta es exactamente la fórmula usada en los Transformers.
 
 ---
@@ -205,7 +204,7 @@ Esta es exactamente la fórmula usada en los Transformers.
 
 La self-attention **no tiene noción del orden** de la secuencia.
 
-Es completamente invariante a permutar los tokens, porque QKᵀ depende solo de similitudes entre tokens, no de posiciones.
+Es completamente invariante a permutar los tokens, porque $QKᵀ$ depende solo de similitudes entre tokens, no de posiciones.
 
 ### Consecuencia
 
@@ -214,11 +213,8 @@ Transformers NECESITAN agregar **información posicional**.
 ### Métodos:
 
 - 🔹 Positional encodings sinusoidales (fijos)
-    
 - 🔹 Positional encodings aprendidos
-    
 - 🔹 Representaciones relativas (Shaw et al.)
-    
 
 Estas permitirán que el modelo entienda orden, distancia y dirección.
 
@@ -249,18 +245,9 @@ Self-attention aplica esta operación por **toda la secuencia en paralelo**.
 # ✅ Conclusiones
 
 - La atención de Vaswani et al. formaliza el mecanismo como una transformación **query → weighted sum de values**, con compatibilidades basadas en keys.
-    
 - La versión matricial permite aplicar atención **a múltiples queries simultáneamente**, clave para el paralelismo masivo de Transformers.
-    
 - El mecanismo base del Transformer es la **Scaled Dot-Product Attention**, diseñada para estabilidad numérica en altas dimensiones.
-    
 - La **Self-Attention** permite que cada token “vea” a todos los demás tokens de la secuencia.
-    
 - El mecanismo es **invariante al orden**, por lo que se agregan **positional encodings**.
-    
 - Esta formulación simplificada, paralelizable y efectiva es la base de **Attention is All You Need**, que reemplaza completamente a las RNNs en las tareas de NLP.
-    
 
----
-
-¡Listo! Cuando quieras seguí pasándome los PDFs y los vamos resumiendo todos con este formato 🔥📘
