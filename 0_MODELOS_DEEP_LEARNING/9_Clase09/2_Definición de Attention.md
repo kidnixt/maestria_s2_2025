@@ -17,7 +17,7 @@ $$
 \text{Attention}(q, {k_i:v_i}) = \sum_{i=1}^{n} \alpha_i(q) , v_i  
 $$
 
-donde cada (\alpha_i) indica **qué tanto mirar** a cada value.
+donde cada $\alpha_i$ indica **qué tanto mirar** a cada value.
 
 ---
 
@@ -25,20 +25,16 @@ donde cada (\alpha_i) indica **qué tanto mirar** a cada value.
 
 Se asume:
 
-- Query: (q \in \mathbb{R}^p)
-    
-- Key: (k_i \in \mathbb{R}^p)
-    
-- Value: (v_i \in \mathbb{R}^d)
-    
+- Query: $q \in \mathbb{R}^p$
+- Key: $k_i \in \mathbb{R}^p$
+- Value: $v_i \in \mathbb{R}^d$
 
-La atención produce un vector en (\mathbb{R}^d):
-
-[  
+La atención produce un vector en $\mathbb{R}^d$:
+$$  
 z = \sum_{i=1}^{n} \alpha_i v_i  
-]
+$$
 
-Las (\alpha_i) son compatibilidades normalizadas (softmax).
+Las $\alpha_i$ son compatibilidades normalizadas (softmax).
 
 ---
 
@@ -48,49 +44,44 @@ Las (\alpha_i) son compatibilidades normalizadas (softmax).
 
 La atención escoge solo un índice:
 
-[  
+$$ 
 \alpha_i = 1_{{i = \arg\max_j (q \cdot k_j)}}  
-]
-
+$$
 → Interpretación: el modelo “fija la vista” en un único elemento.
 
 ### 🟦 Caso 2: _Indecisión total_
 
 Distribución uniforme:
 
-[  
+$$ 
 \alpha_i = \frac{1}{n}  
-]
+$$
 
 → La query mira a todos los values por igual.
 
 ### 🔥 Caso intermedio: Softmax
 
-[  
+$$ 
 \alpha_i = \operatorname{Softmax}_i(q \cdot k_1, \ldots, q \cdot k_n)  
-]
+$$
 
-Controlado por **temperatura** (\tau):
+Controlado por **temperatura** $\tau$:
 
-- (\tau \to 0): aproximación al winner-takes-all
-    
-- (\tau \to \infty): distribución uniforme
-    
+- $\tau \to 0$: aproximación al winner-takes-all
+- $\tau \to \infty$: distribución uniforme
 
 ---
 
 ## 4. 🔁 Atención para múltiples queries
 
-Si tenemos queries ({q_j}_{j=1}^m):
+Si tenemos queries ${q_j}_{j=1}^m$:
 
-# [  
+$$  
 \text{Attention}({q_j},{k_i:v_i})
-
 \left{  
 \sum_{i=1}^n \alpha_i(q_j) v_i  
 \right}_{j=1}^m  
-]
-
+$$
 Cada query obtiene su propio vector de salida.
 
 ---
@@ -99,12 +90,10 @@ Cada query obtiene su propio vector de salida.
 
 Vaswani et al. definieron el mecanismo de atención en forma **completamente vectorizada**:
 
-# [  
-\text{Attention}(Q,K,V)
-
+$$ 
+\text{Attention}(Q,K,V) = 
 \operatorname{Softmax}(QK^{\top}) V  
-]
-
+$$
 Donde:
 
 - (Q \in \mathbb{R}^{m \times p}) → consultas
