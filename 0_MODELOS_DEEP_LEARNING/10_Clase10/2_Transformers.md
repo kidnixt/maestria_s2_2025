@@ -55,13 +55,11 @@ $$
 En forma matricial:
 
 $$
-Z^{(0)} =  
-\begin{bmatrix}  
-(z_1^{(0)})^\top \  
-\vdots \  
-(z_{T_x}^{(0)})^\top  
-\end{bmatrix}  
-\in| \mathbb{R}^{T_x \times d_{\text{model}}}.  
+\mathbf{z}^{(0)} = \begin{bmatrix}
+(\mathbf{z}_1^{(0)})^{\text{T}} \\
+\vdots \\
+(\mathbf{z}_{T_x}^{(0)})^{\text{T}}
+\end{bmatrix} \sim (T_x, d_{\text{model}}).
 $$
 
 Esta matriz entra al primer encoder.
