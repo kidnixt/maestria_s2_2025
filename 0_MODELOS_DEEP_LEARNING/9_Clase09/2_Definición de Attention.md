@@ -15,7 +15,7 @@ $$\text{Attention}: Q \times {K:V} \rightarrow V. $$
 Dado un conjunto de keys ${k_i}$, values ${v_i}$ y una query $q$:
 $$  
 \text{Attention}(q, {k_i:v_i}) = \sum_{i=1}^{n} \alpha_i(q) , v_i  
-]
+$$
 
 donde cada (\alpha_i) indica **qué tanto mirar** a cada value.
 
