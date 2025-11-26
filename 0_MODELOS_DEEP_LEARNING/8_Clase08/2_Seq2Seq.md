@@ -143,22 +143,29 @@ $$ \text{input}_1 = \text{SOS}$$
 
 Genera una palabra → se realimenta → genera la siguiente → … hasta **EOS**.
 
-
 Así produce secuencias de longitud arbitraria.
+
+![[Pasted image 20251126143243.png]]
 
 ---
 
 ## 6. ⚔️ Training vs. Predicting
 
 Durante **training**:
-
 - recibe siempre la palabra correcta previa → aprendizaje estable.
 
 Durante **predicting**:
-
 - recibe sus propias predicciones → más realista, pero más difícil.
 
 Esta diferencia provoca una brecha entre entrenamiento e inferencia.
+
+![[Pasted image 20251126143300.png]]
+
+- Aunque los modelos **Encoder** y **Decoder** puedan ser diferentes, se entrenan de forma conjunta (end-to-end).
+- Usamos la loss del decoder en cada tiempo para calcular el costo total.
+- Se usan los resultados de ambos modelos para ajustar sus parámetros mediante ***backpropagation***
+
+![[Pasted image 20251126143423.png]]
 
 ---
 

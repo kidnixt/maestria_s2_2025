@@ -57,9 +57,9 @@ $$
 p(y_t \mid y_{1:t-1},c)=g(y_{t-1}, s_t, c)  
 $$
 
-donde (s_t) es el hidden del decoder.
+donde $s_t$ es el hidden del decoder.
 
-👉 Todo depende del **mismo** vector (c).  
+👉 Todo depende del **mismo** vector $c$.  
 De allí el cuello de botella.
 
 ---
