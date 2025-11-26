@@ -179,13 +179,13 @@ El decoder genera la secuencia **token por token**, condicionándose en los toke
 
 # 11. 🧱 Componentes Clave del Transformer
 
-| Componente               | Función                                                                       |
-| ------------------------ | ----------------------------------------------------------------------------- |
-| **Multi-Head Attention** | Múltiples "cabezas" aprenden relaciones distintas en paralelo.                |
-| **Feed-Forward Network** | Procesa cada token individualmente; agrega no linealidad.                     |
-| **Residual Connections** | Evitan el problema del gradiente; facilitan redes profundas.                  |
-| **Layer Normalization**  | Estabiliza y normaliza cada s y acelera entrenamiento.                        |
-| **Positional Encoding**  | Introduce información de orden (fundamental en un modelo sin secuencialidad). |
+| Componente               | Función                                                                              |
+| ------------------------ | ------------------------------------------------------------------------------------ |
+| **Multi-Head Attention** | Múltiples "cabezas" aprenden relaciones distintas en paralelo.                       |
+| **Feed-Forward Network** | Procesa cada token individualmente; agrega no linealidad.                            |
+| **Residual Connections** | Evitan el problema del gradiente; facilitan redes profundas.                         |
+| **Layer Normalization**  | Estabiliza y normaliza cada secuencia de forma independiente, acelera entrenamiento. |
+| **Positional Encoding**  | Introduce información de orden (fundamental en un modelo sin secuencialidad).        |
 
 ---
 
