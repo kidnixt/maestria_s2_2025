@@ -97,11 +97,8 @@ Al traducir “te traeré la bolsa”, el modelo asigna alto peso a “I”, “
 Analogía con un buscador:
 
 - **Key = tags de las imágenes**
-    
 - **Query = texto de búsqueda**
-    
 - **Value = imágenes recuperadas**
-    
 
 El modelo busca qué keys son relevantes para un query y combina sus values.
 
