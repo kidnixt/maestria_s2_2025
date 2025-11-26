@@ -133,6 +133,8 @@ $$
 $$
 
 Luego el modelo predice $$ \hat{y}_t$$
+![[Pasted image 20251126143152.png]]
+
 ### 5.2 🔮 Inferencia
 
 El decoder recibe:
