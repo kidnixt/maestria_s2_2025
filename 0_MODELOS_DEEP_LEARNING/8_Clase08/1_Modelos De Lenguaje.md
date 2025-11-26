@@ -187,6 +187,9 @@ $$
 
 ## 8. 🎯 Predicción y Entrenamiento en RNNs
 
+
+![[Pasted image 20251126142908.png]]
+
 La salida del modelo es una distribución sobre el vocabulario:
 
 - La palabra predicha es aquella con mayor probabilidad.
@@ -215,17 +218,14 @@ Ejemplo:
 - Los **N-gramas** fueron la primera solución efectiva, pero sufren de sparsity y ventana rígida.
 - Los **MLPs con embeddings** mejoran la representación, pero mantienen ventana limitada.
 - Las **RNNs** (incluyendo LSTM/GRU):
-    
     - escalan mejor,
     - capturan dependencias largas,
     - comparten pesos a través del tiempo,
     - dominaron el NLP hasta los Transformers.
-        
 - Conceptos clave:
-    
     - Ventanas fijas vs. dependencia larga
     - Sparsity
     - Embeddings
     - Teacher forcing
     - Softmax sobre el vocabulario
-        
+

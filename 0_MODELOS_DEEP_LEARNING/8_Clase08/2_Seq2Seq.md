@@ -80,6 +80,8 @@ Las RNN pueden:
 👉 pero **NO** pueden manejar por sí solas input y output de longitud diferente.  
 Necesitamos más estructura…
 
+![[Pasted image 20251126143041.png]]
+
 ---
 
 ## 4. 🏗️ Arquitectura Encoder–Decoder
@@ -97,6 +99,8 @@ Objetivo: **comprimir** toda la información relevante del input en un **vector 
 - Este vector suele ser el **estado oculto final** de una RNN (p. ej. LSTM/GRU).
 - También podrían usarse outputs intermedios, pero en el modelo básico se usa solo el último estado.
 
+![[Pasted image 20251126143119.png]]
+
 ### 4.2 🧱 Decoder
 
 Objetivo: **generar la secuencia output paso a paso**.
@@ -109,6 +113,8 @@ Objetivo: **generar la secuencia output paso a paso**.
 $$SOS, y₁, y₂, …, yₙ$$
 - En inferencia:  
     el modelo se autoalimenta con sus propias predicciones, hasta llegar a **EOS**.
+
+
 
 ---
 
