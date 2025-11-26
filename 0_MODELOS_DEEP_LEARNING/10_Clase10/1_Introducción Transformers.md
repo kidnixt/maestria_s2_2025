@@ -86,7 +86,6 @@ Pasos:
 - Para cada palabra de salida, se calcula similitud con cada palabra fuente.
 - Softmax → distribución de atención.
 - Suma ponderada de los vectores fuente.
-    
 
 Ejemplo:  
 Al traducir “te traeré la bolsa”, el modelo asigna alto peso a “I”, “bring” al generar “I will bring”.
