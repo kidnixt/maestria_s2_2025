@@ -163,7 +163,7 @@ $$
 \hat{u}_i = \frac{u_i - \mu}{\sqrt{\sigma^2 + \epsilon}}  
 $$
 
-[  
+$$
 \mathrm{LayerNorm}(u) = \gamma \odot \hat{u} + \beta,  
 \quad \gamma,\beta \in \mathbb{R}^d.  
 ]
