@@ -76,10 +76,11 @@ Controlado por **temperatura** $\tau$:
 
 Si tenemos queries ${q_j}_{j=1}^m$:
 
-$$ \text{Attention}({q_j},{k_i:v_i})
-\left{  
-\sum_{i=1}^n \alpha_i(q_j) v_i  
-\right}_{j=1}^m  
+$$
+\text{Attention}(\{q_j\},\{k_i:v_i\}) = 
+\left\{
+\sum_{i=1}^n \alpha_i(q_j) v_i
+\right\}_{j=1}^m
 $$
 Cada query obtiene su propio vector de salida.
 
