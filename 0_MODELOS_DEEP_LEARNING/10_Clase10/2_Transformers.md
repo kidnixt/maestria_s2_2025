@@ -318,17 +318,14 @@ $$
 # 13. 📐 Observaciones sobre la secuencia de salida
 
 - El decoder genera autorregresivamente:
-    
-
 $$
 p(y_t \mid y_{<t}, x)  
 $$
 
 - La máscara causal asegura que no se mire el futuro.
-    
-- El largo de salida (T_y) es variable.
-    
-- El cross-attention permite que (T_x \neq T_y).
+- La generación continúa hasta producir el token especial EOS.
+- El largo de salida $T_y$ es variable.
+- El cross-attention () permite que (T_x \neq T_y).
     
 
 ---
@@ -339,10 +336,9 @@ El self-attention es **invariante a permutaciones**.
 Depende solo de productos escalares entre filas de Q, K y V.
 
 Por eso se suma:
-
-[  
+$$
 z_t = e_t + PE_t.  
-]
+$$
 
 El vector (PE_t) debe tener dimensión (d_{\text{model}}).
 
