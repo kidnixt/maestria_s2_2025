@@ -325,7 +325,7 @@ $$
 - La máscara causal asegura que no se mire el futuro.
 - La generación continúa hasta producir el token especial EOS.
 - El largo de salida $T_y$ es variable.
-- El cross-attention (la atención encoder-decoder) permite que (T_x \neq T_y).
+- El cross-attention (la atención encoder-decoder) permite que $T_x \neq T_y$.
     
 
 ---
