@@ -166,7 +166,7 @@ $$
 $$
 \mathrm{LayerNorm}(u) = \gamma \odot \hat{u} + \beta,  
 \quad \gamma,\beta \in \mathbb{R}^d.  
-]
+$$
 
 Para una matriz (U \in (T,d)) se aplica **fila a fila**.
 
