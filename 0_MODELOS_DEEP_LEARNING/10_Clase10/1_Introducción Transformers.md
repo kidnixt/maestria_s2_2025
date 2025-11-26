@@ -134,13 +134,9 @@ El encoder usa **self-attention completo** (cada token atiende a todos).
 Estructura interna:
 
 1. **Multi-Head Self-Attention**
-    
     - con máscara de **padding**
-        
 2. **Residual + LayerNorm**
-    
 3. **Feed-Forward Network** (dos capas densas y activación)
-    
 4. **Residual + LayerNorm**
     
 
