@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ef21f9330133686b",
@@ -184,6 +183,10 @@
   },
   "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
+    "0_MODELOS_DEEP_LEARNING/9_Clase09/2_Definición de Attention.md",
+    "0_MODELOS_DEEP_LEARNING/9_Clase09/1_Attention en Seq2Seq.md",
+    "0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
+    "assets/Pasted image 20251126145138.png",
     "0_MODELOS_DEEP_LEARNING/8_Clase08/2_Seq2Seq.md",
     "assets/Pasted image 20251126143423.png",
     "assets/Pasted image 20251126143300.png",
@@ -195,16 +198,12 @@
     "assets/Pasted image 20251126142908.png",
     "assets/Pasted image 20251126142729.png",
     "assets/Pasted image 20251126142604.png",
-    "0_MODELOS_DEEP_LEARNING/9_Clase09/2_Definición de Attention.md",
-    "0_MODELOS_DEEP_LEARNING/9_Clase09/1_Attention en Seq2Seq.md",
     "0_MODELOS_DEEP_LEARNING/9_Clase09",
-    "0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
     "0_MODELOS_DEEP_LEARNING/8_Clase08",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
     "0_MODELOS_DEEP_LEARNING/7_Clase07/1_RNN.md",
     "0_MODELOS_DEEP_LEARNING/6_Clase06/2_NLP.md",
     "0_MODELOS_DEEP_LEARNING/7_Clase07/7_Clase07.md",
-    "assets/Pasted image 20251103173039.png",
     "0_MODELOS_DEEP_LEARNING/5_Clase05/2_Redes CNN Parte 2.md",
     "0_MODELOS_DEEP_LEARNING/7_Clase07",
     "0_MODELOS_DEEP_LEARNING/6_Clase06/1_Skip Connections.md",

@@ -62,6 +62,9 @@ donde $s_t$ es el hidden del decoder.
 👉 Todo depende del **mismo** vector $c$.  
 De allí el cuello de botella.
 
+### Traducción antes de Bahdanau
+![[Pasted image 20251126145138.png]]
+
 ---
 
 ## 3. 🧠 Idea clave de Bahdanau: Atención + Alineamiento suave
