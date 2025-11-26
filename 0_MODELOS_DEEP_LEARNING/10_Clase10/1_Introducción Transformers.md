@@ -5,7 +5,6 @@
 # 1. 🚀 De la Atención a los Transformers
 
 - En 2017, Vaswani et al. publican **“Attention Is All You Need”**, introduciendo el **Transformer**.
-    
 - Descubren que **la atención por sí sola** puede reemplazar a las RNNs:
     - Capta dependencias largas sin recurrencia.
     - Permite **procesamiento paralelo** → entrenamiento mucho más rápido.
