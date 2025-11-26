@@ -114,10 +114,10 @@ con:
 
 ## 4.1 Atención por head
 
-[  
+$$
 \text{head}_i = \mathrm{Softmax}!\left(\frac{Q_i K_i^\top}{\sqrt{d_k}}\right) V_i  
 \quad \in \mathbb{R}^{m \times d_v}.  
-]
+$$
 
 ## 4.2 Salida final del MHA
 
