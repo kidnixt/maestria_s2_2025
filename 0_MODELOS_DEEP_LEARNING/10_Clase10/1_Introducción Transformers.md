@@ -38,6 +38,8 @@ Para cada palabra:
 3. Se aplica **softmax** para normalizar los pesos (suman 1).
 4. Se realiza una **suma ponderada** de todos los vectores → nuevo vector contextual.
 
+![[Pasted image 20251126152731.png]]
+
 Ejemplo:
 
 > En “The train left the station on time”, la palabra “station” incorpora información de “train”.
@@ -59,15 +61,17 @@ Esto permite captar **relaciones semánticas complejas**, incluso con distancia 
 
 # 5. ⚙️ Ejemplo Formal del Self-Attention
 
-Cada token se proyecta a:
+![[Pasted image 20251126152812.png]]
 
+
+Cada token se proyecta a:
 - **Query** $q$
 - **Key** $k$
 - **Value** $v$
 
 Cálculo:
 1. **Scores:**  
- $$ s_{ij} = q_i^\top k_j $$
+$$ s_{ij} = q_i^\top k_j $$
 2. **Normalización:**  
 $$ \alpha_{ij} = \text{softmax}(s_{ij}) $$
 3. **Salida contextual:**  
@@ -87,6 +91,9 @@ Pasos:
 - Softmax → distribución de atención.
 - Suma ponderada de los vectores fuente.
 
+![[Pasted image 20251126152849.png]]
+
+
 Ejemplo:  
 Al traducir “te traeré la bolsa”, el modelo asigna alto peso a “I”, “bring” al generar “I will bring”.
 
@@ -99,6 +106,9 @@ Analogía con un buscador:
 - **Key = tags de las imágenes**
 - **Query = texto de búsqueda**
 - **Value = imágenes recuperadas**
+
+![[Pasted image 20251126152917.png]]
+
 
 El modelo busca qué keys son relevantes para un query y combina sus values.
 
@@ -116,6 +126,8 @@ Los Transformers usan **múltiples cabezas en paralelo**, cada una especializada
 - Estructura sintáctica
 - Resolución de coreferencia
 - etc.
+
+![[Pasted image 20251126152931.png]]
 
 El proceso:
 
@@ -155,16 +167,11 @@ Similar al encoder, pero agrega mecanismos esenciales para generación autoregre
 Componentes:
 
 1. **Masked Self-Attention**
-    
     - Máscara causal → evita mirar tokens futuros.
     - Fundamental para tareas de generación (GPT-like).
-        
 2. **Cross-Attention**
-    
     - Usa las representaciones del encoder como keys/values.
-        
 3. **Feed-Forward + Residual + LayerNorm**
-    
 
 El decoder genera la secuencia **token por token**, condicionándose en los tokens previos.
 
@@ -172,13 +179,13 @@ El decoder genera la secuencia **token por token**, condicionándose en los toke
 
 # 11. 🧱 Componentes Clave del Transformer
 
-|Componente|Función|
-|---|---|
-|**Multi-Head Attention**|Modela relaciones ricas y paralelas.|
-|**Feed-Forward Network**|Procesa cada token individualmente; agrega no linealidad.|
-|**Residual Connections**|Evitan el problema del gradiente; facilitan redes profundas.|
-|**Layer Normalization**|Estabiliza y acelera entrenamiento.|
-|**Positional Encoding**|Introduce información de orden (fundamental en un modelo sin secuencialidad).|
+| Componente               | Función                                                                       |
+| ------------------------ | ----------------------------------------------------------------------------- |
+| **Multi-Head Attention** | Múltiples "cabezas" aprenden relaciones distintas en paralelo.                |
+| **Feed-Forward Network** | Procesa cada token individualmente; agrega no linealidad.                     |
+| **Residual Connections** | Evitan el problema del gradiente; facilitan redes profundas.                  |
+| **Layer Normalization**  | Estabiliza y normaliza cada s y acelera entrenamiento.                        |
+| **Positional Encoding**  | Introduce información de orden (fundamental en un modelo sin secuencialidad). |
 
 ---
 
@@ -193,20 +200,10 @@ El decoder genera la secuencia **token por token**, condicionándose en los toke
 # ✅ Conclusiones
 
 - El Transformer elimina la recurrencia y usa **solo atención** para procesar secuencias.
-    
 - Self-attention produce representaciones **contextuales** superiores a los embeddings fijos.
-    
 - Multi-head attention permite capturar múltiples relaciones en paralelo.
-    
 - Encoder y decoder tienen estructuras similares, pero el decoder incorpora:
-    
     - **masked attention** (causal)
-        
     - **cross-attention** (usa la información del encoder)
-        
 - Es la arquitectura base de todos los modelos modernos de NLP y más allá (visión, audio, multimodal).
     
-
----
-
-Si querés, seguimos con el siguiente PDF cuando lo tengas listo 📘🔥
