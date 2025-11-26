@@ -143,7 +143,6 @@ Estructura interna:
 Características clave:
 
 - La salida tiene la **misma dimensión** que la entrada.
-    
 - Se pueden apilar **N encoders** para aumentar capacidad.
     
 
@@ -158,7 +157,6 @@ Componentes:
 1. **Masked Self-Attention**
     
     - Máscara causal → evita mirar tokens futuros.
-        
     - Fundamental para tareas de generación (GPT-like).
         
 2. **Cross-Attention**
