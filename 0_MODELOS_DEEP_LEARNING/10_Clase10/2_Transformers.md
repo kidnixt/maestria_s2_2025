@@ -212,7 +212,7 @@ Es decir:
 
 # 8. 🔤 Tokens especiales del Decoder
 
-- : inicio
+- $BOS$: inicio
 - : final
     
 
