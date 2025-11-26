@@ -113,22 +113,15 @@ Los Transformers usan **múltiples cabezas en paralelo**, cada una especializada
 - Sujeto-verbo
 - Dependencia larga
 - Sentimiento
-
 - Estructura sintáctica
-    
 - Resolución de coreferencia
-    
 - etc.
-    
 
 El proceso:
 
 1. Cada head calcula su atención.
-    
 2. Se **concatenan** todas las salidas.
-    
 3. Se proyectan con una capa lineal.
-    
 
 👉 Esto produce representaciones **mucho más ricas y expresivas**.
 
