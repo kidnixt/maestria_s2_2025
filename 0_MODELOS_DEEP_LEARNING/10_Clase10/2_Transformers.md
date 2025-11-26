@@ -260,11 +260,11 @@ $$
 Q = \tilde{Z}^{(l)}_{\text{dec}} \sim (T_y, d_{model})  
 $$
 
-Keys/Values: son las salidas finale
+Keys/Values: son las salidas finales del encoder
 
-[  
+$$
 K = V = Z^{(N)}_{\text{enc}}  
-]
+$$
 
 Atención:
 
