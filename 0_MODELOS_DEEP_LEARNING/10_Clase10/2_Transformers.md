@@ -217,7 +217,7 @@ Es decir:
 
 Durante entrenamiento:
 - Entrada al decoder:  
-    $(\text{}, y_1, \dots, y_{T_y-1})
+    $(\text{BOS}, y_1, \dots, y_{T_y-1})$
     
 - Salida esperada:  
     ((y_1, \dots, y_{T_y}, \text{}))
