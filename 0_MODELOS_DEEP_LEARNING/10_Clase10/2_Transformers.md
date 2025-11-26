@@ -267,17 +267,16 @@ K = V = Z^{(N)} \sim (T_x, d_{model})
 $$
 
 Atención:
-
 $$ 
 H^{(l)}_{\text{enc-dec}} = \mathrm{MHA}(Q,K,V).  
 $$
 
 Luego:
 
-[  
+$$
 \hat{Z}^{(l)}_{\text{dec}}  
 = \mathrm{LayerNorm}!\bigl( \tilde{Z}^{(l)}_{\text{dec}} + H^{(l)}_{\text{enc-dec}}\bigr)  
-]
+$$
 
 Después FFN + Add & Norm igual al encoder.
 
@@ -287,46 +286,43 @@ Después FFN + Add & Norm igual al encoder.
 
 La última capa del decoder produce:
 
-[  
-Z^{(N)}_{\text{dec}} \in (T_y, d_{\text{model}}).  
-]
+$$ 
+Z^{(N)}_{\text{dec}} \sim (T_y, d_{\text{model}}).  
+$$
 
 Para cada posición:
 
-[  
-o_t = Z^{(N)}_{\text{dec},t}, W_{\text{out}} + b_{\text{out}}  
-\quad \in \mathbb{R}^{|V|}  
-]
+$$
+o_t = Z^{(N)}_{\text{dec},t} W_{\text{out}} + b_{\text{out}}  
+\quad \sim ({|V|})  
+$$
+donde $W_{\text{out}} \sim (d_{model}, |V|)$
 
 Probabilidad del token:
-
-[  
+$$
 p(y_t \mid y_{<t}, x) = \mathrm{Softmax}(o_t).  
-]
+$$
 
 ---
 
 # 12. 📏 Observaciones sobre la secuencia de entrada
 
-- El encoder procesa **cualquier longitud (T_x)**.
-    
-- No hay recurrencia temporal.
-    
+- El encoder procesa **cualquier longitud $T_x: X \sim (T_x, d_{model})$. 
+- Procesa de cualquier longitud porque el self-attention se define para cualquier dimension.
+- No hay recurrencia en el tiempo.
 - El positional encoding permite manejar posiciones arbitrarias.
-    
 - Para batches con longitudes distintas → se usa **padding + máscara** para que los no sean atendidos.
-    
 
 ---
 
 # 13. 📐 Observaciones sobre la secuencia de salida
 
-- El decoder genera:
+- El decoder genera autorregresivamente:
     
 
-[  
+$$
 p(y_t \mid y_{<t}, x)  
-]
+$$
 
 - La máscara causal asegura que no se mire el futuro.
     
