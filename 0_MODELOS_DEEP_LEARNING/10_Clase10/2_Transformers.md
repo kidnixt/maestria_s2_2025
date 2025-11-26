@@ -219,41 +219,35 @@ Durante entrenamiento:
 - Entrada al decoder:  
     $(\text{BOS}, y_1, \dots, y_{T_y-1})$
 - Salida esperada:  
-    $(y_1, \dots, y_{T_y}, \text{})
-    
+    $(y_1, \dots, y_{T_y}, \text{EOS})$
 
 Durante inferencia:
-
-- Comienza con
-    
-- Genera tokens hasta producir
-    
+- Comienza con $BOS$
+- Genera tokens hasta producir $EOS$
 
 ---
 
 # 9. 🟥 Decoder: Máscara Causal
 
-La entrada embebida es:
+Se obtienen embeddings + positional encodings:
+$$
+Z^{(0)}_{\text{dec}} \sim (T_y, d_{\text{model}}).  
+$$
 
-[  
-Z^{(0)}_{\text{dec}} \in (T_y, d_{\text{model}}).  
-]
+En la primera subcapá se aplica Masket Multi-Head Self-Attention:
 
-En el self-attention del decoder:
-
-[  
+$$
 Q = K = V = Z^{(l-1)}_{\text{dec}}.  
-]
+$$
 
 La máscara causal impone:
-
-[  
-(QK^\top)_{t,j} =  
-\begin{cases}  
--\infty & j > t, \  
-(QK^\top)_{t,j} & j \le t.  
-\end{cases}  
-]
+$$
+(\mathbf{Q}\mathbf{K}^{\text{T}})_{tj} \to 
+\begin{cases}
+-\infty & j > t, \\
+(\mathbf{Q}\mathbf{K}^{\text{T}})_{tj} & j \le t.
+\end{cases}
+$$
 
 → La softmax ignora posiciones futuras.
 
@@ -261,13 +255,12 @@ La máscara causal impone:
 
 # 10. 🟩 Decoder: Atención Encoder–Decoder (Cross-Attention)
 
-Queries:
+Queries: son las salidas de la subcapa anterior del decoder
+$$
+Q = \tilde{Z}^{(l)}_{\text{dec}} \sim (T_y, d_{model})  
+$$
 
-[  
-Q = \tilde{Z}^{(l)}_{\text{dec}}  
-]
-
-Keys/Values:
+Keys/Values: son las salidas finale
 
 [  
 K = V = Z^{(N)}_{\text{enc}}  
