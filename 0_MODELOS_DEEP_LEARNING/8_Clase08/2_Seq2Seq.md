@@ -143,6 +143,7 @@ $$ \text{input}_1 = \text{SOS}$$
 
 Genera una palabra → se realimenta → genera la siguiente → … hasta **EOS**.
 
+
 Así produce secuencias de longitud arbitraria.
 
 ---
