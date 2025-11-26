@@ -186,14 +186,14 @@ Escalar por $\sqrt{d_k}$ estabiliza los valores.
 
 ## 9. 🧮 Self-Attention (versión matricial final)
 
-# [  
+$$[  
 \text{Attention}(Q,K,V)
 
 \operatorname{Softmax}  
 \left(  
 \frac{QK^\top}{\sqrt{d_k}}  
 \right)V  
-]
+]$$
 
 Esta es exactamente la fórmula usada en los Transformers.
 
