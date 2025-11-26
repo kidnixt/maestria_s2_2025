@@ -163,52 +163,56 @@ $$
 \hat{u}_i = \frac{u_i - \mu}{\sqrt{\sigma^2 + \epsilon}}  
 $$
 
-
+- Luego se aplica un **re-escalado y desplazamiento** con parámetros entrenables:
 $$
 \mathrm{LayerNorm}(u) = \gamma \odot \hat{u} + \beta,  
 \quad \gamma,\beta \sim d.  
 $$
 
-Para una matriz (U \in (T,d)) se aplica **fila a fila**.
+Para una matriz $U \sim (T,d)$ se aplica **fila a fila**.
 
+$$
+\text{LayerNorm}(\mathbf{U}) = \begin{bmatrix}
+\text{LayerNorm}(\mathbf{u}_1) \\
+\vdots \\
+\text{LayerNorm}(\mathbf{u}_T)
+\end{bmatrix}
+$$
 ---
 
 # 7. ⚙️ Feed-Forward Network (FFN)
 
-Para cada vector:
+Se usa una FNN aplicada **independientemente** a cada posición de la secuencia (misma red para todos los tokens)
 
-[  
+Para cada vector $z \sim (d_{model})$
+$$
 \mathrm{FFN}(z) = \sigma(z W_1 + b_1), W_2 + b_2  
-]
+$$
 
 con:
 
-- (W_1 \in (d_{\text{model}}, d_{\text{ff}}))
-    
-- (W_2 \in (d_{\text{ff}}, d_{\text{model}}))
-    
-- (\sigma): ReLU en Vaswani, GELU moderno
-    
+- $W_1 \sim (d_{\text{model}}, d_{\text{ff}})$
+- $W_2 \sim (d_{\text{ff}}, d_{\text{model}})$
+- $\sigma$: ReLU en Vaswani, GELU moderno
 
 En forma matricial:
 
-[  
-\mathrm{FFN}(Z) =  
-\begin{bmatrix}  
-\mathrm{FFN}(Z_{1,:}) \  
-\vdots \  
-\mathrm{FFN}(Z_{T,:})  
-\end{bmatrix}.  
-]
-
-No hay interacción entre posiciones en la FFN.
+$$
+\text{FFN}(\mathbf{Z}) = \begin{bmatrix}
+\text{FFN}(\mathbf{Z}_{1,:}) \\
+\vdots \\
+\text{FFN}(\mathbf{Z}_{T,:})
+\end{bmatrix}
+$$
+Es decir:
+- La misma MLP se aplica fila a fila.
+- No hay interacción entre posiciones en la FNN: toda la mezcla entre tokens viene de la atención.
 
 ---
 
 # 8. 🔤 Tokens especiales del Decoder
 
 - : inicio
-    
 - : final
     
 
