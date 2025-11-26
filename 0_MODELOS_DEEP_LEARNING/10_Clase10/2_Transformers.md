@@ -263,7 +263,7 @@ $$
 Keys/Values: son las salidas finales del encoder
 
 $$
-K = V = Z^{(N)}_{\text{enc}}  
+K = V = Z^{(N)} \sim (T_x, d_{model})  
 $$
 
 Atención:
