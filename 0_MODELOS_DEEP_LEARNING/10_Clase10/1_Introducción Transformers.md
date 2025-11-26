@@ -34,13 +34,9 @@ Pero el significado es **contextual**:
 Para cada palabra:
 
 1. Calcula **scores de relevancia** respecto a todas las otras (producto punto).
-    
 2. Esos scores indican qué tan relacionadas están.
-    
 3. Se aplica **softmax** para normalizar los pesos (suman 1).
-    
 4. Se realiza una **suma ponderada** de todos los vectores → nuevo vector contextual.
-    
 
 Ejemplo:
 
@@ -55,9 +51,7 @@ Resultado: **representaciones context-aware**.
 Cada palabra "mira" al resto:
 
 - Combina su información original + señales relevantes de otras palabras.
-    
 - Produce una representación dinámica, adaptada al contexto.
-    
 
 Esto permite captar **relaciones semánticas complejas**, incluso con distancia arbitraria.
 
@@ -67,24 +61,17 @@ Esto permite captar **relaciones semánticas complejas**, incluso con distancia 
 
 Cada token se proyecta a:
 
-- **Query** (q)
-    
-- **Key** (k)
-    
-- **Value** (v)
-    
+- **Query** $q$
+- **Key** $k$
+- **Value** $v$
 
 Cálculo:
-
 1. **Scores:**  
-    $$ s_{ij} = q_i^\top k_j $$
-    
+ $$ s_{ij} = q_i^\top k_j $$
 2. **Normalización:**  
-    $$ \alpha_{ij} = \text{softmax}(s_{ij}) $$
-    
+$$ \alpha_{ij} = \text{softmax}(s_{ij}) $$
 3. **Salida contextual:**  
-    $$ z_i = \sum_j \alpha_{ij} v_j $$
-    
+$$ z_i = \sum_j \alpha_{ij} v_j $$
 
 🎯 El vector final **zᵢ** incorpora información de toda la oración.
 
@@ -97,9 +84,7 @@ Objetivo: identificar qué partes del **input fuente** son relevantes para cada 
 Pasos:
 
 - Para cada palabra de salida, se calcula similitud con cada palabra fuente.
-    
 - Softmax → distribución de atención.
-    
 - Suma ponderada de los vectores fuente.
     
 
