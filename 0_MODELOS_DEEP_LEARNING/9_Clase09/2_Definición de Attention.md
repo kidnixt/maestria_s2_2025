@@ -95,36 +95,28 @@ $$
 $$
 Donde:
 
-- $$Q \in \mathbb{R}^{m \times p}) → consultas$$
-    
-- (K \in \mathbb{R}^{n \times p}) → claves
-    
-- (V \in \mathbb{R}^{n \times d}) → valores
-    
+- $Q \in \mathbb{R}^{m \times p}$ → consultas
+- $K \in \mathbb{R}^{n \times p}$ → claves
+- $V \in \mathbb{R}^{n \times d}$ → valores
 
 ### 5.1 Producto QKᵀ
 
-Da matriz de similitudes (m\times n):
-
-[  
-(QK^\top)_{j,i} = q_j \cdot k_i  
-]
+Da matriz de similitudes $m\times n$:
+$$  
+QK^\top_{j,i} = q_j \cdot k_i  
+$$
 
 Cada fila → una query comparada con todas las keys.
 
 ### 5.2 Softmax fila a fila
-
-[  
-A = \operatorname{Softmax}(QK^\top)  
-]
+$$  
+A = \operatorname{Softmax}(QK^\top) $$
 
 Cada fila de A es una **distribución sobre keys**.
 
 ### 5.3 Multiplicación por V
-
-[  
-Z = AV  
-]
+ 
+$$Z = AV$$
 
 Cada fila de Z es la combinación ponderada de values para una query.
 
@@ -139,28 +131,21 @@ Self-attention es un caso particular:
 
 ### 6.1 Construcción de Q, K, V
 
-Para cada posición (x_i) se aprenden proyecciones:
-
-[  
-q_i = W_Q x_i,\quad k_i = W_K x_i,\quad v_i = W_V x_i  
-]
+Para cada posición $x_i$ se aprenden proyecciones:
+$$
+q_i = W_Q x_i,\quad k_i = W_K x_i,\quad v_i = W_V x_i $$
 
 El mecanismo compara cada posición consigo misma y con todas las demás.
 
 ### 6.2 Resultado final
 
 Una secuencia de salida:
+$$
+Y = (y_1, \ldots, y_n)  $$
+donde cada $y_i$ incorpora:
 
-[  
-Y = (y_1, \ldots, y_n)  
-]
-
-donde cada (y_i) incorpora:
-
-- el significado de (x_i)
-    
+- el significado de $x_i$
 - relaciones con toda la secuencia completa
-    
 
 👉 Es la base del Transformer Encoder.
 
@@ -168,44 +153,34 @@ donde cada (y_i) incorpora:
 
 ## 7. 📋 Fórmula final de Self-Attention escalar
 
-Dada una query q y un conjunto de keys y values:
+Dada una query $q$ y un conjunto de keys y values:
 
-[  
-z = \sum_{j=1}^n \alpha_j v_j  
-]
-
+$$
+z = \sum_{j=1}^n \alpha_j v_j  $$
 donde:
-
-[  
-\alpha_j = \frac{\exp(f(k_j, q))}{\sum_{i=1}^n \exp(f(k_i, q))}  
-]
-
-y f es la función de compatibilidad.
+$$
+\alpha_j = \frac{\exp(f(k_j, q))}{\sum_{i=1}^n \exp(f(k_i, q))}  $$
+y $f$ es la función de compatibilidad.
 
 ---
 
 ## 8. 🚀 Scaled Dot-Product Attention
 
-Transformers definen f como:
+Transformers definen $f$ como:
+$$
+f(k,q) = \frac{k q^\top}{\sqrt{d_k}}  $$
 
-[  
-f(k,q) = \frac{k q^\top}{\sqrt{d_k}}  
-]
-
-donde (d_k) es la dimensión de las keys.
+donde $d_k$ es la dimensión de las keys.
 
 ### ¿Por qué escalar?
 
-Cuando (d_k) crece:
+Cuando $d_k$ crece:
 
 - dot-products tienen varianza mayor
-    
 - softmax se “satura” más fácilmente
-    
 - entrenamiento pierde estabilidad
-    
 
-Escalar por (\sqrt{d_k}) estabiliza los valores.
+Escalar por $\sqrt{d_k}$ estabiliza los valores.
 
 ---
 
