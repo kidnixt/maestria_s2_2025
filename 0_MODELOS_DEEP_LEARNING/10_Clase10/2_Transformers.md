@@ -1,0 +1,428 @@
+
+# 📘 Apuntes – Deep Learning: **Transformers (Parte 2)**
+
+_(Basado en Teórico MDL 21 – Arquitectura Encoder/Decoder del Transformer)_
+
+---
+
+# 1. 🎯 Visión general del Transformer (Vaswani et al., 2017)
+
+El Transformer introduce una arquitectura completamente basada en **atención**, compuesta de dos bloques principales:
+- **Encoder** (izquierda)
+- **Decoder** (derecha)
+Ambos construidos repitiendo **N bloques** idénticos.
+
+## 1.1 Encoder
+
+Cada bloque aplica, en este orden:
+1. **Multi-Head Attention**
+2. **Add & LayerNorm**
+3. **Feed-Forward Network (FFN)**
+4. **Add & LayerNorm**
+
+## 1.2 Decoder
+
+Cada bloque aplica:
+1. **Masked Multi-Head Self-Attention**
+2. **Multi-Head Attention sobre las salidas del encoder**
+3. **Feed-Forward Network**
+4. **Add & LayerNorm** después de cada operación
+
+Al final del decoder:
+
+- Proyección lineal
+- Softmax sobre el vocabulario
+
+---
+
+# 2. 🔡 Embeddings + Positional Encoding
+
+Dada una secuencia de entrada:
+$$ 
+x = (x_1, \dots, x_{T_x}),\quad x_t \in V.  
+$$
+
+Cada token se convierte en un embedding:
+
+$$
+e_t = E(x_t) \in \mathbb{R}^{d_{\text{model}}}.  
+$$
+Se suma el **Positional Encoding** correspondiente:
+$$
+z_t^{(0)} = e_t + PE_t.  
+$$
+
+En forma matricial:
+
+$$
+Z^{(0)} =  
+\begin{bmatrix}  
+(z_1^{(0)})^\top \  
+\vdots \  
+(z_{T_x}^{(0)})^\top  
+\end{bmatrix}  
+\in| \mathbb{R}^{T_x \times d_{\text{model}}}.  
+$$
+
+Esta matriz entra al primer encoder.
+
+---
+
+# 3. 🧱 Bloque del Encoder
+
+Para cada capa (l = 1,\dots,N):
+
+Entrada:  
+[  
+Z^{(l-1)} \in \mathbb{R}^{T_x \times d_{\text{model}}}.  
+]
+
+## 3.1 Multi-Head Self-Attention
+
+[  
+H^{(l)} = \mathrm{MHA}(Z^{(l-1)}, Z^{(l-1)}, Z^{(l-1)}).  
+]
+
+## 3.2 Residual + LayerNorm
+
+[  
+\tilde{Z}^{(l)} = \mathrm{LayerNorm}(Z^{(l-1)} + H^{(l)}).  
+]
+
+## 3.3 Feed-Forward Network
+
+[  
+F^{(l)} = \mathrm{FFN}(\tilde{Z}^{(l)}).  
+]
+
+## 3.4 Residual + LayerNorm final
+
+[  
+Z^{(l)} = \mathrm{LayerNorm}(\tilde{Z}^{(l)} + F^{(l)}).  
+]
+
+---
+
+# 4. 🧠 Multi-Head Attention (MHA)
+
+Dadas matrices:
+
+- (Q \in (m, d_{\text{model}}))
+    
+- (K \in (n, d_{\text{model}}))
+    
+- (V \in (n, d_{\text{model}}))
+    
+
+Cada head (i) proyecta:
+
+[  
+Q_i = Q W_i^Q,\quad K_i = K W_i^K,\quad V_i = V W_i^V,  
+]
+
+con:
+
+- (W_i^Q, W_i^K \in (d_{\text{model}}, d_k))
+    
+- (W_i^V \in (d_{\text{model}}, d_v))
+    
+
+## 4.1 Atención por head
+
+[  
+\text{head}_i = \mathrm{Softmax}!\left(\frac{Q_i K_i^\top}{\sqrt{d_k}}\right) V_i  
+\quad \in \mathbb{R}^{m \times d_v}.  
+]
+
+## 4.2 Salida final del MHA
+
+[  
+\mathrm{MHA}(Q,K,V) = \mathrm{Concat}(\text{head}_1,\dots,\text{head}_h), W^O,  
+]
+
+donde (W^O \in (h d_v, d_{\text{model}})).
+
+---
+
+# 5. 🔁 Self-Attention en el Encoder
+
+En el encoder:
+
+[  
+Q = K = V = Z^{(l-1)}.  
+]
+
+Cada head:
+
+[  
+\text{head}_i^{(l)} =  
+\mathrm{Softmax}!\left(  
+\frac{Z^{(l-1)} W_i^Q (Z^{(l-1)} W_i^K)^\top}{\sqrt{d_k}}  
+\right) Z^{(l-1)} W_i^V.  
+]
+
+Cada fila de la salida es una **combinación lineal** de todas las posiciones de entrada.
+
+---
+
+# 6. 🧮 Layer Normalization
+
+Dado (u = (u_1,\dots,u_d)):
+
+[  
+\mu = \frac{1}{d} \sum u_i,\qquad  
+\sigma^2 = \frac{1}{d}\sum (u_i - \mu)^2  
+]
+
+[  
+\hat{u}_i = \frac{u_i - \mu}{\sqrt{\sigma^2 + \epsilon}}  
+]
+
+[  
+\mathrm{LayerNorm}(u) = \gamma \odot \hat{u} + \beta,  
+\quad \gamma,\beta \in \mathbb{R}^d.  
+]
+
+Para una matriz (U \in (T,d)) se aplica **fila a fila**.
+
+---
+
+# 7. ⚙️ Feed-Forward Network (FFN)
+
+Para cada vector:
+
+[  
+\mathrm{FFN}(z) = \sigma(z W_1 + b_1), W_2 + b_2  
+]
+
+con:
+
+- (W_1 \in (d_{\text{model}}, d_{\text{ff}}))
+    
+- (W_2 \in (d_{\text{ff}}, d_{\text{model}}))
+    
+- (\sigma): ReLU en Vaswani, GELU moderno
+    
+
+En forma matricial:
+
+[  
+\mathrm{FFN}(Z) =  
+\begin{bmatrix}  
+\mathrm{FFN}(Z_{1,:}) \  
+\vdots \  
+\mathrm{FFN}(Z_{T,:})  
+\end{bmatrix}.  
+]
+
+No hay interacción entre posiciones en la FFN.
+
+---
+
+# 8. 🔤 Tokens especiales del Decoder
+
+- : inicio
+    
+- : final
+    
+
+Durante entrenamiento:
+
+- Entrada al decoder:  
+    ((\text{}, y_1, \dots, y_{T_y-1}))
+    
+- Salida esperada:  
+    ((y_1, \dots, y_{T_y}, \text{}))
+    
+
+Durante inferencia:
+
+- Comienza con
+    
+- Genera tokens hasta producir
+    
+
+---
+
+# 9. 🟥 Decoder: Máscara Causal
+
+La entrada embebida es:
+
+[  
+Z^{(0)}_{\text{dec}} \in (T_y, d_{\text{model}}).  
+]
+
+En el self-attention del decoder:
+
+[  
+Q = K = V = Z^{(l-1)}_{\text{dec}}.  
+]
+
+La máscara causal impone:
+
+[  
+(QK^\top)_{t,j} =  
+\begin{cases}  
+-\infty & j > t, \  
+(QK^\top)_{t,j} & j \le t.  
+\end{cases}  
+]
+
+→ La softmax ignora posiciones futuras.
+
+---
+
+# 10. 🟩 Decoder: Atención Encoder–Decoder (Cross-Attention)
+
+Queries:
+
+[  
+Q = \tilde{Z}^{(l)}_{\text{dec}}  
+]
+
+Keys/Values:
+
+[  
+K = V = Z^{(N)}_{\text{enc}}  
+]
+
+Atención:
+
+[  
+H^{(l)}_{\text{enc-dec}} = \mathrm{MHA}(Q,K,V).  
+]
+
+Luego:
+
+[  
+\hat{Z}^{(l)}_{\text{dec}}  
+= \mathrm{LayerNorm}!\bigl( \tilde{Z}^{(l)}_{\text{dec}} + H^{(l)}_{\text{enc-dec}}\bigr)  
+]
+
+Después FFN + Add & Norm igual al encoder.
+
+---
+
+# 11. 🧾 Salida final del Decoder
+
+La última capa del decoder produce:
+
+[  
+Z^{(N)}_{\text{dec}} \in (T_y, d_{\text{model}}).  
+]
+
+Para cada posición:
+
+[  
+o_t = Z^{(N)}_{\text{dec},t}, W_{\text{out}} + b_{\text{out}}  
+\quad \in \mathbb{R}^{|V|}  
+]
+
+Probabilidad del token:
+
+[  
+p(y_t \mid y_{<t}, x) = \mathrm{Softmax}(o_t).  
+]
+
+---
+
+# 12. 📏 Observaciones sobre la secuencia de entrada
+
+- El encoder procesa **cualquier longitud (T_x)**.
+    
+- No hay recurrencia temporal.
+    
+- El positional encoding permite manejar posiciones arbitrarias.
+    
+- Para batches con longitudes distintas → se usa **padding + máscara** para que los no sean atendidos.
+    
+
+---
+
+# 13. 📐 Observaciones sobre la secuencia de salida
+
+- El decoder genera:
+    
+
+[  
+p(y_t \mid y_{<t}, x)  
+]
+
+- La máscara causal asegura que no se mire el futuro.
+    
+- El largo de salida (T_y) es variable.
+    
+- El cross-attention permite que (T_x \neq T_y).
+    
+
+---
+
+# 14. 🌀 Positional Encoding: Motivación
+
+El self-attention es **invariante a permutaciones**.  
+Depende solo de productos escalares entre filas de Q, K y V.
+
+Por eso se suma:
+
+[  
+z_t = e_t + PE_t.  
+]
+
+El vector (PE_t) debe tener dimensión (d_{\text{model}}).
+
+---
+
+# 15. 🔊 Positional Encoding Sinusoidal
+
+Para posición (pos) y coordenada (i):
+
+[  
+PE(pos, 2i) = \sin!\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right),  
+]
+
+[  
+PE(pos, 2i+1) = \cos!\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right).  
+]
+
+Propiedades:
+
+- Frecuencias decrecen geométricamente
+    
+- No requiere parámetros
+    
+- Permiten extrapolación a secuencias más largas
+    
+
+---
+
+# 16. 📚 Bibliografía
+
+- Vaswani et al., 2017 – _Attention Is All You Need_
+    
+- Alammar, 2018 – _The Illustrated Transformer_
+    
+
+---
+
+# ✅ Conclusiones
+
+- El Transformer encoder–decoder combina **self-attention**, **cross-attention**, **FFNs**, **LayerNorm** y **residuals** en una arquitectura flexible.
+    
+- El encoder procesa secuencias completas con **self-attention bidireccional**.
+    
+- El decoder usa:
+    
+    - **máscara causal** (autoregresión),
+        
+    - **cross-attention** (consulta al encoder).
+        
+- La salida final se obtiene mediante una capa lineal seguida de softmax.
+    
+- El positional encoding permite introducir la noción de **orden**.
+    
+- La arquitectura es totalmente paralelizable, sin recurrencia, y maneja secuencias de longitudes variables.
+    
+
+---
+
+Si querés, seguimos inmediatamente con el próximo PDF 📘🔥
