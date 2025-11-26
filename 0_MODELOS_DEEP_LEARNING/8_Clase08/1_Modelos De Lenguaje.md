@@ -143,6 +143,8 @@ $$
 \hat{y} = \text{softmax}(Uh + b_2) \in \mathbb{R}^{|V|}  
 $$
 
+![[Pasted image 20251126142729.png]]
+
 ### ✔️ Ventajas:
 
 - Ya no necesitamos almacenar todos los n-gramas.
