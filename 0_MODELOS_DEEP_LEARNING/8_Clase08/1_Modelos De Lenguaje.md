@@ -69,8 +69,8 @@ P(x^{(t+1)} \mid x^{(t)}, x^{(t-1)}).
 $$
 
 Estimación a partir de frecuencias:
-
-# $$  
+ 
+$$  
 P(x^{(t+1)} | x^{(t)}, \ldots, x^{(t-N+2)})
 
 \frac{\text{count}(x^{(t-N+2)}, \ldots, x^{(t)}, x^{(t+1)})}  
@@ -81,6 +81,8 @@ $$
 
 ## 4. 🧪 Ejemplo numérico de 4-gramas
 
+
+![[Pasted image 20251126142604.png]]
 Supongamos:
 
 - count(a glass of) = 1000
@@ -104,17 +106,14 @@ $$
 1. **N pequeño → modelo limitado**
     - Solo captura dependencias cortas.
     - “Corto de vista”.
-    
 2. **N grande → explosión combinatoria**
     - Costo exponencial en $|V|^N$.
     - La mayoría de los n-gramas **sparse**: casi nunca aparecen.
-        
 3. **Lenguas flexibles → peor desempeño**
     - Idiomas con orden de palabras variable generan combinaciones muy dispersas.
-        
 4. **Oraciones largas inrepresentables**
     - No importa cuán grande sea N, siempre existe una oración que supera esa ventana.
-        
+
 
 ---
 
