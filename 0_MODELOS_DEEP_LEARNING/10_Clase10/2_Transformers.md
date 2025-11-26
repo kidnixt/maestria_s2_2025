@@ -53,7 +53,6 @@ z_t^{(0)} = e_t + PE_t.
 $$
 
 En forma matricial:
-
 $$
 \mathbf{z}^{(0)} = \begin{bmatrix}
 (\mathbf{z}_1^{(0)})^{\text{T}} \\
@@ -68,36 +67,30 @@ Esta matriz entra al primer encoder.
 
 # 3. 🧱 Bloque del Encoder
 
-Para cada capa (l = 1,\dots,N):
+Para cada capa $l = 1,\dots,N$:
 
 Entrada:  
-[  
-Z^{(l-1)} \in \mathbb{R}^{T_x \times d_{\text{model}}}.  
-]
-
+$$ 
+Z^{(l-1)} \sim (T_x, d_{\text{model}}).  
+$$
 ## 3.1 Multi-Head Self-Attention
 
-[  
+$$
 H^{(l)} = \mathrm{MHA}(Z^{(l-1)}, Z^{(l-1)}, Z^{(l-1)}).  
-]
-
+$$
 ## 3.2 Residual + LayerNorm
-
-[  
+$$ 
 \tilde{Z}^{(l)} = \mathrm{LayerNorm}(Z^{(l-1)} + H^{(l)}).  
-]
-
+$$
 ## 3.3 Feed-Forward Network
-
-[  
+$$ 
 F^{(l)} = \mathrm{FFN}(\tilde{Z}^{(l)}).  
-]
-
+$$
 ## 3.4 Residual + LayerNorm final
 
-[  
+$$ 
 Z^{(l)} = \mathrm{LayerNorm}(\tilde{Z}^{(l)} + F^{(l)}).  
-]
+$$
 
 ---
 
@@ -105,18 +98,14 @@ Z^{(l)} = \mathrm{LayerNorm}(\tilde{Z}^{(l)} + F^{(l)}).
 
 Dadas matrices:
 
-- (Q \in (m, d_{\text{model}}))
-    
-- (K \in (n, d_{\text{model}}))
-    
-- (V \in (n, d_{\text{model}}))
-    
+- $Q \sim (m, d_{\text{model}})$
+- $K \sim (n, d_{\text{model}})$
+- $V \sim (n, d_{\text{model}})$
 
-Cada head (i) proyecta:
-
-[  
+Cada head $i$ proyecta:
+$$
 Q_i = Q W_i^Q,\quad K_i = K W_i^K,\quad V_i = V W_i^V,  
-]
+$$
 
 con:
 
