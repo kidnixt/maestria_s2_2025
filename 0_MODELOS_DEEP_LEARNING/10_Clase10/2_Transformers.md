@@ -268,9 +268,9 @@ $$
 
 Atención:
 
-[  
+$$ 
 H^{(l)}_{\text{enc-dec}} = \mathrm{MHA}(Q,K,V).  
-]
+$$
 
 Luego:
 
