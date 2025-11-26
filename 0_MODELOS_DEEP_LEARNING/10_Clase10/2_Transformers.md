@@ -158,6 +158,7 @@ $$
 \sigma^2 = \frac{1}{d}\sum (u_i - \mu)^2  
 $$
 
+- Luego se normaliza ca
 $$
 \hat{u}_i = \frac{u_i - \mu}{\sqrt{\sigma^2 + \epsilon}}  
 $$
