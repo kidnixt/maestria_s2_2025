@@ -213,7 +213,7 @@ Es decir:
 # 8. 🔤 Tokens especiales del Decoder
 
 - $BOS$: inicio
-- : final
+- $EOS$: final
     
 
 Durante entrenamiento:
