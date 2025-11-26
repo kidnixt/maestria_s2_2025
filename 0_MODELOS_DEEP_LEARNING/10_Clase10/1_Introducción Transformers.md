@@ -22,9 +22,7 @@ Los **word embeddings clásicos** asignan un único vector fijo por palabra.
 Pero el significado es **contextual**:
 
 - “go on a **date**” ≠ “mark the **date**”
-    
 - “see you **soon**” ≠ “see what you **mean**”
-    
 
 ✦ Necesitamos representaciones **dependientes del contexto**.  
 ✦ El **self-attention** lo resuelve: cada palabra ajusta su representación en función de todas las demás del enunciado.
