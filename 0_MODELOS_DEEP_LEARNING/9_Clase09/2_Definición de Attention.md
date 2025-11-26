@@ -95,7 +95,7 @@ $$
 $$
 Donde:
 
-- $$Q \in \mathbb{R}^{m \times p}) → consultas
+- $$Q \in \mathbb{R}^{m \times p}) → consultas$$
     
 - (K \in \mathbb{R}^{n \times p}) → claves
     
