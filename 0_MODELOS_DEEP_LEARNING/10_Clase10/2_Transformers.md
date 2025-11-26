@@ -214,7 +214,6 @@ Es decir:
 
 - $BOS$: inicio
 - $EOS$: final
-    
 
 Durante entrenamiento:
 
