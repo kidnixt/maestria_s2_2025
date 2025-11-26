@@ -111,11 +111,9 @@ Un único head capta un solo tipo de relación.
 Los Transformers usan **múltiples cabezas en paralelo**, cada una especializada en un patrón:
 
 - Sujeto-verbo
-    
 - Dependencia larga
-    
 - Sentimiento
-    
+
 - Estructura sintáctica
     
 - Resolución de coreferencia
