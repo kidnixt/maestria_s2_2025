@@ -111,7 +111,7 @@ con:
 
 - $W_i^Q, W_i^K \sim (d_{\text{model}}, d_k)$
     
-- (W_i^V \in (d_{\text{model}}, d_v))
+- $W_i^V \in (d_{\text{model}}, d_v)$
     
 
 ## 4.1 Atención por head
