@@ -116,16 +116,15 @@ con:
 
 $$
 \text{head}_i = \mathrm{Softmax}\left(\frac{Q_i K_i^\top}{\sqrt{d_k}}\right) V_i  
-\quad \in \mathbb{R}^{m \times d_v}.  
+\quad \sim (m \times d_v).  
 $$
-
 ## 4.2 Salida final del MHA
 
-[  
-\mathrm{MHA}(Q,K,V) = \mathrm{Concat}(\text{head}_1,\dots,\text{head}_h), W^O,  
-]
+$$
+\mathrm{MHA}(Q,K,V) = \mathrm{Concat}(\text{head}_1,\dots,\text{head}_h), W^O  
+$$
 
-donde (W^O \in (h d_v, d_{\text{model}})).
+donde $W^O \sim (h d_v, d_{\text{model}})$.
 
 ---
 
@@ -133,35 +132,35 @@ donde (W^O \in (h d_v, d_{\text{model}})).
 
 En el encoder:
 
-[  
-Q = K = V = Z^{(l-1)}.  
-]
-
+$$ 
+Q = K = V = Z^{(l-1)} \sim (T_x, d_{\text{model}})  
+$$
 Cada head:
-
-[  
+$$
 \text{head}_i^{(l)} =  
-\mathrm{Softmax}!\left(  
+\mathrm{Softmax}\left(  
 \frac{Z^{(l-1)} W_i^Q (Z^{(l-1)} W_i^K)^\top}{\sqrt{d_k}}  
 \right) Z^{(l-1)} W_i^V.  
-]
+$$
 
-Cada fila de la salida es una **combinación lineal** de todas las posiciones de entrada.
+Cada fila de la salida es una **combinación lineal** de todas las posiciones de entrada. La concatenación de todas las heads y la proyección final dan $H^{l}$
 
 ---
 
 # 6. 🧮 Layer Normalization
 
-Dado (u = (u_1,\dots,u_d)):
+Dado $u = (u_1,\dots,u_d)$:
+- **LayerNorm** normaliza el vector a lo largo de sus coordenadas (no en batch)
+- Se calculan media y varianza
 
-[  
+$$
 \mu = \frac{1}{d} \sum u_i,\qquad  
 \sigma^2 = \frac{1}{d}\sum (u_i - \mu)^2  
-]
+$$
 
-[  
+$$
 \hat{u}_i = \frac{u_i - \mu}{\sqrt{\sigma^2 + \epsilon}}  
-]
+$$
 
 [  
 \mathrm{LayerNorm}(u) = \gamma \odot \hat{u} + \beta,  
