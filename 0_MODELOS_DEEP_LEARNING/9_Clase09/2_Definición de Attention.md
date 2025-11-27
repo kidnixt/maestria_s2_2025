@@ -198,10 +198,10 @@ La PPT define self-attention como aplicar la atención a **cada posición** de l
 
 La PPT resume la operación como:
 
-[  
+$$
 z = \sum_{j=1}^n \alpha_j v_j,\qquad  
 \alpha_j = \frac{\exp(f(k_j,q))}{\sum_{i=1}^n \exp(f(k_i,q))},  
-]
+$$
 
 es decir, (\alpha_j) es la softmax de las compatibilidades (f(k_j,q)).
 
