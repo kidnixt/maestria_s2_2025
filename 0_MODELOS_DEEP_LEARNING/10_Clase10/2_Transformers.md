@@ -279,7 +279,7 @@ $$
 H^{(l)}_{\text{enc-dec}} = \mathrm{MHA}(Q,K,V).  
 $$
 
-Luego:
+Seguido de:
 
 $$
 \hat{Z}^{(l)}_{\text{dec}}  
