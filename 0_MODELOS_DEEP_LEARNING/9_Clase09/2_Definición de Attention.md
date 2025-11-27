@@ -17,9 +17,7 @@
 - Se definen los espacios:
     
     - Espacio de **queries**: (Q)
-        
     - Espacio de **keys**: (K)
-        
     - Espacio de **values**: (V)
         
     - Espacio de diccionarios (pares key–value): ({K:V})
