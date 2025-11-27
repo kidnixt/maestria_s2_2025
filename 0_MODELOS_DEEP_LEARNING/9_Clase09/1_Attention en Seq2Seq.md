@@ -275,7 +275,6 @@ $$p(y_i) = \text{Softmax}(W_o s_i + b_o)$$
 - Idea de Bahdanau et al. (2014): **permitir que el modelo "soft-search"** automáticamente qué partes de la oración fuente son relevantes para predecir cada palabra objetivo, en lugar de comprimirlo todo en un único vector.
 - Resultado: **aprender a alinear y traducir conjuntamente**.
 
-
 ---
 
 ## 2. 🔁 Encoder–Decoder clásico (antes de Bahdanau)
