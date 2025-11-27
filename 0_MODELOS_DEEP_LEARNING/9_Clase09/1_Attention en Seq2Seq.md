@@ -465,7 +465,7 @@ El decoder combina tres fuentes de información:
 
 - Embedding de la palabra target anterior $y_{i-1} : \tilde{e}_{i-1}$ .
     
-- **Prev hidden**: (s_{i-1}).
+- **Prev hidden del decoder**: $s_{i-1}).
     
 - **Encoder outputs**: ({h_1,\dots,h_{T_x}}).
     
