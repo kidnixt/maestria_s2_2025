@@ -1,7 +1,7 @@
 
 # 📘 Apuntes – Deep Learning: Definición de Attention
 
-_(resumen **fiel al orden** de la PPT)_
+
 
 ---
 
