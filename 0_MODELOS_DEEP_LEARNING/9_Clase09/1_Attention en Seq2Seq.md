@@ -450,15 +450,20 @@ $$
 c_i = \sum_{j=1}^{T_x} \alpha_{ij} h_j.  
 $$
 
-Interpretación: el modelo decide “dónde mirar” y forma (c_i) como la suma ponderada de las anotaciones.
+Interpretración probabilística:
+
+- $\alpha_{ij}$ = puede verse como la probabilidad de que $y_i$ se traduzca desde $x_j$
+- $c_i$ = “esperanza” de las anotaciones $h_j$ bajo esa distribución
+
+Interpretación: el modelo decide “dónde mirar” y forma $c_i$ como la suma ponderada de las anotaciones.
 
 ---
 
 ## 13. 🔁 Decoder GRU con atención (entradas y actualización)
 
-Entradas al decoder en el paso (i) (según PPT):
+El decoder combina tres fuentes de información:
 
-- **Input**: la palabra target anterior (y_{i-1}).
+- Embedding de la palabra target anterior $y_{i-1}$.
     
 - **Prev hidden**: (s_{i-1}).
     
@@ -467,7 +472,7 @@ Entradas al decoder en el paso (i) (según PPT):
 
 La palabra previa se convierte en embedding y se aplica dropout:
 
-[  
+$$
 \text{embedded} = E(y_{i-1}),\qquad \tilde{e}_{i-1} = \text{Dropout}(E(y_{i-1})).  
 ]
 
