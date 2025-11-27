@@ -387,6 +387,7 @@ En cada paso del decoder, el modelo **decide a qué partes de la secuencia fuent
 
 - El encoder produce hiddens
 - El decoder tiene un hidden previo $s_{i-1}$ y la palabra anterior $y_{i-1}$
+- La atenci
 
 
 ## 10. ⚙️ Parametrización del alignment (cómo se calcula $e_{ij}$)
