@@ -404,7 +404,6 @@ $$
 
 - $v$es un parámetro (vector) independiente de $i,j$.
 - Las $\tilde{v}_{ij}$ son vectores intermedios que dependen de la posición $j$ y del paso $i$.
-    
 
 ---
 
