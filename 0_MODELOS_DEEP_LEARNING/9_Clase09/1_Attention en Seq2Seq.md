@@ -438,9 +438,8 @@ A partir  de los vectores $\tilde{v}_{ij}$, se obtienen **scores escalares** de 
 	- Lo que da un score para cada posición $j$ del input.
 - $\tilde{v}_{j} \rightarrow$ vector intermedio dependiente de $j$
 - $v$ (no depende de $i$ y $j$) $\rightarrow$ parámetros del mecanismo de atención
-- $\alpha_{ij}$ es la probabilidad de alinear 
-- El vector (\alpha_i = (\alpha_{i1},\dots,\alpha_{iT_x})) son los pesos de atención para el paso (i).
-    
+- $\alpha_{ij}$ es la probabilidad de alinear $y_i$ con la posición $j$ del input.
+- El vector $\alpha_i = (\alpha_{i1},\dots,\alpha_{iT_x})$ son los pesos de atención para el paso $i$.
 
 ---
 
