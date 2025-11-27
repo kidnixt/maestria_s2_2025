@@ -109,7 +109,7 @@ Agrupando queries, keys y values en matrices:
     
 - $K \in \mathbb{R}^{n\times p}$ (filas: keys)
     
-- (V \in \mathbb{R}^{n\times d}$ (filas: values)
+- $V \in \mathbb{R}^{n\times d}$ (filas: values)
     
 
 La operación se escribe:
