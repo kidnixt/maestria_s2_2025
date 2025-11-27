@@ -274,7 +274,7 @@ $$
 K = V = Z^{(N)} \sim (T_x, d_{model})  
 $$
 
-Atención:
+Se aplica Mu:
 $$ 
 H^{(l)}_{\text{enc-dec}} = \mathrm{MHA}(Q,K,V).  
 $$
