@@ -266,18 +266,15 @@ $$p(y_i) = \text{Softmax}(W_o s_i + b_o)$$
 
 # 📘 Apuntes – Deep Learning: Atención en Seq2Seq (Bahdanau et al., 2014)
 
-_(resumen fiel al orden y contenido de la PPT)_
 
 ---
 
 ## 1. 🎯 Extracto / motivación (abstract)
 
 - Problema: los encoder–decoder clásicos codifican la oración fuente en **un único vector de longitud fija**, lo cual es un **cuello de botella** para traducción y tareas similares.
-    
 - Idea de Bahdanau et al. (2014): **permitir que el modelo "soft-search"** automáticamente qué partes de la oración fuente son relevantes para predecir cada palabra objetivo, en lugar de comprimirlo todo en un único vector.
-    
 - Resultado: **aprender a alinear y traducir conjuntamente**.
-    
+
 
 ---
 
