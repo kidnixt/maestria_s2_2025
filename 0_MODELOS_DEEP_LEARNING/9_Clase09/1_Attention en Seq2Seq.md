@@ -302,37 +302,30 @@ $$p(y_t \mid \cdot) = g(y_{t-1}, s_t, c))$$donde $s_t$ es el hidden del decoder.
 
 ## 4. 🧩 Modelo con atención (formulación central)
 
-- Nuevo modelado para cada (i):
+- Nuevo modelado para cada $i$:
 
-[  
+$$
 p(y_i \mid y_{1:i-1}, x) = g(y_{i-1}, s_i, c_i)  
-]
+$$
 
-- La actualización del hidden del decoder incorpora (c_i):
-    
+- La actualización del hidden del decoder incorpora $c_i$:
 
-[  
+$$
 s_i = f(s_{i-1}, y_{i-1}, c_i).  
-]
+$$
 
-- Importante: **(c_i) depende de (i)** (un vector distinto por cada paso del decoder).
-    
+- Importante: **$c_i$ depende de $i$** (un vector distinto por cada paso del decoder).
 
 ---
 
 ## 5. 🏗️ Arquitectura (esquema)
 
-- Encoder produce la secuencia de anotaciones (hiddens) (h_1,\dots,h_{T_x}).
+- Encoder produce la secuencia de anotaciones (hiddens) $h_1,\dots,h_{T_x}$.
+- Para cada paso $i$ del decoder:
+    - Se calcula $c_i$ a partir de los $h_j$.
+    - El decoder (con su hidden previo $s_{i-1}$ y la palabra previa $y_{i-1})$ genera $s_i$ y predice $y_i$.
+- En entrenamiento suele usarse _teacher forcing_ (dar $y_{i-1}$ real como entrada).
     
-- Para cada paso (i) del decoder:
-    
-    - Se calcula (c_i) a partir de los (h_j).
-        
-    - El decoder (con su hidden previo (s_{i-1}) y la palabra previa (y_{i-1})) genera (s_i) y predice (y_i).
-        
-- En entrenamiento suele usarse _teacher forcing_ (dar (y_{i-1}) real como entrada).
-    
-
 (La PPT muestra un diagrama con encoder → atención → decoder, y flujo train/inference.)
 
 ---
