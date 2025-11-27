@@ -1,6 +1,3 @@
-Perfecto — voy a seguir **exactamente el orden de la PPT** y **no improviso nada**: cada sección corresponde a la diapositiva en el mismo orden, con las mismas fórmulas que aparecen allí. Solo explico, nada agregado ni omitido. Las referencias provienen del PDF que me diste.
-
----
 
 # 📘 Apuntes – Deep Learning: Definición de Attention
 
