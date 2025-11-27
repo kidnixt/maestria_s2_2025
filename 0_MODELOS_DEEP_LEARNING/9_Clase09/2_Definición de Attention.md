@@ -32,10 +32,9 @@
 
 -  $Q=\mathbb{R}^p \quad\wedge\quad q = [q_1,\dots, q_p]$ 
 - $K=\mathbb{R}^p \quad\wedge\quad k = [k_1,\dots, k_p]$
-- $V=\mathbb{R}^d \quad\wedge\quad v = [v_1,\dots, q_p]$
+- $V=\mathbb{R}^d \quad\wedge\quad v = [v_1,\dots, q_d]$
 
-
-$K=\mathbb{R}^p,; k_i\in\mathbb{R}^p) y (V=\mathbb{R}^d,; v_i\in\mathbb{R}^d), entonces la atención para una query (q) y pares ({k_i:v_i}_{i=1}^n) tiene la forma:
+Entonces, la fun
 
 [  
 \text{Attention}\big(q,{k_i:v_i}_{i=1}^n\big) ;=; \sum_{i=1}^n \alpha_i\big(q,{k_j}_{j=1}^n\big), v_i,  
