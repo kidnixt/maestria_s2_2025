@@ -464,12 +464,9 @@ Interpretación: el modelo decide “dónde mirar” y forma $c_i$ como la suma 
 El decoder combina tres fuentes de información:
 
 - Embedding de la palabra target anterior $y_{i-1} : \tilde{e}_{i-1}$ .
+- **Prev hidden del decoder**: $s_{i-1}$.
+- **Context vector actual:** $c_i$
     
-- **Prev hidden del decoder**: $s_{i-1}).
-    
-- **Encoder outputs**: ({h_1,\dots,h_{T_x}}).
-    
-
 La palabra previa se convierte en embedding y se aplica dropout:
 
 $$
@@ -478,39 +475,37 @@ $$
 
 Luego el GRU del decoder actualiza el estado combinando el embedding y el context vector:
 
-[  
+$$
 s_i = \mathrm{GRU}([\tilde{e}_{i-1}, c_i],; s_{i-1}).  
-]
+$$
 
-Así (s_i) incorpora tanto la historia del decoder como la información de la fuente relevante (vía (c_i)).
+El nuevo hidden $s_i$ está influenciado tanto por la historia del decoder como por las partes relevantes de la secuencia fuente seleccionadas por la atención.
+
 
 ---
 
 ## 14. 🔚 Salida y distribución sobre la próxima palabra
 
-A partir del nuevo hidden (s_i) se calcula el logit y la probabilidad:
-
-[  
+A partir del nuevo hidden $s_i$ se calcula el logit y la probabilidad:
+$$
 o_i = W_o s_i + b_o,  
-]
+$$
 
-[  
+$$
 p(y_i \mid y_{1:i-1}, x) = \mathrm{Softmax}(o_i).  
-]
+$$
 
 ---
 
 ## 15. ✅ Resumen paso a paso (operacional) — paso (i)
 
-1. **Calcular scores** (e_{ij}) usando (a(s_{i-1}, h_j)) (proyección + tanh + (v^\top)).
-    
-2. **Obtener pesos** (\alpha_{ij} = \text{Softmax}_j(e_{i1},\dots,e_{iT_x})).
-    
-3. **Formar context vector** (c_i = \sum_j \alpha_{ij} h_j).
-    
-4. **Actualizar hidden** del decoder: (s_i = \mathrm{GRU}([\tilde{e}_{i-1}, c_i], s_{i-1})).
-    
-5. **Predecir**: (o_i = W_o s_i + b_o) → (p(y_i)=\text{Softmax}(o_i)).
+1. **Calcular scores** $e_{ij}$ usando $a(s_{i-1}, h_j)$ (proyección + tanh + $v^\top$).
+2. **Obtener pesos** $\alpha_{ij} = \text{Softmax}_j(e_{i1},\dots,e_{iT_x})$.
+3. **Formar context vector** $c_i = \sum_j \alpha_{ij} h_j$.
+4. **Actualizar hidden** del decoder: $s_i = \mathrm{GRU}([\tilde{e}_{i-1}, c_i], s_{i-1}$.
+5. Aplicar una capa lineal + softmax
+	1. **Predecir**: $o_i = W_o s_i + b_o$ → (p(y_i)=\text{Softmax}(o_i)).
+
     
 
 (Esta lista sigue estrictamente el flujo que aparece en la PPT.)
