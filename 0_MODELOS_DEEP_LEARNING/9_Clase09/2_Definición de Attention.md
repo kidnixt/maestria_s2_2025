@@ -45,10 +45,14 @@ donde las $\alpha_i$ calculan la **compatibilidad** entre $q$ y las keys.
 ---
 ## 4. 🔺 Casos extremos de compatibilidad
 
-- **Winner-takes-all (extremo):**  $$
+- **Winner-takes-all (extremo):** 
+- Interpretración: el modelo "fija la vista" en un único elemento.
+
+$$
     \alpha_i(q,\{k_i\}_{i=1}^n) = \mathbf{1}{i = \arg\max_j (q\cdot k_j)}.  
     $$
-- **Indecisión (extremo uniforme):**  
+- **Indecisión (extremo uniforme):** 
+- Interpretación: La query mira a todos los valores por igual.
     $$
     \alpha_i(q,\{k_i\}_{i=1}^n) = \frac{1}{n}.  
     $$
@@ -59,11 +63,11 @@ Estas son dos formas límite de la función de compatibilidad.
 
 ## 5. 🔁 Caso intermedio: softmax sobre productos escalares
 
-La PPT presenta el caso práctico usual:
+El caso práctico usual, compatibilidad mediante softmax de productos escalares:
 
-[  
-\alpha_i(q,{k_j}) = \operatorname{Softmax}_i\big[,q!\cdot!k_1,; \ldots,; q!\cdot!k_n,\big],  
-]
+$$
+\alpha_i(q,\{k_i\}_{i=1}^n) = \operatorname{Softmax}_i\big[q\cdot k_1, \ldots, q\cdot!k_n,\big],  
+$$
 
 y menciona el parámetro de **temperatura** (\tau) para controlar extremos:
 
