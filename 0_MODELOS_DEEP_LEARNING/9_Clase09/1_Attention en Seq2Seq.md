@@ -259,3 +259,7 @@ $$p(y_i) = \text{Softmax}(W_o s_i + b_o)$$
 - Atención = mecanismo de alineamiento suave, interpretable, flexible y efectivo.
 - El modelo resultante **mejora significativamente** tareas como la traducción automática.
 - Este mecanismo sentó las bases para la atención moderna usada en los **Transformers**.
+
+
+----
+
