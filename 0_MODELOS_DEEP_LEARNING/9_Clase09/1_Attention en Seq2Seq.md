@@ -513,13 +513,9 @@ $$
 ## 16. 📚 Parámetros aprendidos principales (recap)
 
 - Pesos del encoder (p. ej. LSTM).
-    
 - Pesos del decoder (GRU) y embeddings (E(\cdot)).
-    
 - Parámetros del alignment network: (W_s, W_h, v).
-    
 - Proyección final (W_o, b_o).
-    
 
 ---
 
