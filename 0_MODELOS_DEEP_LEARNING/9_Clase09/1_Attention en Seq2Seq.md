@@ -303,7 +303,6 @@ $$p(y_t \mid \cdot) = g(y_{t-1}, s_t, c))$$donde $s_t$ es el hidden del decoder.
 ## 4. 🧩 Modelo con atención (formulación central)
 
 - Nuevo modelado para cada (i):
-    
 
 [  
 p(y_i \mid y_{1:i-1}, x) = g(y_{i-1}, s_i, c_i)  
