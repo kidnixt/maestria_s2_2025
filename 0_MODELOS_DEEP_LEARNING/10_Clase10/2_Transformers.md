@@ -1,8 +1,6 @@
 
 # 📘 Apuntes – Deep Learning: **Transformers (Parte 2)**
 
-_(Basado en Teórico MDL 21 – Arquitectura Encoder/Decoder del Transformer)_
-
 ---
 
 # 1. 🎯 Visión general del Transformer (Vaswani et al., 2017)
@@ -326,44 +324,39 @@ $$
 - La generación continúa hasta producir el token especial EOS.
 - El largo de salida $T_y$ es variable.
 - El cross-attention (la atención encoder-decoder) permite que $T_x \neq T_y$. de modo uqe el largo es variable y determinado por el modelo. 
-    
 
 ---
 
 # 14. 🌀 Positional Encoding: Motivación
 
-El self-attention es **invariante a permutaciones**.  
-Depende solo de productos escalares entre filas de Q, K y V.
+El self-attention es **invariante a permutaciones** (orden de los tokens):   
+Depende solo de productos escalares entre filas de Q, K y V, sin noción temporal. 
 
 Por eso se suma:
 $$
 z_t = e_t + PE_t.  
 $$
 
-El vector (PE_t) debe tener dimensión (d_{\text{model}}).
+El vector $PE_t$ debe tener dimensión $d_{\text{model}}$, siendo la misma dimensión que los embeddings.
 
 ---
 
 # 15. 🔊 Positional Encoding Sinusoidal
 
-Para posición (pos) y coordenada (i):
+Para posición $pos$ y coordenada $i$:
 
-[  
+$$
 PE(pos, 2i) = \sin!\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right),  
-]
+$$
 
-[  
+$$
 PE(pos, 2i+1) = \cos!\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right).  
-]
+$$
 
 Propiedades:
-
 - Frecuencias decrecen geométricamente
-    
 - No requiere parámetros
-    
 - Permiten extrapolación a secuencias más largas
-    
 
 ---
 
@@ -379,22 +372,10 @@ Propiedades:
 # ✅ Conclusiones
 
 - El Transformer encoder–decoder combina **self-attention**, **cross-attention**, **FFNs**, **LayerNorm** y **residuals** en una arquitectura flexible.
-    
 - El encoder procesa secuencias completas con **self-attention bidireccional**.
-    
 - El decoder usa:
-    
     - **máscara causal** (autoregresión),
-        
     - **cross-attention** (consulta al encoder).
-        
 - La salida final se obtiene mediante una capa lineal seguida de softmax.
-    
 - El positional encoding permite introducir la noción de **orden**.
-    
 - La arquitectura es totalmente paralelizable, sin recurrencia, y maneja secuencias de longitudes variables.
-    
-
----
-
-Si querés, seguimos inmediatamente con el próximo PDF 📘🔥
