@@ -31,7 +31,7 @@
 ## 3. 🧮 Forma escalar (entrada vectorial)
 
 -  $Q=\mathbb{R}^p \quad\wedge\quad q = [q_1,\dots, q_p]$ 
-- $K=\mathbb{R}^p \quad\wedge\quad q = [q_1,\dots, q_p]$
+- $K=\mathbb{R}^p \quad\wedge\quad k = [k_1,\dots, k_p]$
 
 
 $K=\mathbb{R}^p,; k_i\in\mathbb{R}^p) y (V=\mathbb{R}^d,; v_i\in\mathbb{R}^d), entonces la atención para una query (q) y pares ({k_i:v_i}_{i=1}^n) tiene la forma:
