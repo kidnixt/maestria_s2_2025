@@ -132,7 +132,7 @@ donde $W^O \sim (h d_v, d_{\text{model}})$.
 
 # 5. 🔁 Self-Attention en el Encoder
 
-En el encoder, hay self/
+En el encoder, hay self-attention
 
 $$ 
 Q = K = V = Z^{(l-1)} \sim (T_x, d_{\text{model}})  
