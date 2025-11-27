@@ -71,7 +71,7 @@ $$
 
 y menciona el parámetro de **temperatura** (\tau) para controlar extremos:
 
-- (\tau \to 0) → winner-takes-all.
+- $\tau \to 0) → winner-takes-all.
     
 - (\tau \to \infty) → distribución uniforme.
     
