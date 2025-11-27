@@ -519,7 +519,7 @@ $$
 
 ---
 
-## 17. 📝 Conclusión (fiel al paper / PPT)
+## 18. 📝 Conclusión (fiel al paper / PPT)
 
 - Bahdanau et al. introducen un **mecanismo de atención suave** que evita el cuello de botella del vector único $c$.
 - La atención **aprende a alinear** dinámicamente la entrada y el output en cada paso, mejorando traducción y tareas seq2seq.
