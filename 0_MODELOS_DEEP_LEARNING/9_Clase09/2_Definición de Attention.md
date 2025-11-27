@@ -66,7 +66,7 @@ Estas son dos formas límite de la función de compatibilidad.
 El caso práctico usual, compatibilidad mediante softmax de productos escalares:
 
 $$
-\alpha_i(q,\{k_i\}_{i=1}^n) = \operatorname{Softmax}_i\big[q\cdot k_1, \ldots, q\cdot k_n,\big],  
+\alpha_i(q,\{k_i\}_{i=1}^n) = \operatorname{Softmax}_i\big[q\cdot k_1, \ldots, q\cdot k_n\big]  
 $$
 
 y menciona el parámetro de **temperatura** (\tau) para controlar extremos:
