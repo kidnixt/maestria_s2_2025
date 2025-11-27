@@ -474,7 +474,7 @@ La palabra previa se convierte en embedding y se aplica dropout:
 
 $$
 \text{embedded} = E(y_{i-1}),\qquad \tilde{e}_{i-1} = \text{Dropout}(E(y_{i-1})).  
-]
+]$$
 
 Luego el GRU del decoder actualiza el estado combinando el embedding y el context vector:
 
