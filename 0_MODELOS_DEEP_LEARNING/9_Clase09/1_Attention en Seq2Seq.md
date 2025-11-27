@@ -443,7 +443,7 @@ A partir  de los vectores $\tilde{v}_{ij}$, se obtienen **scores escalares** de 
 
 ---
 
-## 12. 🧩 Construcción de (c_i) (repetición breve)
+## 12. 🧩 Construcción de $c_i) (repetición breve)
 
 [  
 c_i = \sum_{j=1}^{T_x} \alpha_{ij} h_j.  
