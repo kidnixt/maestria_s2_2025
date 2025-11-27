@@ -115,7 +115,6 @@ $$
 \text{Attention}(Q,K,V) = \operatorname{Softmax}(QK^\top), V.  
 $$
 
-(Esta es la forma matricial que aparece en la PPT.)
 
 ---
 
