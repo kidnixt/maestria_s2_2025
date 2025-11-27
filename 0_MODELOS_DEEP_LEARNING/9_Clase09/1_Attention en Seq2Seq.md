@@ -497,7 +497,7 @@ $$
 
 ---
 
-## 15. ✅ Resumen paso a paso (operacional) — paso (i)
+## 16. ✅ Resumen paso a paso (operacional) — paso (i)
 
 1. **Calcular scores** $e_{ij}$ usando $a(s_{i-1}, h_j)$ (proyección + tanh + $v^\top$).
 2. **Obtener pesos** $\alpha_{ij} = \text{Softmax}_j(e_{i1},\dots,e_{iT_x})$.
@@ -510,7 +510,7 @@ $$
 
 ---
 
-## 16. 📚 Parámetros aprendidos principales (recap)
+## 17. 📚 Parámetros aprendidos principales (recap)
 
 - Pesos del encoder (p. ej. LSTM).
 - Pesos del decoder (GRU) y embeddings $E(\cdot)$.
