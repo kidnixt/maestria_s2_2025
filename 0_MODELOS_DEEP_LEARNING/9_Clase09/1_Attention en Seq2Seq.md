@@ -297,8 +297,8 @@ $$p(y_t \mid \cdot) = g(y_{t-1}, s_t, c))$$donde $s_t$ es el hidden del decoder.
 
 ## 3. 🧭 Limitación identificada
 
-- El uso de un **vector fijo** (c) reúne toda la información; esto falla en oraciones largas o con estructura compleja.
-- Bahdanau propone que **cada palabra target tenga su propio context vector** (c_i) calculado como una combinación ponderada de los hiddens del encoder.
+- El uso de un **vector fijo** $c$ reúne toda la información; esto falla en oraciones largas o con estructura compleja.
+- Bahdanau propone que **cada palabra target tenga su propio context vector** $c_i$ calculado como una combinación ponderada de los hiddens del encoder.
 
 ---
 
