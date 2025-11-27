@@ -445,7 +445,7 @@ A partir  de los vectores $\tilde{v}_{ij}$, se obtienen **scores escalares** de 
 
 ## 12. 🧩 Construcción de $c_i$ (repetición breve)
 
-Pesos de atención 
+Pesos de atención  $\alpha_{ij}$ y hidden del encoder 
 
 [  
 c_i = \sum_{j=1}^{T_x} \alpha_{ij} h_j.  
