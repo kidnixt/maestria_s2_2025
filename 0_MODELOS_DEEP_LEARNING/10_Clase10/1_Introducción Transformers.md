@@ -150,7 +150,6 @@ Estructura interna:
 2. **Residual + LayerNorm**
 3. **Feed-Forward Network** (dos capas densas y activación)
 4. **Residual + LayerNorm**
-    
 
 Características clave:
 
@@ -193,7 +192,7 @@ El decoder genera la secuencia **token por token**, condicionándose en los toke
 
 - Vaswani et al. (2017). **Attention Is All You Need**.  
     NeurIPS 30.
-    
+
 
 ---
 
@@ -206,4 +205,3 @@ El decoder genera la secuencia **token por token**, condicionándose en los toke
     - **masked attention** (causal)
     - **cross-attention** (usa la información del encoder)
 - Es la arquitectura base de todos los modelos modernos de NLP y más allá (visión, audio, multimodal).
-    

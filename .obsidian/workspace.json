@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/10_Clase10/2_Transformers.md",
+                "file": "0_MODELOS_DEEP_LEARNING/9_Clase09/1_Attention en Seq2Seq.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_Transformers"
+              "title": "1_Attention en Seq2Seq"
             }
           }
         ]
@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ef21f9330133686b",
@@ -184,10 +183,14 @@
   },
   "active": "5ca64efbdc552d89",
   "lastOpenFiles": [
-    "assets/Pasted image 20251126154129.png",
-    "assets/Pasted image 20251126153820.png",
     "0_MODELOS_DEEP_LEARNING/10_Clase10/1_Introducción Transformers.md",
     "0_MODELOS_DEEP_LEARNING/10_Clase10/2_Transformers.md",
+    "Untitled.base",
+    "Untitled 2.base",
+    "Untitled 1.base",
+    "Untitled 3.base",
+    "assets/Pasted image 20251126154129.png",
+    "assets/Pasted image 20251126153820.png",
     "assets/Pasted image 20251126152931.png",
     "assets/Pasted image 20251126152917.png",
     "assets/Pasted image 20251126152849.png",
@@ -201,7 +204,6 @@
     "0_MODELOS_DEEP_LEARNING/8_Clase08/2_Seq2Seq.md",
     "assets/Pasted image 20251126143423.png",
     "assets/Pasted image 20251126143300.png",
-    "assets/Pasted image 20251126143243.png",
     "0_MODELOS_DEEP_LEARNING/8_Clase08/1_Modelos De Lenguaje.md",
     "0_MODELOS_DEEP_LEARNING/9_Clase09",
     "0_MODELOS_DEEP_LEARNING/8_Clase08",
@@ -222,13 +224,9 @@
     "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
-    "Untitled 1.base",
-    "Untitled.base",
     "conflict-files-obsidian-git.md",
     "0_MODELOS_DEEP_LEARNING/4_Clase04/4_Clase04.md",
     "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
-    "0_MODELOS_DEEP_LEARNING/5_Clase05",
-    "0_MODELOS_DEEP_LEARNING/4_Clase04",
-    "2_TALLER_DEEP_LEARNING/3_Clase3"
+    "0_MODELOS_DEEP_LEARNING/5_Clase05"
   ]
 }
