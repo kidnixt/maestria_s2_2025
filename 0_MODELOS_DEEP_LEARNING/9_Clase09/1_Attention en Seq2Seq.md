@@ -387,8 +387,21 @@ En cada paso del decoder, el modelo **decide a qué partes de la secuencia fuent
 
 - El encoder produce hiddens
 - El decoder tiene un hidden previo $s_{i-1}$ y la palabra anterior $y_{i-1}$
-- La atención calcula pesos $\alpha_{ij}$ sobre los hiddens 
+- La atención calcula pesos $\alpha_{ij}$ sobre los hiddens del encoder y un context vector $c_i$
+- El decoder usa $c_i$ para actualizar su estado y predecir $y_1$
 
+### Entradas del decoder en el paso $i$
+
+En el paso $i$ del decoder:
+- **Input**: La palabra target anterior.
+- **prev_hidden**: hidden state previo del decoder
+- **encoder_outputs**: hiddens del encoder.
+
+La palabra anterior se encaja:
+
+$\text{embedded} = E(y_{i-1})$
+$\tilde{e}_{i-1}}) = \text{Dropout}(E(y_{i-1}))$
+ 
 
 ## 10. ⚙️ Parametrización del alignment (cómo se calcula $e_{ij}$)
 
