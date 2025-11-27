@@ -34,7 +34,7 @@
 - $K=\mathbb{R}^p \quad\wedge\quad k = [k_1,\dots, k_p]$
 - $V=\mathbb{R}^d \quad\wedge\quad v = [v_1,\dots, q_d]$
 
-Entonces, la fun
+Entonces, la función Attention es de la forma
 
 [  
 \text{Attention}\big(q,{k_i:v_i}_{i=1}^n\big) ;=; \sum_{i=1}^n \alpha_i\big(q,{k_j}_{j=1}^n\big), v_i,  
