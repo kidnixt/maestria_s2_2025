@@ -399,8 +399,8 @@ En el paso $i$ del decoder:
 
 La palabra anterior se encaja:
 
-$\text{embedded} = E(y_{i-1})$
-$\tilde{e}_{i-1}}) = \text{Dropout}(E(y_{i-1}))$
+$$\text{embedded} = E(y_{i-1})
+\quad\quad \tilde{e}_{i-1} = \text{Dropout}(E(y_{i-1}))$$
  
 
 ## 10. ⚙️ Parametrización del alignment (cómo se calcula $e_{ij}$)
