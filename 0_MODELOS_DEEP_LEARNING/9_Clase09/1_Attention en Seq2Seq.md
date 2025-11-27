@@ -281,25 +281,22 @@ $$p(y_i) = \text{Softmax}(W_o s_i + b_o)$$
 
 - Entrada: $x=(x_1,\dots,x_{T_x})$
 - Encoder (ej.: LSTM) produce hiddens $h_t = f(x_t,h_{t-1})$.
-- Context vector clásico: $c = q({h_1,\dots,h_{T_x}})) (habitualmente (c=h_{T_x})).
-    
+- Context vector clásico: $c = q({h_1,\dots,h_{T_x}})$ (habitualmente $c=h_{T_x})$.
 - Decoder modela la traducción como:
-    
 
-[  
+$$
 p(y) = \prod_{t=1}^{T_y} p(y_t \mid y_{1:t-1}, c),  
-]
+$$
 
-con un RNN-decoder: (p(y_t \mid \cdot) = g(y_{t-1}, s_t, c)), donde (s_t) es el hidden del decoder.
+con un RNN-decoder: 
+$$p(y_t \mid \cdot) = g(y_{t-1}, s_t, c))$$donde $s_t$ es el hidden del decoder.
 
 ---
 
 ## 3. 🧭 Limitación identificada
 
 - El uso de un **vector fijo** (c) reúne toda la información; esto falla en oraciones largas o con estructura compleja.
-    
 - Bahdanau propone que **cada palabra target tenga su propio context vector** (c_i) calculado como una combinación ponderada de los hiddens del encoder.
-    
 
 ---
 
