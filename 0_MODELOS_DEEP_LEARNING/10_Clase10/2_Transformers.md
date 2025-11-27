@@ -274,7 +274,7 @@ $$
 K = V = Z^{(N)} \sim (T_x, d_{model})  
 $$
 
-Se aplica Multi-Head Attent:
+Se aplica Multi-Head Attention:
 $$ 
 H^{(l)}_{\text{enc-dec}} = \mathrm{MHA}(Q,K,V).  
 $$
