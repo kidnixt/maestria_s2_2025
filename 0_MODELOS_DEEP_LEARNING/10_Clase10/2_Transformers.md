@@ -283,7 +283,7 @@ Seguido de:
 
 $$
 \hat{Z}^{(l)}_{\text{dec}}  
-= \mathrm{LayerNorm}!\bigl( \tilde{Z}^{(l)}_{\text{dec}} + H^{(l)}_{\text{enc-dec}}\bigr)  
+= \mathrm{LayerNorm}\bigl( \tilde{Z}^{(l)}_{\text{dec}} + H^{(l)}_{\text{enc-dec}}\bigr)  
 $$
 
 Después FFN + Add & Norm igual al encoder.
@@ -297,7 +297,6 @@ La última capa del decoder produce:
 $$ 
 Z^{(N)}_{\text{dec}} \sim (T_y, d_{\text{model}}).  
 $$
-
 Para cada posición:
 
 $$
@@ -339,7 +338,7 @@ $$
 
 # 14. 🌀 Positional Encoding: Motivación
 
-El self-attention es **invariante a permutaciones** (orden de los tokens):   
+El mecanismo de attention es **invariante a permutaciones** (orden de los tokens):   
 Depende solo de productos escalares entre filas de Q, K y V, sin noción temporal. 
 
 Por eso se suma:
@@ -356,11 +355,11 @@ El vector $PE_t$ debe tener dimensión $d_{\text{model}}$, siendo la misma dimen
 Para posición $pos$ y coordenada $i$:
 
 $$
-PE(pos, 2i) = \sin!\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right),  
+PE(pos, 2i) = \sin\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right),  
 $$
 
 $$
-PE(pos, 2i+1) = \cos!\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right).  
+PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right).  
 $$
 
 Propiedades:
@@ -373,9 +372,7 @@ Propiedades:
 # 16. 📚 Bibliografía
 
 - Vaswani et al., 2017 – _Attention Is All You Need_
-    
 - Alammar, 2018 – _The Illustrated Transformer_
-    
 
 ---
 
