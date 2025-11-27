@@ -383,7 +383,10 @@ Interpretación: para cada query (decoder step) se calcula una combinación pond
 
 ## 10. Atención de Bahdanau
 
-En cada paso del decoder, el modelo **decide a qué partes de la secuencia fuente prestar atenci**
+En cada paso del decoder, el modelo **decide a qué partes de la secuencia fuente prestar atención** para generar la siguiente palabra.
+
+- El encoder produce hiddens
+- El decoder tiene un hidden previo $s_{i-1}
 
 
 ## 10. ⚙️ Parametrización del alignment (cómo se calcula $e_{ij}$)
