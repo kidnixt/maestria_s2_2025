@@ -507,7 +507,6 @@ $$
 	1. **Predecir**: $o_i = W_o s_i + b_o$ $\rightarrow$ $p(y_i)=\text{Softmax}(o_i)$.
 
 
-(Esta lista sigue estrictamente el flujo que aparece en la PPT.)
 
 ---
 
