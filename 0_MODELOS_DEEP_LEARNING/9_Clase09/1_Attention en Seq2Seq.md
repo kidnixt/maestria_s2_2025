@@ -504,9 +504,8 @@ $$
 3. **Formar context vector** $c_i = \sum_j \alpha_{ij} h_j$.
 4. **Actualizar hidden** del decoder: $s_i = \mathrm{GRU}([\tilde{e}_{i-1}, c_i], s_{i-1}$.
 5. Aplicar una capa lineal + softmax
-	1. **Predecir**: $o_i = W_o s_i + b_o$ $\rightarrow$ $p(y_i)=\text{Softmax}(o_i)).
+	1. **Predecir**: $o_i = W_o s_i + b_o$ $\rightarrow$ $p(y_i)=\text{Softmax}(o_i)$.
 
-    
 
 (Esta lista sigue estrictamente el flujo que aparece en la PPT.)
 
