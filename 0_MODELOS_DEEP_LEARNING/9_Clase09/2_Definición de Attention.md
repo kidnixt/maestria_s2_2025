@@ -196,7 +196,7 @@ La PPT define self-attention como aplicar la atención a **cada posición** de l
 
 ## 16. 🧾 Resumen formal (fórmula que aparece)
 
-&
+- Dada una qu
 
 $$
 z = \sum_{j=1}^n \alpha_j v_j,\qquad  
