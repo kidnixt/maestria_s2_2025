@@ -430,7 +430,7 @@ $$
 
 ---
 
-## 11. 🔢 Cálculo de atención: scores → softmax
+## 12. 🔢 Cálculo de atención: scores → softmax
 
 A partir  de los vectores $\tilde{v}_{ij}$, se obtienen **scores escalares** de alineación
 
@@ -443,7 +443,7 @@ A partir  de los vectores $\tilde{v}_{ij}$, se obtienen **scores escalares** de 
 
 ---
 
-## 12. 🧩 Construcción de $c_i$ (repetición breve)
+## 13. 🧩 Construcción de $c_i$ (repetición breve)
 
 Pesos de atención  $\alpha_{ij}$ y hidden del encoder $h_j$ forman el **context vector**
 $$
@@ -459,7 +459,7 @@ Interpretación: el modelo decide “dónde mirar” y forma $c_i$ como la suma 
 
 ---
 
-## 13. 🔁 Decoder GRU con atención (entradas y actualización)
+## 14. 🔁 Decoder GRU con atención (entradas y actualización)
 
 El decoder combina tres fuentes de información:
 
@@ -484,7 +484,7 @@ El nuevo hidden $s_i$ está influenciado tanto por la historia del decoder como 
 
 ---
 
-## 14. 🔚 Salida y distribución sobre la próxima palabra
+## 15. 🔚 Salida y distribución sobre la próxima palabra
 
 A partir del nuevo hidden $s_i$ se calcula el logit y la probabilidad:
 $$
@@ -514,20 +514,14 @@ $$
 
 - Pesos del encoder (p. ej. LSTM).
 - Pesos del decoder (GRU) y embeddings $E(\cdot)$.
-- Parámetros del alignment network: (W_s, W_h, v$.
-- Proyección final (W_o, b_o).
+- Parámetros del alignment network: $W_s, W_h, v$.
+- Proyección final $W_o, b_o$.
 
 ---
 
 ## 17. 📝 Conclusión (fiel al paper / PPT)
 
-- Bahdanau et al. introducen un **mecanismo de atención suave** que evita el cuello de botella del vector único (c).
-    
+- Bahdanau et al. introducen un **mecanismo de atención suave** que evita el cuello de botella del vector único $c$.
 - La atención **aprende a alinear** dinámicamente la entrada y el output en cada paso, mejorando traducción y tareas seq2seq.
-    
-- La arquitectura mantiene interpretabilidad (matrices de (\alpha)) y puede entrenarse end-to-end junto con encoder y decoder.
-    
+- La arquitectura mantiene interpretabilidad (matrices de $\alpha$) y puede entrenarse end-to-end junto con encoder y decoder.
 
----
-
-¿Querés que te lo deje ahora en **Markdown descargable (.md)** tal cual —o lo exporto también a **.pdf** con el mismo formato— para que lo tengas como apuntes listos para imprimir?
