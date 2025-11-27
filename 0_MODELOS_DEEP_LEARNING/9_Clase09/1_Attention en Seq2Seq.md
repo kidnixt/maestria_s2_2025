@@ -280,9 +280,7 @@ $$p(y_i) = \text{Softmax}(W_o s_i + b_o)$$
 ## 2. 🔁 Encoder–Decoder clásico (antes de Bahdanau)
 
 - Entrada: $x=(x_1,\dots,x_{T_x})$
-    
 - Encoder (ej.: LSTM) produce hiddens $h_t = f(x_t,h_{t-1})$.
-    
 - Context vector clásico: (c = q({h_1,\dots,h_{T_x}})) (habitualmente (c=h_{T_x})).
     
 - Decoder modela la traducción como:
