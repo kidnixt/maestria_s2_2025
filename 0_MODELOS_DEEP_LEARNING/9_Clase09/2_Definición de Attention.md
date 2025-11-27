@@ -17,7 +17,7 @@ $$
 \text{Attention}(q, {k_i:v_i}) = \sum_{i=1}^{n} \alpha_i(q, \{k_i\})v_i  
 $$
 
-donde cada $\alpha_i$ indica **qué tanto mirar** a cada value.
+donde cada $\alpha_i$ indica **qué tanto mirar** a cada value. Las funciones $\alpha_i$, calculan la **compatibilidad** entre **q** y las keys.
 
 ---
 
