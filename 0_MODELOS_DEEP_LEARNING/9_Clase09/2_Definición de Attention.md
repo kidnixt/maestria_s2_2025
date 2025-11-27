@@ -120,66 +120,59 @@ $$
 
 ## 9. 📐 Shapes (tal como en la diapositiva)
 
-- (Q \sim (m,p))
-    
-- (K \sim (n,p))
-    
-- (V \sim (n,d))
-    
+- $Q \sim (m,p)$
+- $K \sim (n,p)$
+- $V \sim (n,d)$
 
 Donde:
-
-- (m): número de queries
-    
-- (n): número de keys/values.
-    
+- $m$: número de queries
+- $n$: número de keys/values.
 
 ---
 
-## 10. ✖️ Producto matricial (QK^\top)
+## 10. ✖️ Producto matricial ($QK^\top$)
 
-El producto (QK^\top) da una matriz (m\times n) con entradas:
-
-[  
+El producto $QK^\top$ da una matriz $m\times n$ con entradas:
+$$
 (QK^\top)_{j,i} = q_j\cdot k_i.  
-]
+$$
 
-En la PPT se muestra explícitamente la matriz de productos punto con cada fila correspondiente a una query.
-
+$$
+\mathbf{Q}\mathbf{K}^{\text{T}} = \begin{bmatrix}
+\mathbf{q}_1 \cdot \mathbf{k}_1 & \cdots & \mathbf{q}_1 \cdot \mathbf{k}_n \\
+\vdots & \ddots & \vdots \\
+\mathbf{q}_m \cdot \mathbf{k}_1 & \cdots & \mathbf{q}_m \cdot \mathbf{k}_n
+\end{bmatrix}
+$$
 ---
 
 ## 11. 🔄 Softmax fila a fila
 
 Se aplica softmax **por fila** de (QK^\top):
 
-[  
-\operatorname{Softmax}(QK^\top) =  
-\begin{bmatrix}  
-\operatorname{Softmax}(q_1\cdot k_1,\dots,q_1\cdot k_n) \  
-\vdots \  
-\operatorname{Softmax}(q_m\cdot k_1,\dots,q_m\cdot k_n)  
-\end{bmatrix}.  
-]
-
-Cada fila es una distribución sobre las (n) values.
+$$
+\text{Softmax}(\mathbf{Q}\mathbf{K}^{\text{T}}) = \begin{bmatrix}
+\text{Softmax}(\mathbf{q}_1 \cdot \mathbf{k}_1, \dots, \mathbf{q}_1 \cdot \mathbf{k}_n) \\
+\vdots \\
+\text{Softmax}(\mathbf{q}_m \cdot \mathbf{k}_1, \dots, \mathbf{q}_m \cdot \mathbf{k}_n)
+\end{bmatrix}
+$$
+Cada fila es una distribución sobre las $n$ values.
 
 ---
 
-## 12. ➗ Multiplicación por (V) (salida)
+## 12. ➗ Multiplicación por $V$ (salida)
 
 Finalmente:
+$$
+\operatorname{Softmax}(QK^\top) V \in \mathbb{R}^{m\times d}.  
+$$
+La fila $j$ es:
 
-[  
-\operatorname{Softmax}(QK^\top), V ;\in; \mathbb{R}^{m\times d}.  
-]
-
-La fila (j) es:
-
-[  
-\sum_{r=1}^n \operatorname{Softmax}_r(q_j\cdot k_1,\dots,q_j\cdot k_n), v_r,  
-]
-
-es decir, una combinación ponderada de las filas de (V).
+$$
+\sum_{r=1}^n \operatorname{Softmax}_r(q_j\cdot k_1,\dots,q_j\cdot k_n) v_r  
+$$
+es decir, **una combinación ponderada de las filas de $V$.**
 
 ---
 
@@ -191,7 +184,7 @@ Se cita el recuento histórico: Bahdanau et al. (2014) definieron la atención e
 
 ## 14. 🔁 Definición precisa de Self-Attention (texto literal)
 
-La PPT define self-attention como aplicar la atención a **cada posición** de la secuencia fuente creando para cada (x_i) tres vectores (query, key, value) y aplicando la atención de (x_i) (query) sobre todas las keys/values de la secuencia, produciendo una secuencia (Y=(y_1,\dots,y_n)) donde cada (y_i) mezcla información de (x_i) y su relación con el resto.
+La PPT define self-attention como aplicar la atención a **cada posición** de la secuencia fuente creando para cada $x_i$ tres vectores (query, key, value) y aplicando la atención de $x_i$ (query) sobre todas las keys/values de la secuencia, produciendo una secuencia $Y=(y_1,\dots,y_n)$ donde cada $y_i$ mezcla información de $x_i$y su relación con el resto.
 
 ---
 
