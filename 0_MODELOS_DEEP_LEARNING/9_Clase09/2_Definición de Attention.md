@@ -78,30 +78,26 @@ y menciona el parámetro de **temperatura** (\tau) para controlar extremos:
 
 ## 6. 🔗 Diagrama conceptual (proceso)
 
-Flujo (tal como aparece en la PPT):
+- Input: $q, \{k_i\}_{i=1}^n, \{v_i\}_{i=1}^n$
+- Paso 1: calcular compatibilidades $e_i$ entre $q$ y cada $k_i$
+- Paso 2: normalizar con softmax → $\alpha_i$
+- Paso 3: suma ponderada → salida $z=\sum_i \alpha_i v_i$.
 
-- Input: (q,; {k_i},; {v_i})
-    
-- Paso 1: calcular compatibilidades (e_i) entre (q) y cada (k_i)
-    
-- Paso 2: normalizar con softmax → (\alpha_i)
-    
-- Paso 3: suma ponderada → salida (z=\sum_i \alpha_i v_i).
-    
+
+![[Pasted image 20251127151550.png]]
 
 ---
 
 ## 7. 🧩 Atención para múltiples queries
 
-Si tenemos varias queries ({q_j}_{j=1}^m), la función devuelve los (m) outputs:
-
-# [  
-\text{Attention}\big({q_j}_{j=1}^m,{k_i:v_i}_{i=1}^n\big)
-
-\big{,\sum_{i=1}^n \alpha_i(q_j,{k}), v_i \big}_{j=1}^m.  
-]
-
-Cada query obtiene su propia distribución (\alpha).
+Si tenemos varias queries $\{q_j\}_{j=1}^m$, la función devuelve los $m$ outputs:
+$$
+\text{Attention}\big(\{q_j\}_{j=1}^m,\{k_i:v_i\}_{i=1}^n\big) = 
+\left\{
+\sum_{i=1}^n \alpha_i(q_j,\{k_i\}_{i=1}^n) v_i
+\right\}_{j=1}^m
+$$
+Cada query obtiene su propia distribución $\alpha$.
 
 ---
 
@@ -109,7 +105,7 @@ Cada query obtiene su propia distribución (\alpha).
 
 Agrupando queries, keys y values en matrices:
 
-- (Q \in \mathbb{R}^{m\times p}) (filas: queries)
+- $Q \in \mathbb{R}^{m\times p}$ (filas: queries)
     
 - (K \in \mathbb{R}^{n\times p}) (filas: keys)
     
