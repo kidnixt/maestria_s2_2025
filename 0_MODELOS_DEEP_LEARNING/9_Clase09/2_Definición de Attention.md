@@ -36,9 +36,9 @@
 
 Entonces, la función Attention es de la forma
 
-[  
+$$
 \text{Attention}\big(q,{k_i:v_i}_{i=1}^n\big) ;=; \sum_{i=1}^n \alpha_i\big(q,{k_j}_{j=1}^n\big), v_i,  
-]
+$$
 
 donde las (\alpha_i) calculan la **compatibilidad** entre (q) y las keys.
 
