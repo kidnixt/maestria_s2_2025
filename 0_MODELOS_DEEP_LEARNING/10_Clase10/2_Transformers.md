@@ -128,6 +128,9 @@ $$
 
 donde $W^O \sim (h d_v, d_{\text{model}})$.
 
+- En el **encoder** hay self-attention
+- En el **decoder**, hay self-attention y atención sobre las salidas del encoder.
+
 ---
 
 # 5. 🔁 Self-Attention en el Encoder
@@ -197,7 +200,7 @@ con:
 - $W_2 \sim (d_{\text{ff}}, d_{\text{model}})$
 - $\sigma$: ReLU en Vaswani, GELU moderno
 
-En forma matricial:
+En forma matricial, si la enternada a la capa $Z \sim (T, d_{model})$, donde cada fila corresponde a una posición de la secuencia, entonces:
 
 $$
 \text{FFN}(\mathbf{Z}) = \begin{bmatrix}
@@ -231,6 +234,9 @@ Durante inferencia:
 
 # 9. 🟥 Decoder: Máscara Causal
 
+La entrada del decoder es la secuencia de salida desplazada, se usa 
+$$(\text{BOS}, y_1, \dots, y_{T_y-1})$$
+
 Se obtienen embeddings + positional encodings:
 $$
 Z^{(0)}_{\text{dec}} \sim (T_y, d_{\text{model}}).  
@@ -242,7 +248,7 @@ $$
 Q = K = V = Z^{(l-1)}_{\text{dec}}.  
 $$
 
-La máscara causal impone:
+La máscara causal hace que, para la posición $t$, la softmax ignore entradas correspondientes a posiciones futuras $> t$
 $$
 (\mathbf{Q}\mathbf{K}^{\text{T}})_{tj} \to 
 \begin{cases}
