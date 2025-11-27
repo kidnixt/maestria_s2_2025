@@ -43,7 +43,7 @@ $$
 Cada token se convierte en un embedding:
 
 $$
-e_t = E(x_t) \in \mathbb{R}^{d_{\text{model}}}.  
+e_t = E(x_t) \sim d_{\text{model}}  
 $$
 Se suma el **Positional Encoding** correspondiente:
 $$
@@ -100,7 +100,7 @@ Dadas matrices:
 - $K \sim (n, d_{\text{model}})$
 - $V \sim (n, d_{\text{model}})$
 
-Cada head $i$ proyecta:
+Cada head $i$ proyecta linealmente:
 $$
 Q_i = Q W_i^Q,\quad K_i = K W_i^K,\quad V_i = V W_i^V,  
 $$
@@ -112,11 +112,15 @@ con:
 
 ## 4.1 Atención por head
 
+Cada head calcula **Scaled Dot-Product Attention**
+
 $$
 \text{head}_i = \mathrm{Softmax}\left(\frac{Q_i K_i^\top}{\sqrt{d_k}}\right) V_i  
-\quad \sim (m \times d_v).  
+\quad \sim (m, d_v).  
 $$
 ## 4.2 Salida final del MHA
+
+Luego se concatenan lso resultas de las $h$ heads y se proyectan
 
 $$
 \mathrm{MHA}(Q,K,V) = \mathrm{Concat}(\text{head}_1,\dots,\text{head}_h), W^O  
