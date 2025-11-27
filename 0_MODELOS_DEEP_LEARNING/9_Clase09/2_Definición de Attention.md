@@ -15,16 +15,14 @@
 ## 2. 🧭 Espacios y notación (Q, K, V)
 
 - Se definen los espacios:
-    - Espacio de **queries**: (Q)
-    - Espacio de **keys**: (K)
-    - Espacio de **values**: (V)
-    - Espacio de diccionarios (pares key–value): ({K:V})
-        
+    - Espacio de **queries**: $Q$
+    - Espacio de **keys**: $K$
+    - Espacio de **values**: $V$
+    - Espacio de diccionarios (pares key–value): $\{K:V\}$
 - La función de atención se formaliza como:  
-    [  
-    \text{Attention}: Q \times {K:V} \to V.  
-    ]
-    
+    $$
+    \text{Attention}: Q \times \{K:V\} \to V.  
+    $$
 - En la PPT se asume la simplificación (Q = K).
     
 
@@ -32,7 +30,11 @@
 
 ## 3. 🧮 Forma escalar (entrada vectorial)
 
-Si (Q=\mathbb{R}^p,; q\in\mathbb{R}^p), (K=\mathbb{R}^p,; k_i\in\mathbb{R}^p) y (V=\mathbb{R}^d,; v_i\in\mathbb{R}^d), entonces la atención para una query (q) y pares ({k_i:v_i}_{i=1}^n) tiene la forma:
+-  $Q=\mathbb{R}^p \quad\wedge\quad q = [q_1,\dots, q_p]$ 
+- $K=\mathbb{R}^p \quad\wedge\quad q = [q_1,\dots, q_p]$
+
+
+$K=\mathbb{R}^p,; k_i\in\mathbb{R}^p) y (V=\mathbb{R}^d,; v_i\in\mathbb{R}^d), entonces la atención para una query (q) y pares ({k_i:v_i}_{i=1}^n) tiene la forma:
 
 [  
 \text{Attention}\big(q,{k_i:v_i}_{i=1}^n\big) ;=; \sum_{i=1}^n \alpha_i\big(q,{k_j}_{j=1}^n\big), v_i,  
