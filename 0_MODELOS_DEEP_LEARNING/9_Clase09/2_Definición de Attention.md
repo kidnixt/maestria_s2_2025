@@ -15,11 +15,9 @@
 ## 2. 🧭 Espacios y notación (Q, K, V)
 
 - Se definen los espacios:
-    
     - Espacio de **queries**: (Q)
     - Espacio de **keys**: (K)
     - Espacio de **values**: (V)
-        
     - Espacio de diccionarios (pares key–value): ({K:V})
         
 - La función de atención se formaliza como:  
