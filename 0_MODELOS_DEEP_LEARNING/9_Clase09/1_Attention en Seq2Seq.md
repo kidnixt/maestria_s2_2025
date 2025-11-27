@@ -402,7 +402,7 @@ La palabra anterior se encaja:
 $$\text{embedded} = E(y_{i-1})
 \quad\quad \tilde{e}_{i-1} = \text{Dropout}(E(y_{i-1}))$$
  
-Embedding y context vector se usar[an luego]
+Embedding y context vector se usar
 ## 10. ⚙️ Parametrización del alignment (cómo se calcula $e_{ij}$)
 
 Bahdanau parametriza $a(\cdot)$ como una **red feedforward** entrenable. En la PPT se resume el cálculo así:
