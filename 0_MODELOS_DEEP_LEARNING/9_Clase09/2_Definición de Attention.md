@@ -190,7 +190,7 @@ La PPT define self-attention como aplicar la atención a **cada posición** de l
 
 ## 15. 🔳 Diagrama de Self-Attention (mención)
 
-La PPT incluye un diagrama visual del flujo Q,K,V → Attention → salida (no hay ecuaciones nuevas aquí).
+![[Pasted image 20251127152521.png]]
 
 ---
 
