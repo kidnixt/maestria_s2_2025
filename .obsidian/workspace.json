@@ -88,8 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ef21f9330133686b",
@@ -161,9 +160,19 @@
               "icon": "lucide-list",
               "title": "Outline of 1_MIT-BIH Arrhythmia"
             }
+          },
+          {
+            "id": "62c4c682474ccdbe",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
