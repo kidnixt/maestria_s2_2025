@@ -386,29 +386,21 @@ Interpretación: para cada query (decoder step) se calcula una combinación pond
 Bahdanau parametriza $a(\cdot)$ como una **red feedforward** entrenable. En la PPT se resume el cálculo así:
 
 1. Proyectar el hidden del decoder y cada hidden del encoder:
-    
-
-[  
+$$
 W_s s_{i-1}, \quad W_h h_j.  
-]
+$$
 
 2. Sumar y aplicar no linealidad:
-    
-
-[  
+$$
 \text{sum}_{ij} = W_s s_{i-1} + W_h h_j,  
-]
-
-[  
+$$
+$$
 \tilde{v}_{ij} = \tanh(\text{sum}_{ij}).  
-]
-
+$$
 3. Reducir a score escalar con vector (v):
-    
-
-[  
+$$
 e_{ij} = v^\top \tilde{v}_{ij}.  
-]
+$$
 
 - (v) es un parámetro (vector) independiente de (i,j).
     
