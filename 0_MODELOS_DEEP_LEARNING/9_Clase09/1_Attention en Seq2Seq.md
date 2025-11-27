@@ -291,6 +291,8 @@ $$
 con un RNN-decoder: 
 $$p(y_t \mid \cdot) = g(y_{t-1}, s_t, c))$$donde $s_t$ es el hidden del decoder.
 
+![[Pasted image 20251127124046.png]]
+
 ---
 
 ## 3. 🧭 Limitación identificada
