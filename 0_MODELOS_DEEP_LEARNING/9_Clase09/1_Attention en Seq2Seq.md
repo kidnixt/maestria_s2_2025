@@ -263,3 +263,281 @@ $$p(y_i) = \text{Softmax}(W_o s_i + b_o)$$
 
 ----
 
+
+# 📘 Apuntes – Deep Learning: Atención en Seq2Seq (Bahdanau et al., 2014)
+
+_(resumen fiel al orden y contenido de la PPT)_
+
+---
+
+## 1. 🎯 Extracto / motivación (abstract)
+
+- Problema: los encoder–decoder clásicos codifican la oración fuente en **un único vector de longitud fija**, lo cual es un **cuello de botella** para traducción y tareas similares.
+    
+- Idea de Bahdanau et al. (2014): **permitir que el modelo "soft-search"** automáticamente qué partes de la oración fuente son relevantes para predecir cada palabra objetivo, en lugar de comprimirlo todo en un único vector.
+    
+- Resultado: **aprender a alinear y traducir conjuntamente**.
+    
+
+---
+
+## 2. 🔁 Encoder–Decoder clásico (antes de Bahdanau)
+
+- Entrada: (x=(x_1,\dots,x_{T_x})).
+    
+- Encoder (ej.: LSTM) produce hiddens (h_t = f(x_t,h_{t-1})).
+    
+- Context vector clásico: (c = q({h_1,\dots,h_{T_x}})) (habitualmente (c=h_{T_x})).
+    
+- Decoder modela la traducción como:
+    
+
+[  
+p(y) = \prod_{t=1}^{T_y} p(y_t \mid y_{1:t-1}, c),  
+]
+
+con un RNN-decoder: (p(y_t \mid \cdot) = g(y_{t-1}, s_t, c)), donde (s_t) es el hidden del decoder.
+
+---
+
+## 3. 🧭 Limitación identificada
+
+- El uso de un **vector fijo** (c) reúne toda la información; esto falla en oraciones largas o con estructura compleja.
+    
+- Bahdanau propone que **cada palabra target tenga su propio context vector** (c_i) calculado como una combinación ponderada de los hiddens del encoder.
+    
+
+---
+
+## 4. 🧩 Modelo con atención (formulación central)
+
+- Nuevo modelado para cada (i):
+    
+
+[  
+p(y_i \mid y_{1:i-1}, x) = g(y_{i-1}, s_i, c_i)  
+]
+
+- La actualización del hidden del decoder incorpora (c_i):
+    
+
+[  
+s_i = f(s_{i-1}, y_{i-1}, c_i).  
+]
+
+- Importante: **(c_i) depende de (i)** (un vector distinto por cada paso del decoder).
+    
+
+---
+
+## 5. 🏗️ Arquitectura (esquema)
+
+- Encoder produce la secuencia de anotaciones (hiddens) (h_1,\dots,h_{T_x}).
+    
+- Para cada paso (i) del decoder:
+    
+    - Se calcula (c_i) a partir de los (h_j).
+        
+    - El decoder (con su hidden previo (s_{i-1}) y la palabra previa (y_{i-1})) genera (s_i) y predice (y_i).
+        
+- En entrenamiento suele usarse _teacher forcing_ (dar (y_{i-1}) real como entrada).
+    
+
+(La PPT muestra un diagrama con encoder → atención → decoder, y flujo train/inference.)
+
+---
+
+## 6. 🔢 Cálculo del context vector (c_i) (fórmulas)
+
+Definición:
+
+[  
+c_i = \sum_{j=1}^{T_x} \alpha_{ij} , h_j.  
+]
+
+Los pesos (\alpha_{ij}) son una distribución (softmax) sobre las posiciones de la fuente:
+
+[  
+\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x} \exp(e_{ik})}  
+= \text{Softmax}_j([e_{i1},\dots,e_{iT_x}]).  
+]
+
+Donde el **score de alineación** (e_{ij}) se define como:
+
+[  
+e_{ij} = a(s_{i-1}, h_j),  
+]
+
+es decir, una función (aprendida) que mide la compatibilidad entre el estado previo del decoder (s_{i-1}) y el hidden del encoder (h_j).
+
+---
+
+## 7. 🔁 Terminología moderna (keys, values, queries)
+
+- **Keys:** ({h_1,\dots,h_{T_x}}) (hiddens del encoder)
+    
+- **Values:** usualmente las mismas anotaciones ({h_1,\dots,h_{T_x}})
+    
+- **Queries:** hiddens del decoder ({s_1,\dots,s_{T_y}})
+    
+
+Interpretación: para cada query (decoder step) se calcula una combinación ponderada de values según compatibilidades con las keys.
+
+---
+
+## 8. 🧾 Intuición probabilística
+
+- (\alpha_{ij}) puede verse como la **probabilidad** de que la palabra target (y_i) esté alineada con la fuente (x_j).
+    
+- (c_i) es la **esperanza** (weighted average) de las anotaciones (h_j) bajo esa distribución: el "contexto" relevante para generar (y_i).
+    
+
+---
+
+## 9. 🖼️ Visualizaciones (qué muestran los heatmaps)
+
+- La PPT incluye ejemplos de heatmaps de atención sobre frases en francés: muestran qué tokens fuente contribuyen a cada token objetivo.
+    
+- Observación práctica: la atención revela correspondencias (a menudo casi diagonales) y reordenamientos cuando el idioma lo requiere — proporciona **interpretabilidad**.
+    
+
+---
+
+## 10. ⚙️ Parametrización del alignment (cómo se calcula (e_{ij}))
+
+Bahdanau parametriza (a(\cdot)) como una **red feedforward** entrenable. En la PPT se resume el cálculo así:
+
+1. Proyectar el hidden del decoder y cada hidden del encoder:
+    
+
+[  
+W_s s_{i-1}, \quad W_h h_j.  
+]
+
+2. Sumar y aplicar no linealidad:
+    
+
+[  
+\text{sum}_{ij} = W_s s_{i-1} + W_h h_j,  
+]
+
+[  
+\tilde{v}_{ij} = \tanh(\text{sum}_{ij}).  
+]
+
+3. Reducir a score escalar con vector (v):
+    
+
+[  
+e_{ij} = v^\top \tilde{v}_{ij}.  
+]
+
+- (v) es un parámetro (vector) independiente de (i,j).
+    
+- Las (\tilde{v}_{ij}) son vectores intermedios que dependen de la posición (j) y del paso (i).
+    
+
+---
+
+## 11. 🔢 Cálculo de atención: scores → softmax
+
+- A partir de (e_{ij}) se obtiene (\alpha_{ij}) vía softmax (ya mostrado).
+    
+- El vector (\alpha_i = (\alpha_{i1},\dots,\alpha_{iT_x})) son los pesos de atención para el paso (i).
+    
+
+---
+
+## 12. 🧩 Construcción de (c_i) (repetición breve)
+
+[  
+c_i = \sum_{j=1}^{T_x} \alpha_{ij} h_j.  
+]
+
+Interpretación: el modelo decide “dónde mirar” y forma (c_i) como la suma ponderada de las anotaciones.
+
+---
+
+## 13. 🔁 Decoder GRU con atención (entradas y actualización)
+
+Entradas al decoder en el paso (i) (según PPT):
+
+- **Input**: la palabra target anterior (y_{i-1}).
+    
+- **Prev hidden**: (s_{i-1}).
+    
+- **Encoder outputs**: ({h_1,\dots,h_{T_x}}).
+    
+
+La palabra previa se convierte en embedding y se aplica dropout:
+
+[  
+\text{embedded} = E(y_{i-1}),\qquad \tilde{e}_{i-1} = \text{Dropout}(E(y_{i-1})).  
+]
+
+Luego el GRU del decoder actualiza el estado combinando el embedding y el context vector:
+
+[  
+s_i = \mathrm{GRU}([\tilde{e}_{i-1}, c_i],; s_{i-1}).  
+]
+
+Así (s_i) incorpora tanto la historia del decoder como la información de la fuente relevante (vía (c_i)).
+
+---
+
+## 14. 🔚 Salida y distribución sobre la próxima palabra
+
+A partir del nuevo hidden (s_i) se calcula el logit y la probabilidad:
+
+[  
+o_i = W_o s_i + b_o,  
+]
+
+[  
+p(y_i \mid y_{1:i-1}, x) = \mathrm{Softmax}(o_i).  
+]
+
+---
+
+## 15. ✅ Resumen paso a paso (operacional) — paso (i)
+
+1. **Calcular scores** (e_{ij}) usando (a(s_{i-1}, h_j)) (proyección + tanh + (v^\top)).
+    
+2. **Obtener pesos** (\alpha_{ij} = \text{Softmax}_j(e_{i1},\dots,e_{iT_x})).
+    
+3. **Formar context vector** (c_i = \sum_j \alpha_{ij} h_j).
+    
+4. **Actualizar hidden** del decoder: (s_i = \mathrm{GRU}([\tilde{e}_{i-1}, c_i], s_{i-1})).
+    
+5. **Predecir**: (o_i = W_o s_i + b_o) → (p(y_i)=\text{Softmax}(o_i)).
+    
+
+(Esta lista sigue estrictamente el flujo que aparece en la PPT.)
+
+---
+
+## 16. 📚 Parámetros aprendidos principales (recap)
+
+- Pesos del encoder (p. ej. LSTM).
+    
+- Pesos del decoder (GRU) y embeddings (E(\cdot)).
+    
+- Parámetros del alignment network: (W_s, W_h, v).
+    
+- Proyección final (W_o, b_o).
+    
+
+---
+
+## 17. 📝 Conclusión (fiel al paper / PPT)
+
+- Bahdanau et al. introducen un **mecanismo de atención suave** que evita el cuello de botella del vector único (c).
+    
+- La atención **aprende a alinear** dinámicamente la entrada y el output en cada paso, mejorando traducción y tareas seq2seq.
+    
+- La arquitectura mantiene interpretabilidad (matrices de (\alpha)) y puede entrenarse end-to-end junto con encoder y decoder.
+    
+
+---
+
+¿Querés que te lo deje ahora en **Markdown descargable (.md)** tal cual —o lo exporto también a **.pdf** con el mismo formato— para que lo tengas como apuntes listos para imprimir?
