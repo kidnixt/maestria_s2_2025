@@ -463,7 +463,7 @@ Interpretación: el modelo decide “dónde mirar” y forma $c_i$ como la suma 
 
 El decoder combina tres fuentes de información:
 
-- Embedding de la palabra target anterior $y_{i-1}$ .
+- Embedding de la palabra target anterior $y_{i-1} : \tilde{e}_{i-1}$ .
     
 - **Prev hidden**: (s_{i-1}).
     
