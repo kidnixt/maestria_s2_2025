@@ -196,71 +196,58 @@ La PPT define self-attention como aplicar la atención a **cada posición** de l
 
 ## 16. 🧾 Resumen formal (fórmula que aparece)
 
-- Dada una qu
+- Dada una query $q$
+- values $(v_1, \dots, v_n)$
+- y keys $(k_1, \dots, k_n)$
+- Calculamos el output $z$
 
 $$
 z = \sum_{j=1}^n \alpha_j v_j,\qquad  
 \alpha_j = \frac{\exp(f(k_j,q))}{\sum_{i=1}^n \exp(f(k_i,q))},  
 $$
 
-es decir, (\alpha_j) es la softmax de las compatibilidades (f(k_j,q)).
+es decir, $\alpha_j$ es la softmax de las compatibilidades $f(k_i,q)$, entre $k_i$ y $q$.
 
 ---
 
 ## 17. 🔬 Scaled dot-product attention (fórmula literal)
 
 La función de compatibilidad usada frecuentemente es la **scaled dot-product**:
-
-[  
+$$
 f(k,q) = \frac{k q^\top}{\sqrt{d_k}},  
-]
+$$
 
-donde (d_k) es la dimensión de las keys. La PPT cita que el escalado mejora la estabilidad numérica cuando (d_k) crece.
+donde $d_k$ es la dimensión de las keys. La PPT cita que el escalado mejora la estabilidad numérica cuando $d_k$ crece.
 
 ---
 
 ## 18. 🧮 Self-Attention en forma matricial (fórmula final)
 
+Este cálculo se puede hacer para la source entera en paralelo agrupando las queries, keys y values en matrices $Q, K,V$ como hicimos anteriormente.
+
 La operación en toda la fuente en paralelo se escribe como:
 
-[  
-\text{Attention}(Q,K,V) = \operatorname{Softmax}!\left(\frac{QK^\top}{\sqrt{d_k}}\right), V.  
-]
+$$
+\text{Attention}(Q,K,V) = \operatorname{Softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right) V.  
+$$
 
-(Esta es la forma matricial que aparece literalmente en la diapositiva.)
+
 
 ---
 
 ## 19. ♻️ Invarianza bajo permutaciones y positional encodings
 
 - La PPT señala que el mecanismo de atención **es invariante** al orden de la secuencia (depende solo de similitudes entre tokens).
-    
 - Por eso es necesario incorporar **información posicional**; la PPT enumera tres soluciones propuestas:
-    
     1. Positional encodings sinusoidales (fijos)
-        
     2. Positional encodings aprendidos
-        
     3. Representaciones posicionales relativas dentro del mecanismo de atención.
-        
 
 ---
 
 ## 20. 📚 Bibliografía (tal como aparece)
 
 - Ambartsoumian, A. & Popowich, F. (2018). _Self-attention: A better building block..._
-    
 - Bahdanau, D., Cho, K., & Bengio, Y. (2014). _Neural machine translation by jointly learning to align and translate._
-    
 - Vaswani, A., et al. (2017). _Attention is all you need._
     
-
----
-
-# ✅ Cierre — cumplimiento estricto
-
-- Seguí **palabra por palabra** el orden de la PPT y **copié las ecuaciones tal como están** en las diapositivas.
-    
-- No añadí contenido que no esté en la PPT y no omití ninguna ecuación mostrada.
-    
-- Si querés, ahora te lo formateo **idéntico** a tus apuntes previos (títulos, emojis, tabla comparativa adicional) o te lo dejo como **Markdown descargable (.md)**. ¿Qué preferís?
