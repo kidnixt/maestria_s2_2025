@@ -424,15 +424,21 @@ $$
 e_{ij} = v^\top \tilde{v}_{ij}.  
 $$
 
-- $v$es un parámetro (vector) independiente de $i,j$.
+- $v$ es un parámetro (vector) independiente de $i,j$.
 - Las $\tilde{v}_{ij}$ son vectores intermedios que dependen de la posición $j$ y del paso $i$.
+	- Son vector de **alineación**
 
 ---
 
 ## 11. 🔢 Cálculo de atención: scores → softmax
 
-- A partir de (e_{ij}) se obtiene (\alpha_{ij}) vía softmax (ya mostrado).
-    
+A partir  de los vectores $\tilde{v}_{ij}$, se obtienen **scores escalares** de alineación
+
+- A partir de $e_{ij}$ se obtiene $\alpha_{ij}$ vía softmax (ya mostrado).
+	- Lo que da un score para cada posición $j$ del input.
+- $\tilde{v}_{j} \rightarrow$ vector intermedio dependiente de $j$
+- $v$ (no depende de $i$ y $j$) $\rightarrow$ parámetros del mecanismo de atención
+- $\alpha_{ij}$ es la probabilidad de alinear 
 - El vector (\alpha_i = (\alpha_{i1},\dots,\alpha_{iT_x})) son los pesos de atención para el paso (i).
     
 
