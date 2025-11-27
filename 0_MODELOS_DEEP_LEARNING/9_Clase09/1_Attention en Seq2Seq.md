@@ -329,42 +329,39 @@ $$
 - En entrenamiento suele usarse _teacher forcing_ (dar $y_{i-1}$ real como entrada).
     
 (La PPT muestra un diagrama con encoder → atención → decoder, y flujo train/inference.)
+![[Pasted image 20251127124146.png]]
+
 
 ---
 
-## 6. 🔢 Cálculo del context vector (c_i) (fórmulas)
+## 6. 🔢 Cálculo del context vector $c_i$ (fórmulas)
 
 Definición:
-
-[  
+$$
 c_i = \sum_{j=1}^{T_x} \alpha_{ij} , h_j.  
-]
+$$
+Los pesos $\alpha_{ij}$ son una distribución (softmax) sobre las posiciones de la fuente:
 
-Los pesos (\alpha_{ij}) son una distribución (softmax) sobre las posiciones de la fuente:
-
-[  
+$$
 \alpha_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x} \exp(e_{ik})}  
 = \text{Softmax}_j([e_{i1},\dots,e_{iT_x}]).  
-]
+$$
 
-Donde el **score de alineación** (e_{ij}) se define como:
+Donde el **score de alineación** $e_{ij}$ se define como:
 
-[  
+$$
 e_{ij} = a(s_{i-1}, h_j),  
-]
+$$
 
-es decir, una función (aprendida) que mide la compatibilidad entre el estado previo del decoder (s_{i-1}) y el hidden del encoder (h_j).
+es decir, una función (aprendida) que mide la compatibilidad entre el estado previo del decoder $s_{i-1}$ y el hidden del encoder $h_j$.
 
 ---
 
 ## 7. 🔁 Terminología moderna (keys, values, queries)
 
-- **Keys:** ({h_1,\dots,h_{T_x}}) (hiddens del encoder)
-    
-- **Values:** usualmente las mismas anotaciones ({h_1,\dots,h_{T_x}})
-    
-- **Queries:** hiddens del decoder ({s_1,\dots,s_{T_y}})
-    
+- **Keys:** ${h_1,\dots,h_{T_x}}$ (hiddens del encoder)
+- **Values:** usualmente las mismas anotaciones ${h_1,\dots,h_{T_x}}$. Son combinaciones del hidden del encoder
+- **Queries:** hiddens del decoder ${s_1,\dots,s_{T_y}}$
 
 Interpretación: para cada query (decoder step) se calcula una combinación ponderada de values según compatibilidades con las keys.
 
@@ -372,25 +369,21 @@ Interpretación: para cada query (decoder step) se calcula una combinación pond
 
 ## 8. 🧾 Intuición probabilística
 
-- (\alpha_{ij}) puede verse como la **probabilidad** de que la palabra target (y_i) esté alineada con la fuente (x_j).
-    
-- (c_i) es la **esperanza** (weighted average) de las anotaciones (h_j) bajo esa distribución: el "contexto" relevante para generar (y_i).
-    
+- $\alpha_{ij}$ puede verse como la **probabilidad** de que la palabra target $y_i$ esté alineada con la fuente $x_j$.
+- $c_i$ es la **esperanza** (weighted average) de las anotaciones $h_j$ bajo esa distribución: el "contexto" relevante para generar $y_i$.
 
 ---
 
 ## 9. 🖼️ Visualizaciones (qué muestran los heatmaps)
 
 - La PPT incluye ejemplos de heatmaps de atención sobre frases en francés: muestran qué tokens fuente contribuyen a cada token objetivo.
-    
 - Observación práctica: la atención revela correspondencias (a menudo casi diagonales) y reordenamientos cuando el idioma lo requiere — proporciona **interpretabilidad**.
-    
 
 ---
 
-## 10. ⚙️ Parametrización del alignment (cómo se calcula (e_{ij}))
+## 10. ⚙️ Parametrización del alignment (cómo se calcula $e_{ij}$)
 
-Bahdanau parametriza (a(\cdot)) como una **red feedforward** entrenable. En la PPT se resume el cálculo así:
+Bahdanau parametriza $a(\cdot)$ como una **red feedforward** entrenable. En la PPT se resume el cálculo así:
 
 1. Proyectar el hidden del decoder y cada hidden del encoder:
     
