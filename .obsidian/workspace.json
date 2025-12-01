@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/8_Clase08/2_Seq2Seq.md",
+                "file": "0_MODELOS_DEEP_LEARNING/9_Clase09/2_Definición de Attention.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_Seq2Seq"
+              "title": "2_Definición de Attention"
             }
           }
         ],
@@ -210,11 +210,12 @@
   },
   "active": "8ac33111b9ba0b04",
   "lastOpenFiles": [
+    "0_MODELOS_DEEP_LEARNING/9_Clase09/1_Attention en Seq2Seq.md",
+    "0_MODELOS_DEEP_LEARNING/8_Clase08/2_Seq2Seq.md",
     "0_MODELOS_DEEP_LEARNING/8_Clase08/1_Modelos De Lenguaje.md",
     "0_MODELOS_DEEP_LEARNING/7_Clase07/1_RNN.md",
     "0_MODELOS_DEEP_LEARNING/6_Clase06/2_NLP.md",
     "0_MODELOS_DEEP_LEARNING/6_Clase06/1_Skip Connections.md",
-    "0_MODELOS_DEEP_LEARNING/9_Clase09/1_Attention en Seq2Seq.md",
     "0_MODELOS_DEEP_LEARNING/9_Clase09/2_Definición de Attention.md",
     "0_MODELOS_DEEP_LEARNING/10_Clase10/2_Transformers.md",
     "0_MODELOS_DEEP_LEARNING/10_Clase10/1_Introducción Transformers.md",
@@ -234,7 +235,6 @@
     "assets/Pasted image 20251126152849.png",
     "0_MODELOS_DEEP_LEARNING/10_Clase10",
     "0_MODELOS_DEEP_LEARNING/0_MODELOS_DEEP_LEARNING.md",
-    "0_MODELOS_DEEP_LEARNING/8_Clase08/2_Seq2Seq.md",
     "0_MODELOS_DEEP_LEARNING/9_Clase09",
     "0_MODELOS_DEEP_LEARNING/8_Clase08",
     "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Clase01.md",
