@@ -25,12 +25,14 @@
             "id": "8ac33111b9ba0b04",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.10.6"
+                "file": "0_MODELOS_DEEP_LEARNING/6_Clase06/1_Skip Connections.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.10.6"
+              "icon": "lucide-file",
+              "title": "1_Skip Connections"
             }
           }
         ],
