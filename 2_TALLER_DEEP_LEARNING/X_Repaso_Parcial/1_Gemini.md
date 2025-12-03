@@ -6,23 +6,23 @@
 
 ### Propiedades Esenciales
 
-Un tensor en PyTorch tiene varias propiedades clave. El **`dtype`** especifica el tipo de datos de los elementos que contiene, como `torch.float32`11. El **`device`** indica si el tensor está almacenado en la CPU o en la GPU2. El **`ndim`** es el número de dimensiones del tensor 3333, y **`shape`** es una tupla que indica el tamaño de cada dimensión4444. La utilidad del `device` radica en permitir mover un tensor a la GPU para aprovechar el procesamiento paralelo5. Si intentas operar tensores en diferentes dispositivos (CPU y GPU), se producirá un error; la solución es mover ambos al mismo dispositivo6.
+Un tensor en PyTorch tiene varias propiedades clave. El **`dtype`** especifica el tipo de datos de los elementos que contiene, como `torch.float32`. El **`device`** indica si el tensor está almacenado en la CPU o en la GPU. El **`ndim`** es el número de dimensiones del tensor, y **`shape`** es una tupla que indica el tamaño de cada dimensión. La utilidad del `device` radica en permitir mover un tensor a la GPU para aprovechar el procesamiento paralelo. Si intentas operar tensores en diferentes dispositivos (CPU y GPU), se producirá un error; la solución es mover ambos al mismo dispositivo.
 
 ### Manipulación de Formas
 
-El **Broadcasting** es un mecanismo útil que permite realizar operaciones entre tensores con diferentes formas, estirando las dimensiones compatibles implícitamente7777. Por ejemplo, al sumar un tensor de forma $(4, 3)$ con uno de forma $(3,)$, el tensor de forma $(3,)$ se copia a lo largo de la dimensión 0 para hacerlo compatible, resultando en una forma $(4, 3)$8888.
+El **Broadcasting** es un mecanismo útil que permite realizar operaciones entre tensores con diferentes formas, estirando las dimensiones compatibles implícitamente. Por ejemplo, al sumar un tensor de forma $(4, 3)$ con uno de forma $(3,)$, el tensor de forma $(3,)$ se copia a lo largo de la dimensión 0 para hacerlo compatible, resultando en una forma $(4, 3)$.
 
 Para manipular tensores:
 
-- **`torch.cat` (Concatenar):** Une tensores a lo largo de una dimensión **existente**. Las formas deben ser idénticas en todas las demás dimensiones99.
+- **`torch.cat` (Concatenar):** Une tensores a lo largo de una dimensión **existente**. Las formas deben ser idénticas en todas las demás dimensiones.
     
-- **`torch.stack` (Apilar):** Une tensores a lo largo de una **nueva dimensión** (aumenta el número de dimensiones). Todos los tensores de entrada deben tener la misma forma10101010.
+- **`torch.stack` (Apilar):** Une tensores a lo largo de una **nueva dimensión** (aumenta el número de dimensiones). Todos los tensores de entrada deben tener la misma forma.
     
-- **`squeeze`:** Elimina las dimensiones del tensor que tienen un tamaño de 111.
+- **`squeeze`:** Elimina las dimensiones del tensor que tienen un tamaño de 1.
     
-- **`unsqueeze(dim=0)`:** Agrega una dimensión de tamaño 1 en la posición especificada12.
+- **`unsqueeze(dim=0)`:** Agrega una dimensión de tamaño 1 en la posición especificada.
     
-- **`reshape`:** Permite cambiar la forma de un tensor siempre que el número total de elementos se mantenga constante13131313.
+- **`reshape`:** Permite cambiar la forma de un tensor siempre que el número total de elementos se mantenga constante.
     
 
 ---
@@ -31,7 +31,7 @@ Para manipular tensores:
 
 ### Data Loading
 
-Al crear un **`Dataset`** personalizado, debes implementar las funciones `__len__` (para devolver el tamaño del dataset) y `__getitem__` (para obtener la muestra y etiqueta de un índice)14. El **`DataLoader`** utiliza el parámetro **`batch_size`** para determinar la cantidad de muestras procesadas antes de actualizar los pesos15. Un `batch_size` grande puede acelerar el entrenamiento, pero uno pequeño puede ayudar a escapar de mínimos locales16. **`shuffle`** se activa para reordenar los datos en cada época, previniendo que el modelo aprenda el orden de las muestras. **`num_workers`** especifica el número de procesos paralelos para la carga de datos, lo que puede mejorar el rendimiento.
+Al crear un **`Dataset`** personalizado, debes implementar las funciones `__len__` (para devolver el tamaño del dataset) y `__getitem__` (para obtener la muestra y etiqueta de un índice). El **`DataLoader`** utiliza el parámetro **`batch_size`** para determinar la cantidad de muestras procesadas antes de actualizar los pesos. Un `batch_size` grande puede acelerar el entrenamiento, pero uno pequeño puede ayudar a escapar de mínimos locales. **`shuffle`** se activa para reordenar los datos en cada época, previniendo que el modelo aprenda el orden de las muestras. **`num_workers`** especifica el número de procesos paralelos para la carga de datos, lo que puede mejorar el rendimiento.
 
 ### Modos del Modelo y Gradientes
 
