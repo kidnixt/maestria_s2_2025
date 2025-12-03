@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0_MODELOS_DEEP_LEARNING/6_Clase06/1_Skip Connections.md",
-                "mode": "preview",
+                "file": "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/1_Gemini.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1_Skip Connections"
+              "title": "1_Gemini"
             }
           }
         ],
@@ -209,6 +209,14 @@
   },
   "active": "8ac33111b9ba0b04",
   "lastOpenFiles": [
+    "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/2_GPT.md",
+    "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/X_Repaso_Parcial.md",
+    "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/1_Gemini.md",
+    "2_TALLER_DEEP_LEARNING/3_Clase3/1_MIT-BIH Arrhythmia.md",
+    "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial",
+    "2_TALLER_DEEP_LEARNING/2_Clase2/1_California_House_Price.md",
+    "2_TALLER_DEEP_LEARNING/1_Clase1/1_Intro Pytorch.md",
+    "0_MODELOS_DEEP_LEARNING/6_Clase06/1_Skip Connections.md",
     "0_MODELOS_DEEP_LEARNING/8_Clase08/2_Seq2Seq.md",
     "0_MODELOS_DEEP_LEARNING/9_Clase09/1_Attention en Seq2Seq.md",
     "0_MODELOS_DEEP_LEARNING/10_Clase10/1_Introducción Transformers.md",
@@ -217,7 +225,6 @@
     "0_MODELOS_DEEP_LEARNING/8_Clase08/1_Modelos De Lenguaje.md",
     "0_MODELOS_DEEP_LEARNING/7_Clase07/1_RNN.md",
     "0_MODELOS_DEEP_LEARNING/6_Clase06/2_NLP.md",
-    "0_MODELOS_DEEP_LEARNING/6_Clase06/1_Skip Connections.md",
     "assets/Pasted image 20251127152521.png",
     "assets/Pasted image 20251127152244.png",
     "assets/Pasted image 20251127151550.png",
@@ -247,12 +254,6 @@
     "0_MODELOS_DEEP_LEARNING/4_Clase04/1_Entropia Cruzada.md",
     "0_MODELOS_DEEP_LEARNING/3_Clase03/2_Optimización.md",
     "0_MODELOS_DEEP_LEARNING/2_Clase02/1_Multi Layer Perceptron.md",
-    "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md",
-    "0_MODELOS_DEEP_LEARNING/1_Clase01/2_Derivadas.md",
-    "0_MODELOS_DEEP_LEARNING/1_Clase01/1_Tensores.md",
-    "conflict-files-obsidian-git.md",
-    "0_MODELOS_DEEP_LEARNING/4_Clase04/4_Clase04.md",
-    "0_MODELOS_DEEP_LEARNING/3_Clase03/1_Automatic_Differentiation.md",
-    "0_MODELOS_DEEP_LEARNING/5_Clase05"
+    "0_MODELOS_DEEP_LEARNING/2_Clase02/2_Entrenamiento_MLPs.md"
   ]
 }
