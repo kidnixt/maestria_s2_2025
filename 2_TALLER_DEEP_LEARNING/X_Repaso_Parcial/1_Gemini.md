@@ -1,6 +1,3 @@
-¡Por supuesto! Reorganizo el resumen extenso y conciso, eliminando las tablas y la sección de GANs, para que tengas el material listo para tu estudio.
-
----
 
 ## 💻 1. Fundamentos de Tensores y PyTorch
 
