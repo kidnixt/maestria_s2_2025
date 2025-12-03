@@ -118,55 +118,36 @@
     Q,K,V dimensiones: `(B, heads, T_q, d_k)` etc. El factor `1/sqrt(d_k)` previene que los logits sean muy grandes.
     
 - **Máscaras**:
-    
     - **Padding mask**: evita atención a posiciones de padding.
-        
     - **Causal mask / look-ahead mask**: en decoder evita que cada posición vea futuros tokens (triangular superior masked).
-        
     - **Masking en entrenamiento**: permite parallelizar el cálculo (pero manteniendo la restricción causal).
-        
+
 
 # 13 — Positional Encoding (formula y propósito)
 
 - **Propósito**: introducir información posicional en modelos sin recurrencia.
-    
 - **Sinusoidal formula (paper "Attention is all you need")**:
-    
     ```
     PE(pos, 2i)   = sin(pos / (10000^(2i/d_model)))
     PE(pos, 2i+1) = cos(pos / (10000^(2i/d_model)))
     ```
-    
     Esto permite que la red infiera relaciones posicionales mediante combinaciones lineales.
-    
 
 # 14 — Inference en generación de texto (por qué token a token)
 
 - **Razón**: en inferencia no conocés tokens futuros; la probabilidad de cada token depende de tokens previos generados. En entrenamiento con teacher forcing se conoce la secuencia completa y se puede paralelizar, pero en inferencia debes decodificar autoregresivamente (greedy, beam search, sampling).
     
 
-# 15 — GANs (breve)
-
-- **Mode collapse**: el generador aprende a producir muy pocas muestras (o una) que engañan al discriminador → falta diversidad.
-    
-- **Causas**: loss inestable, mala arquitectura, entrenamiento asimétrico.
-    
-- **Soluciones a alto nivel**: mejorar la estabilidad (WGAN, gradient penalty), usar minibatch discrimination, label smoothing, historic averaging, architectural tweaks, regularización y mejor balance entre pasos de G y D.
-    
 
 # 16 — Weights & Biases (WandB)
 
 - **WandB**: plataforma para tracking de experimentos, métricas, modelos, artefactos.
-    
 - **Run**: ejecución individual que registra métricas.
-    
 - **Sweep**: experimento para búsqueda de hiperparámetros (define espacio y estrategia; lanza muchos runs).
-    
 
 ---
 
 # 17 — Fragmentos de código útiles (micro-snippets listos)
-
 - **Mover tensor a GPU y volver**:
     
     ```python
@@ -192,7 +173,6 @@
     ```
     
 - **Early stopping (compacto)**: ver snippet en sección 5.
-    
 
 ---
 
@@ -201,85 +181,46 @@
 Te dejo **40 preguntas rápidas** tipo parcial; respóndelas en voz alta o por escrito para probarte:
 
 1. ¿Qué contiene `tensor.shape`, `tensor.dtype`, `tensor.device` y `tensor.ndim`?
-    
 2. ¿Cómo pasar un tensor a GPU? Muestra el código.
-    
 3. Explica broadcasting con un ejemplo `(4,3)` + `(3,)`.
-    
 4. Diferencia entre `reshape` y `view`.
-    
 5. ¿Qué hacen `squeeze` y `unsqueeze`?
-    
 6. `torch.cat` vs `torch.stack` — ¿cuándo usar cada uno?
-    
 7. ¿Qué hace `model.train()` y `model.eval()`? ¿Qué pasa con Dropout en cada caso?
-    
 8. ¿Por qué usar `with torch.no_grad()` en validación?
-    
 9. ¿Qué es `num_workers` en DataLoader y qué efecto tiene?
-    
 10. Define `batch_size` y su impacto en entrenamiento.
-    
 11. ¿Cómo implementás early stopping con `val_loss` y paciencia=5?
-    
 12. ¿Qué hace `nn.Linear(4,2)` a un input `(3,4)`? ¿Cuál será la shape?
-    
 13. ¿Qué hace `nn.Embedding(6,3)` con input `[0,2,4]`?
-    
 14. Formula salida de Conv2d para `out_h`.
-    
 15. ¿Qué hace MaxPool2d(kernel=2, stride=2) a un tensor `(8,3,32,32)`?
-    
 16. Diferencia conceptual entre RNN y LSTM.
-    
 17. Forma de salida `output, h_n` de un RNN con `batch_first=True`.
-    
 18. ¿Qué significa `growth_rate` en DenseNet?
-    
 19. ¿Qué hacen los transition blocks en DenseNet?
-    
 20. Diferencia entre skip-connection (ResNet) y concatenación (DenseNet).
-    
-21. Explica teacher forcing y por qué puede crear discrepancia.
-    
+21. Explica teacher forcing y por qué puede crear discrepancia.    
 22. ¿Por qué en inferencia no se puede paralelizar la generación completa?
-    
 23. Escribe la fórmula de attention (dot-product).
-    
 24. ¿Qué hace el factor `1/sqrt(d_k)` en attention?
-    
 25. ¿Qué tipo de máscara evita que el decoder vea futuros tokens?
-    
 26. Escribe la fórmula de positional encoding sinusoidal.
-    
 27. ¿Qué es mode collapse en GANs y una forma para mitigarlo?
-    
 28. ¿Qué hace `nn.Dropout(p=0.5)` durante entrenamiento? ¿Y en eval?
-    
 29. ¿Cómo inicializas un embedding con pesos pre-entrenados? (breve)
-    
 30. ¿Qué es un sweep en WandB? ¿Y un run?
-    
 31. ¿Qué transformaciones incluirías en un pipeline de augmentations para imágenes? Nombra 4.
-    
 32. Da un ejemplo de augmentation que sería contraproducente para OCR.
-    
 33. ¿Qué es padding mask y cuándo se usa?
-    
 34. ¿Cómo evitar operar tensors en CPU y CUDA a la vez?
-    
 35. ¿Qué pasa si olvidas `model.eval()` durante validación?
-    
 36. ¿Qué implica `bias=True` en `nn.Linear`?
-    
 37. ¿Cómo calcular `out_w` en una conv 2D? (fórmula)
-    
 38. ¿Qué hace `torch.unsqueeze(x, dim=0)`?
-    
 39. Explica brevemente qué representan `Q`, `K`, `V` en attention.
-    
 40. Menciona 3 técnicas de regularización distintas a Dropout.
-    
+
 
 ---
 
