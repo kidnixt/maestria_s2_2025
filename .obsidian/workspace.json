@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/1_Gemini_mejorado.md",
+                "file": "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/3_GPT_preguntas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1_Gemini_mejorado"
+              "title": "3_GPT_preguntas"
             }
           }
         ],
@@ -209,8 +209,10 @@
   },
   "active": "8ac33111b9ba0b04",
   "lastOpenFiles": [
-    "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/2_GPT.md",
+    "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/2_GPT_mejorado.md",
+    "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/3_GPT_preguntas.md",
     "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/1_Gemini_mejorado.md",
+    "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/2_GPT.md",
     "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/1_Gemini.md",
     "2_TALLER_DEEP_LEARNING/X_Repaso_Parcial/X_Repaso_Parcial.md",
     "2_TALLER_DEEP_LEARNING/3_Clase3/1_MIT-BIH Arrhythmia.md",
@@ -252,8 +254,6 @@
     "0_MODELOS_DEEP_LEARNING/5_Clase05/1_Redes CNN Parte 1.md",
     "0_MODELOS_DEEP_LEARNING/6_Clase06/6_Clase06.md",
     "0_MODELOS_DEEP_LEARNING/6_Clase06",
-    "0_MODELOS_DEEP_LEARNING/4_Clase04/1_Entropia Cruzada.md",
-    "0_MODELOS_DEEP_LEARNING/3_Clase03/2_Optimización.md",
-    "0_MODELOS_DEEP_LEARNING/2_Clase02/1_Multi Layer Perceptron.md"
+    "0_MODELOS_DEEP_LEARNING/4_Clase04/1_Entropia Cruzada.md"
   ]
 }
