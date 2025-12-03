@@ -31,11 +31,11 @@ Para manipular tensores:
 
 ### Data Loading
 
-Al crear un **`Dataset`** personalizado, debes implementar las funciones `__len__` (para devolver el tamaño del dataset) y `__getitem__` (para obtener la muestra y etiqueta de un índice)14. El **`DataLoader`** utiliza el parámetro **`batch_size`** para determinar la cantidad de muestras procesadas antes de actualizar los pesos15. Un `batch_size` grande puede acelerar el entrenamiento, pero uno pequeño puede ayudar a escapar de mínimos locales16. **`shuffle`** se activa para reordenar los datos en cada época, previniendo que el modelo aprenda el orden de las muestras17. **`num_workers`** especifica el número de procesos paralelos para la carga de datos, lo que puede mejorar el rendimiento18.
+Al crear un **`Dataset`** personalizado, debes implementar las funciones `__len__` (para devolver el tamaño del dataset) y `__getitem__` (para obtener la muestra y etiqueta de un índice)14. El **`DataLoader`** utiliza el parámetro **`batch_size`** para determinar la cantidad de muestras procesadas antes de actualizar los pesos15. Un `batch_size` grande puede acelerar el entrenamiento, pero uno pequeño puede ayudar a escapar de mínimos locales16. **`shuffle`** se activa para reordenar los datos en cada época, previniendo que el modelo aprenda el orden de las muestras. **`num_workers`** especifica el número de procesos paralelos para la carga de datos, lo que puede mejorar el rendimiento.
 
 ### Modos del Modelo y Gradientes
 
-Se utiliza **`model.train()`** para poner el modelo en modo de entrenamiento, lo cual activa capas como **`nn.Dropout`** y **`nn.BatchNorm`**19. Por el contrario, **`model.eval()`** pone el modelo en modo de evaluación, **desactivando el `Dropout`** 20202020 y congelando las estadísticas de `BatchNorm`. Es crucial usar este modo durante la evaluación, ya que olvidarlo puede llevar a resultados inconsistentes debido al `Dropout` activo. Además, se usa el contexto **`torch.no_grad()`** durante la evaluación para deshabilitar el cálculo del gradiente, ahorrando memoria y tiempo.
+Se utiliza **`model.train()`** para poner el modelo en modo de entrenamiento, lo cual activa capas como **`nn.Dropout`** y **`nn.BatchNorm`**. Por el contrario, **`model.eval()`** pone el modelo en modo de evaluación, **desactivando el `Dropout`**  y congelando las estadísticas de `BatchNorm`. Es crucial usar este modo durante la evaluación, ya que olvidarlo puede llevar a resultados inconsistentes debido al `Dropout` activo. Además, se usa el contexto **`torch.no_grad()`** durante la evaluación para deshabilitar el cálculo del gradiente, ahorrando memoria y tiempo.
 
 ### Pérdidas y Regularización
 
